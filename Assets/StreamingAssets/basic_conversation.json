@@ -1,0 +1,33 @@
+{
+	"dialogues": [
+		{
+			"type": "basic",
+			"id": "1",
+			"who": "actor",
+			"value": "Hello!",
+			"post": [
+				"next:2",
+				"flag:foo=1"
+			]
+		},
+		{
+			"type": "basic",
+			"id": "2",
+			"who": "actor",
+			"value": "This is a mighty fine world.",
+			"post": [
+				"next:3",
+				"flag:foo++"
+			]
+		},
+		{
+			"type": "basic",
+			"id": "3",
+			"who": "actor",
+			"value": "Don't you think?!",
+			"post": [
+				"flag:foo++"
+			]
+		}
+	]
+}
