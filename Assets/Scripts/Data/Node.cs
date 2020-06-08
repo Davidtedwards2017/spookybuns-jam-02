@@ -7,11 +7,10 @@ namespace Data
 {
 
     [System.Serializable]
-    public abstract class DialogueEntry : IJsonSerializeable
+    public abstract class Node : IJsonSerializeable
     {
         public string Type;
         public string Id;
-        public string Who;
 
         public JObject ToJObject()
         {
@@ -22,7 +21,6 @@ namespace Data
         {
             Type = token.Value<string>("type");
             Id = token.Value<string>("id");
-            Who = token.Value<string>("who");
         }
     }
 }

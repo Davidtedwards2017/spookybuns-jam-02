@@ -69,6 +69,24 @@
 			"id": "4.1.2",
 			"who": "actor",
 			"value": "Someone is being a <i>grumpy goose</i>.",
+			"post": [
+				"next:5"
+			]
+		},
+		{
+			"type": "condition",
+			"id": 5,
+			"condition": "grump=0",
+			"if": [
+				"next:6"
+			],
+			"else": []
+		},
+		{
+			"type": "basic",
+			"id": "6",
+			"who": "actor",
+			"value": "<i><b>Grumpy!</b></i>",
 			"post": []
 		}
 	]

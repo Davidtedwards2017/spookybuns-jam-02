@@ -9,7 +9,7 @@ public class ConversationModule : Module
     public DialogueModule DialogueModule;
     public ChoiceDialogueModule ChoiceDialogueModule;
 
-    public IEnumerator PerformDialogue(DialogueEntry dialogue)
+    public IEnumerator PerformDialogue(Node dialogue)
     {
         if(dialogue is BasicDialogueEntry)
         {

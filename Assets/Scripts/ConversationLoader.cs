@@ -28,7 +28,7 @@ public class ConversationLoader : Singleton<ConversationLoader>
         {
             var text = File.ReadAllText(FilePath);
             var jobj = JObject.Parse(text);
-            return DataExtensions.DialogueFromJObject(jobj);
+            return DataExtensions.NodesFromJObject(jobj);
         }
 
         return null;

@@ -1,26 +1,23 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 namespace Data
 {
     public static class DataExtensions
     {
-        public static Type GetDialogueType(this string name)
+        public static Type GetNodeType(this string name)
         {
             switch (name.ToLower())
             {
                 case "basic": return typeof(BasicDialogueEntry);
                 case "choice": return typeof(ChoiceDialogueEntry);
-
+                case "condition": return typeof(Conditional);
             }
 
             return null;
         }
 
-        public static DialogueData DialogueFromJObject(JObject jObj)
+        public static DialogueData NodesFromJObject(JObject jObj)
         {
             var dialogueData = new DialogueData();
 
@@ -30,12 +27,12 @@ namespace Data
             foreach (var token in jArray)
             {
                 var typePropertyText = token.Value<string>("type");
-                var type = typePropertyText.GetDialogueType();
+                var type = typePropertyText.GetNodeType();
                 if (type == null) continue;
 
-                var instance = (DialogueEntry)Activator.CreateInstance(type);
+                var instance = (Node)Activator.CreateInstance(type);
                 instance.PopulateFromJObject(token);
-                dialogueData.dialogues.Add(instance);
+                dialogueData.nodes.Add(instance);
             }
 
             return dialogueData;

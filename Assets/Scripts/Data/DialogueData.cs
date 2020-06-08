@@ -8,6 +8,6 @@ namespace Data
     public class DialogueData
     {
         public string Id;
-        public List<DialogueEntry> dialogues = new List<DialogueEntry>();
+        public List<Node> nodes = new List<Node>();
     }
 }

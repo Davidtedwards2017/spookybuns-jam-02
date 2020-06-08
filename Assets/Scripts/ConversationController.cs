@@ -19,8 +19,8 @@ public class ConversationController : Singleton<ConversationController>
     public ConversationModule ConversationModule;
 
     public DialogueData conversation;
-    private DialogueEntry _CurrentDialogue;
-    private DialogueEntry _PrevDialogue;
+    private Node _CurrentDialogue;
+    private Node _PrevDialogue;
 
     private ChoiceDialogueOption _SelectedOption;
     public StateMachine<State> _StateMachine;
@@ -43,16 +43,16 @@ public class ConversationController : Singleton<ConversationController>
     private void LoadingConversation_Enter()
     {
         conversation = ConversationLoader.Instance.ConversationData.First();
-        LoadDialogueEntry(conversation.dialogues.First());
+        LoadDialogueEntry(conversation.nodes.First());
         _StateMachine.ChangeState(State.ActorDialogue);
     }
 
     private void LoadDialogueEntry(string id)
     {
-        LoadDialogueEntry(conversation.dialogues.FirstOrDefault(e => e.Id.Equals(id)));
+        LoadDialogueEntry(conversation.nodes.FirstOrDefault(e => e.Id.Equals(id)));
     }
 
-    private void LoadDialogueEntry(DialogueEntry dialogue)
+    private void LoadDialogueEntry(Node dialogue)
     {
         _CurrentDialogue = dialogue;
     }
@@ -83,15 +83,7 @@ public class ConversationController : Singleton<ConversationController>
             _PrevDialogue = _CurrentDialogue;
             _CurrentDialogue = null;
 
-            if (_PrevDialogue is BasicDialogueEntry)
-            {
-                ProcessPost(((BasicDialogueEntry)_PrevDialogue).Post);
-            }
-            else if(_PrevDialogue is ChoiceDialogueEntry && _SelectedOption != null)
-            {
-                ProcessPost(_SelectedOption.Post);
-                _SelectedOption = null;
-            }
+            ProcessNode(_PrevDialogue);
         }
 
         if (_CurrentDialogue != null)
@@ -101,6 +93,23 @@ public class ConversationController : Singleton<ConversationController>
         else
         {
             _StateMachine.ChangeState(State.EndConversation);
+        }
+    }
+
+    private void ProcessNode(Node node)
+    {
+        if (node is BasicDialogueEntry)
+        {
+            ProcessPost(((BasicDialogueEntry)node).Post);
+        }
+        else if (node is ChoiceDialogueEntry && _SelectedOption != null)
+        {
+            ProcessPost(_SelectedOption.Post);
+            _SelectedOption = null;
+        }
+        else if (node is Conditional)
+        {
+            ProcessConditional((Conditional)node);
         }
     }
 
@@ -119,6 +128,38 @@ public class ConversationController : Singleton<ConversationController>
                     break;
             }
         }
+    }
+
+    private void ProcessConditional(Conditional conditional)
+    {
+        if (ProcessConditionalStatement(conditional.Condition))
+        {
+            ProcessPost(conditional.If);
+        }
+        else
+        {
+            ProcessPost(conditional.Else);
+        }
+    }
+
+    private bool ProcessConditionalStatement(string statmentText)
+    {
+        var split = Regex.Split(statmentText, @"([=><])");
+        string symbol = split[1];
+        int conditionalValue = int.Parse(split[2]);
+        int value = StatsController.Instance.GetFlagValue(split[0]);
+
+        switch (symbol)
+        {
+            case "=":
+                return value == conditionalValue;
+            case ">":
+                return value > conditionalValue;
+            case "<":
+                return value < conditionalValue;
+        }
+
+        return false;
     }
 
     private void ProcessFlag(string flagText)
