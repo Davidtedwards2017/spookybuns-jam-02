@@ -13,19 +13,20 @@ namespace Data
             switch (name.ToLower())
             {
                 case "basic": return typeof(BasicDialogueEntry);
+                case "choice": return typeof(ChoiceDialogueEntry);
 
             }
 
             return null;
         }
 
-        public static DialogueData FromJObject(JObject jObj)
+        public static DialogueData DialogueFromJObject(JObject jObj)
         {
             var dialogueData = new DialogueData();
 
+            dialogueData.Id = jObj.Value<string>("id");
+
             JArray jArray = (JArray)jObj["dialogues"];
-            
-            //var tokens = jObj.SelectTokens("dialogues");
             foreach (var token in jArray)
             {
                 var typePropertyText = token.Value<string>("type");

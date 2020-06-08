@@ -1,4 +1,5 @@
 {
+	"id": "testconvo",
 	"dialogues": [
 		{
 			"type": "basic",
@@ -14,10 +15,10 @@
 			"type": "basic",
 			"id": "2",
 			"who": "actor",
-			"value": "This is a mighty fine world.",
+			"value": "This is a mighty fine <color=red><b>world</b></color>.",
 			"post": [
 				"next:3",
-				"flag:foo++"
+				"flag:foo+1"
 			]
 		},
 		{
@@ -26,8 +27,49 @@
 			"who": "actor",
 			"value": "Don't you think?!",
 			"post": [
-				"flag:foo++"
+				"next:4",
+				"flag:foo+1"
 			]
+		},
+		{
+			"type": "choice",
+			"id": "4",
+			"who": "player",
+			"options": [
+				{
+					"id": "4.1",
+					"value": "yeah sure is.",
+					"post": [
+						"next:4.1.1",
+						"flag:positive+1"
+					]
+				},
+				{
+					"id": "4.2",
+					"value": "nah it sucks.",
+					"post": [
+						"next:4.1.2",
+						"flag:grump+1"
+					]
+				}
+			],
+			"post": [
+				"flag:foo+1"
+			]
+		},
+		{
+			"type": "basic",
+			"id": "4.1.1",
+			"who": "actor",
+			"value": "Exactly, gotta stay possitive!",
+			"post": []
+		},
+		{
+			"type": "basic",
+			"id": "4.1.2",
+			"who": "actor",
+			"value": "Someone is being a <i>grumpy goose</i>.",
+			"post": []
 		}
 	]
 }
