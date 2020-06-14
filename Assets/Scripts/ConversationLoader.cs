@@ -3,6 +3,7 @@ using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using System.Linq;
 
 public class ConversationLoader : Singleton<ConversationLoader>
 {
@@ -20,6 +21,11 @@ public class ConversationLoader : Singleton<ConversationLoader>
     void Awake()
     {
         ConversationData.Add(Load(FilePath));
+    }
+
+    public DialogueData GetCharacterConversation(GameInfo.Character character)
+    {
+        return ConversationData.FirstOrDefault(c => c.Id.Equals(character.ToString()));
     }
 
     public DialogueData Load(string filePath)

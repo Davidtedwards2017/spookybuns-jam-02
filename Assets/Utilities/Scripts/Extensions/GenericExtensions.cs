@@ -316,6 +316,17 @@ namespace Utilites
             return tArray;
         }
 
+        public static T[] ReverseShift<T>(this T[] collection)
+        {
+            T[] temp = new T[collection.Length];
+            for (int i = collection.Length - 1; i > 0; i--)
+            {
+                temp[i - 1] = collection[i];
+            }
+
+            return temp;
+        }
+
         public static GameObject RootTo(this GameObject gameObject, GameObject parent, Vector3 offset)
         {
             return gameObject.AttachTo(parent).SetLocalPosition(offset);

@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class Module : MonoBehaviour {
 
-    private bool _Active;
+    public bool _Active;
 
     public bool Active
     {
@@ -27,9 +27,13 @@ public class Module : MonoBehaviour {
         }
     }
 
+    public virtual void SetActive(bool active)
+    {
+        Active = active;
+    }
+
     protected virtual void OnActivated()
     {
-
     }
 
     protected virtual void OnDeactivated()
@@ -39,14 +43,25 @@ public class Module : MonoBehaviour {
     //public Sequence AnimateIn()
     //{
     //    Sequence sequence = DOTween.Sequence();
-    //    //sequence.Append(GetComponent<CanvasGroup>().DOFade(1f, .3f));
+    //
+    //    var canvasGroup = GetComponent<CanvasGroup>();
+    //    if (canvasGroup != null)
+    //    {
+    //        sequence.Append(canvasGroup.DOFade(1f, .3f));
+    //    }
+    //
     //    return sequence;
     //}
     //
     //public Sequence AnimateOut()
     //{
     //    Sequence sequence = DOTween.Sequence();
-    //    //sequence.Append(GetComponent<CanvasGroup>().DOFade(0f, .3f));
+    //
+    //    var canvasGroup = GetComponent<CanvasGroup>();
+    //    if (canvasGroup != null)
+    //    {
+    //        sequence.Append(canvasGroup.DOFade(0f, .3f));
+    //    }
     //    return sequence;
     //}
 

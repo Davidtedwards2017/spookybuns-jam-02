@@ -16,9 +16,9 @@ public class ConversationController : Singleton<ConversationController>
         EndConversation,
     }
 
-    public ConversationModule ConversationModule;
-
+    public GameInfo.Character ConversationWithCharacter;
     public DialogueData conversation;
+
     private Node _CurrentDialogue;
     private Node _PrevDialogue;
 
@@ -32,6 +32,12 @@ public class ConversationController : Singleton<ConversationController>
 
     private void Start()
     {    
+        //_StateMachine.ChangeState(State.LoadingConversation);
+    }
+
+    public void StartConversation(GameInfo.Character character)
+    {
+        ConversationWithCharacter = character;
         _StateMachine.ChangeState(State.LoadingConversation);
     }
 
@@ -58,10 +64,13 @@ public class ConversationController : Singleton<ConversationController>
     }
 
     private IEnumerator ActorDialogue_Enter()
-    {
-        if(_CurrentDialogue != null)
+    { 
+        ConversationUiController.Instance.SetActive(true);
+        NavigationUiController.Instance.SetActive(false);
+
+        if (_CurrentDialogue != null)
         {
-            yield return ConversationModule.PerformDialogue(_CurrentDialogue);
+            yield return ConversationUiController.Instance.PerformDialogue(_CurrentDialogue);
         }
 
         _StateMachine.ChangeState(State.PostDialogue);
@@ -190,6 +199,7 @@ public class ConversationController : Singleton<ConversationController>
 
     private void EndConversation_Enter()
     {
-
+        ConversationUiController.Instance.SetActive(false);
+        NavigationUiController.Instance.SetActive(true);
     }
 }

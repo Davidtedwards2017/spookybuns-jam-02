@@ -8,6 +8,20 @@ public class ConversationModule : Module
 {
     public DialogueModule DialogueModule;
     public ChoiceDialogueModule ChoiceDialogueModule;
+    public Animator Animator;
+
+
+    protected override void OnActivated()
+    {
+        Animator.SetBool("visible", true);
+        base.OnActivated();
+    }
+
+    protected override void OnDeactivated()
+    {
+        Animator.SetBool("visible", false);
+        base.OnDeactivated();
+    }
 
     public IEnumerator PerformDialogue(Node dialogue)
     {

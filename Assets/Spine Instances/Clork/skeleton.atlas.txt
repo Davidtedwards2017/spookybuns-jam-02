@@ -1,0 +1,111 @@
+
+skeleton.png
+size: 530,452
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Arm_left_lower
+  rotate: true
+  xy: 289, 102
+  size: 116, 178
+  orig: 116, 178
+  offset: 0, 0
+  index: -1
+Arm_left_upper
+  rotate: true
+  xy: 289, 220
+  size: 59, 237
+  orig: 59, 237
+  offset: 0, 0
+  index: -1
+Arm_right_upper
+  rotate: true
+  xy: 2, 2
+  size: 70, 278
+  orig: 70, 278
+  offset: 0, 0
+  index: -1
+big hand
+  rotate: false
+  xy: 469, 160
+  size: 58, 58
+  orig: 58, 58
+  offset: 0, 0
+  index: -1
+cord
+  rotate: false
+  xy: 480, 281
+  size: 47, 120
+  orig: 47, 120
+  offset: 0, 0
+  index: -1
+finger
+  rotate: true
+  xy: 289, 284
+  size: 51, 104
+  orig: 51, 104
+  offset: 0, 0
+  index: -1
+hand
+  rotate: true
+  xy: 401, 3
+  size: 86, 92
+  orig: 86, 92
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 2, 74
+  size: 285, 263
+  orig: 285, 263
+  offset: 0, 0
+  index: -1
+neck
+  rotate: true
+  xy: 289, 22
+  size: 78, 110
+  orig: 78, 110
+  offset: 0, 0
+  index: -1
+nose
+  rotate: true
+  xy: 469, 91
+  size: 28, 31
+  orig: 28, 31
+  offset: 0, 0
+  index: -1
+small hand
+  rotate: true
+  xy: 480, 403
+  size: 47, 48
+  orig: 47, 48
+  offset: 0, 0
+  index: -1
+thumb
+  rotate: true
+  xy: 395, 284
+  size: 51, 74
+  orig: 51, 74
+  offset: 0, 0
+  index: -1
+tie
+  rotate: true
+  xy: 297, 337
+  size: 113, 181
+  orig: 113, 181
+  offset: 0, 0
+  index: -1
+tie_knot
+  rotate: true
+  xy: 469, 121
+  size: 37, 38
+  orig: 37, 38
+  offset: 0, 0
+  index: -1
+torso
+  rotate: true
+  xy: 2, 339
+  size: 111, 293
+  orig: 111, 293
+  offset: 0, 0
+  index: -1
