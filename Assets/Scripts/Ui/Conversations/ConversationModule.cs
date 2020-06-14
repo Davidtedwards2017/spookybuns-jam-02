@@ -13,6 +13,7 @@ public class ConversationModule : Module
 
     protected override void OnActivated()
     {
+        Animator.SetBool("choice", false);
         Animator.SetBool("visible", true);
         base.OnActivated();
     }
@@ -31,7 +32,9 @@ public class ConversationModule : Module
         }
         else if(dialogue is ChoiceDialogueEntry)
         {
+            Animator.SetBool("choice", true);
             yield return ChoiceDialogueModule.PerformDialogue((ChoiceDialogueEntry)dialogue);
+            Animator.SetBool("choice", false);
         }
 
         yield break;

@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Linq;
 using MonsterLove.StateMachine;
 using Data;
+using DG.Tweening;
 using System.Text.RegularExpressions;
 
 public class ConversationController : Singleton<ConversationController>
@@ -16,6 +17,7 @@ public class ConversationController : Singleton<ConversationController>
         EndConversation,
     }
 
+    public Camera sceneCamera;
     public GameInfo.Character ConversationWithCharacter;
     public DialogueData conversation;
 
@@ -25,19 +27,33 @@ public class ConversationController : Singleton<ConversationController>
     private ChoiceDialogueOption _SelectedOption;
     public StateMachine<State> _StateMachine;
 
+    public float convoCamaraUpdateDuration = 0.5f;
+    private Vector3 prevSceneCameraPos;
+    private Vector3 convoSceneCameraPos;
+    private float prevSceneCameraOrthoSize;
+    private float convoSceneCameraOrthoSize;
+    private Sequence cameraUpdateSequence;
+
+    public Vector3 ConvoDialoguePos { get; private set; }
+    public Transform ConvoDialogueTransform { get; private set; }
+
     private void Awake()
     {
         _StateMachine = StateMachine<State>.Initialize(this);
     }
 
-    private void Start()
-    {    
-        //_StateMachine.ChangeState(State.LoadingConversation);
-    }
-
-    public void StartConversation(GameInfo.Character character)
+    public void StartConversation(Character_IC ic)
     {
-        ConversationWithCharacter = character;
+        ConvoDialoguePos = ic.ConversationDialogueBubbleAnchor.position;
+        ConvoDialogueTransform = ic.ConversationDialogueBubbleAnchor;
+
+        prevSceneCameraPos = sceneCamera.transform.position;
+        prevSceneCameraOrthoSize = sceneCamera.orthographicSize;
+
+        convoSceneCameraPos = ic.ConversationCameraAnchor.position;
+        convoSceneCameraOrthoSize = ic.ConversationCameraOrthoSize;
+
+        ConversationWithCharacter = ic.Character;
         _StateMachine.ChangeState(State.LoadingConversation);
     }
 
@@ -63,8 +79,23 @@ public class ConversationController : Singleton<ConversationController>
         _CurrentDialogue = dialogue;
     }
 
+    public void UpdateCamera(Vector3 pos, float orthoSize, float duration)
+    {
+        if(cameraUpdateSequence != null && cameraUpdateSequence.IsPlaying())
+        {
+            cameraUpdateSequence.Kill();
+        }
+
+        cameraUpdateSequence = DOTween.Sequence();
+        cameraUpdateSequence.Join(sceneCamera.DOOrthoSize(orthoSize, duration));
+        cameraUpdateSequence.Join(sceneCamera.transform.DOMove(pos, duration));
+        cameraUpdateSequence.Play();
+    }
+
     private IEnumerator ActorDialogue_Enter()
-    { 
+    {
+        UpdateCamera(convoSceneCameraPos, convoSceneCameraOrthoSize, convoCamaraUpdateDuration);
+
         ConversationUiController.Instance.SetActive(true);
         NavigationUiController.Instance.SetActive(false);
 
@@ -199,6 +230,7 @@ public class ConversationController : Singleton<ConversationController>
 
     private void EndConversation_Enter()
     {
+        UpdateCamera(prevSceneCameraPos, prevSceneCameraOrthoSize, convoCamaraUpdateDuration);
         ConversationUiController.Instance.SetActive(false);
         NavigationUiController.Instance.SetActive(true);
     }

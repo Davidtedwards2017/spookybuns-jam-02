@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Data;
@@ -13,6 +12,20 @@ public class DialogueModule : Module
     public void Awake()
     {
         ActionButton.onClick.AddListener(ActionButtonPressed);
+    }
+
+    protected override void OnActivated()
+    {
+        UpdatePosition();
+        base.OnActivated();
+    }
+
+    private void Update()
+    {
+        if(Active)
+        {
+            UpdatePosition();
+        }
     }
 
     public IEnumerator PerformDialogue(BasicDialogueEntry dialogueEntry)
@@ -30,6 +43,12 @@ public class DialogueModule : Module
     private void ActionButtonPressed()
     {
         _ShouldProceed = true;
-        //SendMessageUpwards("DialogueActionButtonClicked");
+    }
+
+    public void UpdatePosition()
+    {
+        var newWorldPos = ConversationController.Instance.ConvoDialogueTransform.position;
+        Vector2 screenPos = Camera.main.WorldToScreenPoint(newWorldPos);
+        SetPosition(screenPos);
     }
 }
