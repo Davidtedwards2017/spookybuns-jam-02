@@ -20,7 +20,7 @@ public class ConversationLoader : Singleton<ConversationLoader>
     // Start is called before the first frame update
     void Awake()
     {
-        ConversationData.Add(Load(FilePath));
+        ConversationData = Load(FilePath);
     }
 
     public DialogueData GetCharacterConversation(GameInfo.Character character)
@@ -28,7 +28,7 @@ public class ConversationLoader : Singleton<ConversationLoader>
         return ConversationData.FirstOrDefault(c => c.Id.Equals(character.ToString()));
     }
 
-    public DialogueData Load(string filePath)
+    public List<DialogueData> Load(string filePath)
     {
         if (File.Exists(filePath))
         {

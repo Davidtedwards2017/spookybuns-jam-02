@@ -32,12 +32,14 @@ public class DialogueModule : Module
     {
         _ShouldProceed = false;
         SetDialogueText(dialogueEntry.Value);
+        
         yield return new WaitUntil(() => _ShouldProceed);
     }
 
     private void SetDialogueText(string text)
     {
         TextArea.text = text;
+        StartCoroutine(UpdateLayoutGroups());
     }
 
     private void ActionButtonPressed()
@@ -51,4 +53,13 @@ public class DialogueModule : Module
         Vector2 screenPos = Camera.main.WorldToScreenPoint(newWorldPos);
         SetPosition(screenPos);
     }
+
+    private IEnumerator UpdateLayoutGroups()
+    {
+        var layoutGroup = GetComponentInChildren<LayoutGroup>();
+        layoutGroup.enabled = false;
+        yield return new WaitForEndOfFrame();
+        layoutGroup.enabled = true;
+    }
+
 }

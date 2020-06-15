@@ -5,6 +5,7 @@ using UnityEngine;
 public static class GameInfo 
 {
     public enum Character {
-        clockhead
+        clockhead,
+        demon,
     }
 }
