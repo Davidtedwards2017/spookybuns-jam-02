@@ -15,7 +15,11 @@ public class Character_IC : MonoBehaviour
 
     public void OnMouseDown()
     {
-        Debug.Log(string.Format("on mouse down: {0}", gameObject.name));
+        StartConversation();
+    }
+
+    public void StartConversation()
+    {
         ConversationController.Instance.StartConversation(this);
     }
 
@@ -24,12 +28,4 @@ public class Character_IC : MonoBehaviour
     {
         DialogueModule = GetComponentInChildren<DialogueModule>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
 }
