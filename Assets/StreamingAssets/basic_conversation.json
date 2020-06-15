@@ -53,6 +53,37 @@
 								"next:4.1.2",
 								"flag:grump+1"
 							]
+						},
+						{
+							"id": "4.3",
+							"value": "(restart)",
+							"post": [
+								"event:game.restart"
+							]
+						},
+						{
+							"id": "4.4",
+							"value": "(end)",
+							"post": [
+								"event:game.end"
+							]
+						},
+						{
+							"id": "4.5",
+							"value": "(remove this option)",
+							"onlyonce": true,
+							"post": [
+								"next:4"
+							]
+						},
+						{
+							"id": "4.6",
+							"value": "(new option)",
+							"onlyonce": true,
+							"condition": "selected.4.5=1",
+							"post": [
+								"next:4"
+							]
 						}
 					],
 					"post": [

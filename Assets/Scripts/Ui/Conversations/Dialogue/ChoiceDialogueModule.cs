@@ -15,7 +15,16 @@ public class ChoiceDialogueModule : Module
         _ShouldProceed = false;
         ClearOptions();
         SpawnOptions(dialogueEntry);
-        yield return new WaitUntil(() => _ShouldProceed);
+
+        if(OptionsArea.childCount == 0)
+        {
+            ConversationController.Instance.ChoiceOptionSelected(null);
+        }
+        else
+        {
+            yield return new WaitUntil(() => _ShouldProceed);
+        }
+
     }
 
     private void ClearOptions()
@@ -30,8 +39,28 @@ public class ChoiceDialogueModule : Module
     {
         foreach(var option in dialogueEntry.Options)
         {
-            SpawnOption(option);
+            if (ShouldCreate(option))
+            {
+                SpawnOption(option);
+            }
         }
+    }
+
+    private bool ShouldCreate(ChoiceDialogueOption data)
+    {
+        if (data.OnlyOnce && 
+            StatsController.Instance.GetFlagValue(string.Format("selected.{0}", data.Id)) > 0)
+        {
+            return false;
+        }
+
+        if(data.Condition != null && 
+            !ConversationController.ProcessConditionalStatement(data.Condition))
+        {
+            return false;
+        }
+
+        return true;
     }
 
     private void SpawnOption(ChoiceDialogueOption data)
@@ -44,6 +73,8 @@ public class ChoiceDialogueModule : Module
     {
         _ShouldProceed = true;
         //not a great pattern, may change this to subscriber/broadcast model
+
+        StatsController.Instance.SetFlagValue(string.Format("selected.{0}", selected.Id), 1);
         ConversationController.Instance.ChoiceOptionSelected(selected);
     }
 }

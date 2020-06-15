@@ -6,6 +6,8 @@ using MonsterLove.StateMachine;
 using Data;
 using DG.Tweening;
 using System.Text.RegularExpressions;
+using UnityEngine.Events;
+using Utilites;
 
 public class ConversationController : Singleton<ConversationController>
 {
@@ -36,6 +38,8 @@ public class ConversationController : Singleton<ConversationController>
 
     public Vector3 ConvoDialoguePos { get; private set; }
     public Transform ConvoDialogueTransform { get; private set; }
+
+    private Dictionary<string, UnityEvent> _Events = new Dictionary<string, UnityEvent>();
 
     private void Awake()
     {
@@ -166,11 +170,14 @@ public class ConversationController : Singleton<ConversationController>
                 case "flag":
                     ProcessFlag(split[1]);
                     break;
+                case "event":
+                    TriggerEvent(split[1]);
+                    break;
             }
         }
     }
 
-    private void ProcessConditional(Conditional conditional)
+    public void ProcessConditional(Conditional conditional)
     {
         if (ProcessConditionalStatement(conditional.Condition))
         {
@@ -182,7 +189,7 @@ public class ConversationController : Singleton<ConversationController>
         }
     }
 
-    private bool ProcessConditionalStatement(string statmentText)
+    public static bool ProcessConditionalStatement(string statmentText)
     {
         var split = Regex.Split(statmentText, @"([=><])");
         string symbol = split[1];
@@ -220,6 +227,21 @@ public class ConversationController : Singleton<ConversationController>
             case "-":
                 StatsController.Instance.AdjustFlagValue(flagname, -value);
                 break;
+        }
+    }
+
+    public void SubscribeToEvent(string eventName, UnityAction action)
+    {
+        var unityEvent = _Events.SafeGetOrInitialize(eventName);
+        unityEvent.AddListener(action);
+    }
+
+    private void TriggerEvent(string eventName)
+    {
+        var unityEvent = _Events.SafeGet(eventName);
+        if(unityEvent != null)
+        {
+            unityEvent.Invoke();
         }
     }
 

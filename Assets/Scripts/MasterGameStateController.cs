@@ -16,7 +16,6 @@ public class MasterGameStateController : Singleton<MasterGameStateController>
     }
 
     public Character_IC[] Character_ICs;
-
     private StateMachine<State> _StateMachine;
 
     private void Awake()
@@ -27,6 +26,9 @@ public class MasterGameStateController : Singleton<MasterGameStateController>
 
     private void Start()
     {
+        ConversationController.Instance.SubscribeToEvent("game.restart", StartRestartSequence);
+        ConversationController.Instance.SubscribeToEvent("game.end", StartEndSequence);
+
         _StateMachine.ChangeState(State.Initialize);
     }
 
