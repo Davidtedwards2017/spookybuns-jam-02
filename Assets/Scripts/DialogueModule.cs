@@ -6,7 +6,8 @@ using Data;
 public class DialogueModule : Module
 {
     public Button ActionButton;
-    public Text TextArea;
+
+    public TextTyper Typer;
     private bool _ShouldProceed;
     
     public void Awake()
@@ -31,16 +32,19 @@ public class DialogueModule : Module
     public IEnumerator PerformDialogue(BasicDialogueEntry dialogueEntry)
     {
         _ShouldProceed = false;
-        SetDialogueText(dialogueEntry.Value);
-        
+        ActionButton.animator.SetBool("visible", false);
+        yield return Typer.PerformTextTyping(dialogueEntry.Value);
+        //SetDialogueText(dialogueEntry.Value);
+        ActionButton.animator.SetBool("visible", true);
         yield return new WaitUntil(() => _ShouldProceed);
+        ActionButton.animator.SetBool("visible", false);
     }
 
-    private void SetDialogueText(string text)
-    {
-        TextArea.text = text;
-        StartCoroutine(UpdateLayoutGroups());
-    }
+    //private void SetDialogueText(string text)
+    //{
+    //    TextArea.text = text;
+    //    StartCoroutine(UpdateLayoutGroups());
+    //}
 
     private void ActionButtonPressed()
     {
