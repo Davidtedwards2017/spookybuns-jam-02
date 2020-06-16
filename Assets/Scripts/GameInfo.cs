@@ -7,5 +7,6 @@ public static class GameInfo
     public enum Character {
         clockhead,
         demon,
+        statue,
     }
 }
