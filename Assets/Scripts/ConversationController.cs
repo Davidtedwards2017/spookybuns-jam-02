@@ -68,14 +68,22 @@ public class ConversationController : Singleton<ConversationController>
 
     private void LoadingConversation_Enter()
     {
-        conversation = ConversationLoader.Instance.ConversationData.First();
+        conversation = ConversationLoader.Instance.GetCharacterConversation(ConversationWithCharacter);
         LoadDialogueEntry(conversation.nodes.First());
         _StateMachine.ChangeState(State.ActorDialogue);
     }
 
     private void LoadDialogueEntry(string id)
     {
-        LoadDialogueEntry(conversation.nodes.FirstOrDefault(e => e.Id.Equals(id)));
+        var node = conversation.nodes.FirstOrDefault(e => e.Id.Equals(id));
+        if (node == null)
+        {
+            Debug.LogError("cannot find node with id:" + id);
+        }
+        else
+        {
+            LoadDialogueEntry(node);
+        }
     }
 
     private void LoadDialogueEntry(Node dialogue)
@@ -122,13 +130,13 @@ public class ConversationController : Singleton<ConversationController>
 
     private void PostDialogue_Enter()
     {
-        if (_CurrentDialogue != null)
-        {
+        //if (_CurrentDialogue != null)
+        //{
             _PrevDialogue = _CurrentDialogue;
             _CurrentDialogue = null;
 
             ProcessNode(_PrevDialogue);
-        }
+        //}
 
         if (_CurrentDialogue != null)
         {
@@ -142,6 +150,8 @@ public class ConversationController : Singleton<ConversationController>
 
     private void ProcessNode(Node node)
     {
+        if (node == null) return;
+
         if (node is BasicDialogueEntry)
         {
             ProcessPost(((BasicDialogueEntry)node).Post);
