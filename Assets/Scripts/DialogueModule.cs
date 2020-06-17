@@ -6,6 +6,7 @@ using Data;
 public class DialogueModule : Module
 {
     public Button ActionButton;
+    public bool ShouldUpdatePosition = true;
 
     public TextTyper Typer;
     private bool _ShouldProceed;
@@ -17,13 +18,16 @@ public class DialogueModule : Module
 
     protected override void OnActivated()
     {
-        UpdatePosition();
+        if(ShouldUpdatePosition)
+        {
+            UpdatePosition();
+        }
         base.OnActivated();
     }
 
     private void Update()
     {
-        if(Active)
+        if(Active && ShouldUpdatePosition)
         {
             UpdatePosition();
         }
@@ -31,20 +35,16 @@ public class DialogueModule : Module
 
     public IEnumerator PerformDialogue(BasicDialogueEntry dialogueEntry)
     {
-        _ShouldProceed = false;
         ActionButton.animator.SetBool("visible", false);
+        Animator.SetBool("visible", true);
+        _ShouldProceed = false;
         yield return Typer.PerformTextTyping(dialogueEntry.Value);
         //SetDialogueText(dialogueEntry.Value);
         ActionButton.animator.SetBool("visible", true);
         yield return new WaitUntil(() => _ShouldProceed);
         ActionButton.animator.SetBool("visible", false);
+        Animator.SetBool("visible", false);
     }
-
-    //private void SetDialogueText(string text)
-    //{
-    //    TextArea.text = text;
-    //    StartCoroutine(UpdateLayoutGroups());
-    //}
 
     private void ActionButtonPressed()
     {

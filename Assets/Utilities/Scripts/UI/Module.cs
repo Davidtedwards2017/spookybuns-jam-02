@@ -5,6 +5,20 @@ using DG.Tweening;
 
 public class Module : MonoBehaviour {
 
+    private Animator _Animator;
+    public Animator Animator
+    {
+        get
+        {
+            if(_Animator == null)
+            {
+                _Animator = GetComponent<Animator>();
+            }
+
+            return _Animator;
+        }
+    }
+
     public bool _Active;
 
     public bool Active

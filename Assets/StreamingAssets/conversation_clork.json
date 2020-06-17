@@ -1,0 +1,385 @@
+{
+	"collection": [{
+		"id": "clockhead",
+		"dialogues": [{
+				"type": "condition",
+				"id": 7,
+				"condition": "pforms=1",
+				"if": [
+					"next:7.1"
+				],
+				"else": ["next:3"]
+			},
+			{
+				"type": "condition",
+				"id": 3,
+				"condition": "c1nice=1",
+				"if": [
+					"next:3.1"
+				],
+				"else": ["next:4"]
+			},
+			{
+				"type": "condition",
+				"id": 4,
+				"condition": "c1mean=1",
+				"if": [
+					"next:4.1"
+				],
+				"else": ["next:1"]
+			},
+			{
+				"type": "basic",
+				"id": "1",
+				"who": "actor",
+				"value": "Welcome back!",
+				"post": [
+					"next:2"
+				]
+			},
+			{
+				"type": "choice",
+				"id": "2",
+				"who": "player",
+				"options": [{
+						"id": "2.1",
+						"value": "Oh, thanks. Sorry, but could you tell me where I am?",
+						"post": [
+							"next:2.1.1",
+							"flag:positive+1"
+						]
+					},
+					{
+						"id": "2.2",
+						"value": "What do you mean, 'Welcome back!'?",
+						"post": [
+							"next:2.2.1",
+							"flag:grump+1"
+						]
+					}
+				]
+			},
+			{
+				"type": "basic",
+				"id": "2.1.1",
+				"who": "player",
+				"value": "Oh, thanks. Sorry, but could you tell me where I am?",
+				"post": [
+					"next:2.1.2"
+				]
+			},
+			{
+				"type": "basic",
+				"id": "2.1.2",
+				"who": "actor",
+				"value": "Please fill out these forms and take a number. Someone will be with you shortly.",
+				"post": [
+					"next:2.1.3"
+				]
+			},
+			{
+				"type": "basic",
+				"id": "2.1.3",
+				"who": "actor",
+				"value": "Will that someone answer my questions.",
+				"post": [
+					"next:2.1.4"
+				]
+			},
+			{
+				"type": "basic",
+				"id": "2.1.4",
+				"who": "actor",
+				"value": "Sure!",
+				"post": [
+					"flag:c1nice+1"
+				]
+			},
+			{
+				"type": "basic",
+				"id": "2.2.1",
+				"who": "player",
+				"value": "What do you mean, 'Welcome back!'?",
+				"post": ["next:2.2.2"]
+			},
+			{
+				"type": "basic",
+				"id": "2.2.2",
+				"who": "actor",
+				"value": "I'm sorry?",
+				"post": ["next:2.2.3"]
+			},
+			{
+				"type": "basic",
+				"id": "2.2.3",
+				"who": "player",
+				"value": "You heard me. Where am I? What’s going on? Why are there creatures here and signs for heaven and hell? Am I dead?!",
+				"post": ["next:2.2.4"]
+			},
+			{
+				"type": "basic",
+				"id": "2.2.4",
+				"who": "actor",
+				"value": "Yes.",
+				"post": ["next:2.2.5"]
+			},
+			{
+				"type": "basic",
+				"id": "2.2.5",
+				"who": "player",
+				"value": "Oh. Well. That sucks.",
+				"post": ["next:2.2.6"]
+			},
+			{
+				"type": "basic",
+				"id": "2.2.6",
+				"who": "actor",
+				"value": "It does.",
+				"post": ["next:2.2.7"]
+			},
+			{
+				"type": "basic",
+				"id": "2.2.7",
+				"who": "player",
+				"value": "...",
+				"post": ["next:2.2.8"]
+			},
+			{
+				"type": "basic",
+				"id": "2.2.8",
+				"who": "actor",
+				"value": "...",
+				"post": ["next:2.2.9"]
+			},
+			{
+				"type": "basic",
+				"id": "2.2.9",
+				"who": "actor",
+				"value": "Please fill out these forms and take a number. Someone will be with you shortly.",
+				"post": ["next:2.2.91"]
+			},
+			{
+				"type": "basic",
+				"id": "2.2.91",
+				"who": "player",
+				"value": "That’s not good enough.",
+				"post": ["next:2.2.92"]
+			},
+			{
+				"type": "basic",
+				"id": "2.2.92",
+				"who": "actor",
+				"value": "I’m sorry you feel that way, but you still need to wait your turn.",
+				"post": ["flag:c1mean+1"]
+			},
+			{
+				"type": "basic",
+				"id": "3.1",
+				"who": "player",
+				"value": "Hi again. I know I was just here, but I think you might have given me the wrong forms. There’s three here that seem to be for other people.",
+				"post": ["next:5"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1",
+				"who": "player",
+				"value": "I’m still upset.",
+				"post": ["next:4.2"]
+			},
+			{
+				"type": "basic",
+				"id": "4.2",
+				"who": "actor",
+				"value": "That makes sense.",
+				"post": ["next:4.3"]
+			},
+			{
+				"type": "basic",
+				"id": "4.3",
+				"who": "player",
+				"value": "Also, you gave me a bunch of stuff that clearly doesn’t belong to me. Take these extra forms back.",
+				"post": ["next:5"]
+			},
+			{
+				"type": "basic",
+				"id": "5",
+				"who": "actor",
+				"value": "Silly me! Must be getting a bit rusty.",
+				"post": ["next:5.1"]
+			},
+			{
+				"type": "basic",
+				"id": "5.1",
+				"who": "actor",
+				"value": "Haha.",
+				"post": ["next:5.2"]
+			},
+			{
+				"type": "basic",
+				"id": "5.2",
+				"who": "actor",
+				"value": "It's clock humor!",
+				"post": ["next:5.3"]
+			},
+			{
+				"type": "choice",
+				"id": "5.3",
+				"who": "player",
+				"options": [{
+						"id": "6.1",
+						"value": "Oh, haha. I guess it is.",
+						"post": [
+							"next:6.1.1",
+							"flag:positive+1"
+						]
+					},
+					{
+						"id": "6.2",
+						"value": "That doesn’t make sense.",
+						"post": [
+							"next:6.2.1",
+							"flag:grump+1"
+						]
+					}
+				]
+			},
+			{
+				"type": "basic",
+				"id": "6.1.1",
+				"who": "player",
+				"value": "Oh, haha. I guess it is.",
+				"post": ["next:6.1.2"]
+			},
+			{
+				"type": "basic",
+				"id": "6.1.2",
+				"who": "player",
+				"value": "(is it?)",
+				"post": ["next:6.1.3"]
+			},
+			{
+				"type": "basic",
+				"id": "6.1.3",
+				"who": "actor",
+				"value": "Do an old analog a favor and pass those forms on to the others waiting just over there for me please.",
+				"post": ["next:6.1.4"]
+			},
+			{
+				"type": "basic",
+				"id": "6.1.4",
+				"who": "player",
+				"value": "Okay, no problem.",
+				"post": ["flag:pforms+1"]
+			},
+			{
+				"type": "basic",
+				"id": "6.2.1",
+				"who": "player",
+				"value": "That doesn’t make sense.",
+				"post": ["next:6.2.2"]
+			},
+			{
+				"type": "basic",
+				"id": "6.2.2",
+				"who": "actor",
+				"value": "Perhaps not.",
+				"post": ["next:6.2.3"]
+			},
+			{
+				"type": "basic",
+				"id": "6.2.3",
+				"who": "actor",
+				"value": "Regardless, would you mind passing out those forms to the others waiting just over there?",
+				"post": ["next:6.2.4"]
+			},
+			{
+				"type": "basic",
+				"id": "6.2.4",
+				"who": "actor",
+				"value": "It would be a big help.",
+				"post": ["next:6.2.5"]
+			},
+			{
+				"type": "basic",
+				"id": "6.2.5",
+				"who": "player",
+				"value": "Do I have to?",
+				"post": ["next:6.2.6"]
+			},
+			{
+				"type": "basic",
+				"id": "6.2.6",
+				"who": "actor",
+				"value": "Yes.",
+				"post": ["flag:pforms+1"]
+			},
+			{
+				"type": "basic",
+				"id": "7.1",
+				"who": "actor",
+				"value": "Welcome back!",
+				"post": ["next:7.2"]
+			},
+			{
+				"type": "basic",
+				"id": "7.2",
+				"who": "player",
+				"value": "What did you want me to do again?",
+				"post": ["next:7.3"]
+			},
+			{
+				"type": "basic",
+				"id": "7.3",
+				"who": "actor",
+				"value": "Give those extra forms to the three other beings in this room.",
+				"post": ["next:7.4"]
+			},
+			{
+				"type": "choice",
+				"id": "7.4",
+				"who": "player",
+				"options": [{
+						"id": "8.1",
+						"value": "Okay, thanks.",
+						"post": []
+					},
+					{
+						"id": "8.2",
+						"value": "I don't want to.",
+						"post": [
+							"next:8.2.1"
+						]
+					}
+				]
+			},
+			{
+				"type": "basic",
+				"id": "8.2.1",
+				"who": "player",
+				"value": "I don't want to.",
+				"post": ["next:8.2.2"]
+			},
+			{
+				"type": "basic",
+				"id": "8.2.2",
+				"who": "actor",
+				"value": "Suit yourself.",
+				"post": ["next:8.2.3"]
+			},
+			{
+				"type": "basic",
+				"id": "8.2.3",
+				"who": "player",
+				"value": "I’m really dead though?",
+				"post": ["next:8.2.4"]
+			},
+			{
+				"type": "basic",
+				"id": "8.2.4",
+				"who": "actor",
+				"value": "Yes, you are really dead.",
+				"post": []
+			}
+		]
+	}]
+}

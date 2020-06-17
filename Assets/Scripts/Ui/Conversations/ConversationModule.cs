@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class ConversationModule : Module
 {
-    public DialogueModule DialogueModule;
+    public DialogueModule ActorDialogueModule;
+    public DialogueModule PlayerDialogueModule;
     public ChoiceDialogueModule ChoiceDialogueModule;
     public Animator Animator;
 
@@ -28,7 +29,16 @@ public class ConversationModule : Module
     {
         if(dialogue is BasicDialogueEntry)
         {
-            yield return DialogueModule.PerformDialogue((BasicDialogueEntry)dialogue);
+            var basicDialogue = (BasicDialogueEntry)dialogue;
+            switch (basicDialogue.Who)
+            {
+                case "actor":
+                    yield return ActorDialogueModule.PerformDialogue(basicDialogue);
+                    break;
+                case "player":
+                    yield return PlayerDialogueModule.PerformDialogue(basicDialogue);
+                    break;
+            }
         }
         else if(dialogue is ChoiceDialogueEntry)
         {

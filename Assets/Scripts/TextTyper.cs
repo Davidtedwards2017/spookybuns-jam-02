@@ -8,8 +8,6 @@ using UnityEngine.UI;
 public class TextTyper : MonoBehaviour
 {
     private Text _TextArea;
-    
-    public string TextValue;
     private float TimePerCharacter = 0.015f;
 
     private List<string> Tags;
