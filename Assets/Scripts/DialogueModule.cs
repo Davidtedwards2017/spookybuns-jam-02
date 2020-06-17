@@ -39,6 +39,7 @@ public class DialogueModule : Module
         Animator.SetBool("visible", true);
         _ShouldProceed = false;
         yield return Typer.PerformTextTyping(dialogueEntry.Value);
+        //StartCoroutine(UpdateLayoutGroups());
         //SetDialogueText(dialogueEntry.Value);
         ActionButton.animator.SetBool("visible", true);
         yield return new WaitUntil(() => _ShouldProceed);
@@ -62,7 +63,8 @@ public class DialogueModule : Module
     {
         var layoutGroup = GetComponentInChildren<LayoutGroup>();
         layoutGroup.enabled = false;
-        yield return new WaitForEndOfFrame();
+        yield return new WaitForFixedUpdate();
+//        yield return new WaitForEndOfFrame();
         layoutGroup.enabled = true;
     }
 
