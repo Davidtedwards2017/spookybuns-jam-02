@@ -4,27 +4,27 @@
 		"dialogues": [{
 				"type": "condition",
 				"id": 7,
-				"condition": "pforms<4",
+				"condition": "dform=2",
 				"if": [
 					"next:7.1"
 				],
-				"else": ["next:3"]
+				"else": ["next:8"]
 			},
 			{
 				"type": "condition",
-				"id": 3,
-				"condition": "c1nice=1",
+				"id": 8,
+				"condition": "pforms=4",
 				"if": [
-					"next:3.1"
+					"next:8.1"
 				],
-				"else": ["next:4"]
+				"else": ["next:9"]
 			},
 			{
 				"type": "condition",
-				"id": 4,
-				"condition": "c1mean=1",
+				"id": 9,
+				"condition": "dform=1",
 				"if": [
-					"next:4.1"
+					"next:9.1"
 				],
 				"else": ["next:1"]
 			},
@@ -80,7 +80,7 @@
 			{
 				"type": "basic",
 				"id": "2.1.3",
-				"who": "actor",
+				"who": "player",
 				"value": "I have some forms for you from the uh…",
 				"post": [
 					"next:3"
@@ -251,13 +251,6 @@
 			{
 				"type": "basic",
 				"id": "3.2.2",
-				"who": "player",
-				"value": "Yes. Yes I do.",
-				"post": ["next:3.2.2"]
-			},
-			{
-				"type": "basic",
-				"id": "3.2.2",
 				"who": "actor",
 				"value": "Oh, finally!",
 				"post": ["next:3.2.3"]
@@ -330,8 +323,926 @@
 				"id": "4",
 				"who": "actor",
 				"value": "I’m number… six.",
+				"post": ["next:4.01"]
+			},
+			{
+				"type": "choice",
+				"id": "4.01",
+				"who": "player",
+				"options": [{
+						"id": "4.1",
+						"value": "Oh.",
+						"post": [
+							"next:4.1.1",
+							"flag:positive+1"
+						]
+					},
+					{
+						"id": "4.2",
+						"value": "I don’t think this is any of my business.",
+						"post": [
+							"next:4.2.1",
+							"flag:grump+1"
+						]
+					}
+				]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.1",
+				"who": "player",
+				"value": "Oh.",
+				"post": ["next:4.1.2"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.2",
+				"who": "actor",
+				"value": "That actually makes a lot of sense.",
+				"post": ["next:4.1.3"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.3",
+				"who": "actor",
+				"value": "Uhhhhhhhhhhhggg!",
+				"post": ["next:4.1.4"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.4",
+				"who": "actor",
+				"value": "Okay. Well. How long could it be before that counter machine ticks back around?",
+				"post": ["next:4.1.5"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.5",
+				"who": "player",
+				"value": "I’m not sure. Would you like to trade numbers with me?",
+				"post": ["next:4.1.6"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.6",
+				"who": "player",
+				"value": "Mine looks high, but I think it should come up before six at least.",
+				"post": ["next:4.1.61"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.61",
+				"who": "actor",
+				"value": "That’s nice of you, kid, but I wouldn’t want you to get in any trouble.",
+				"post": ["next:4.1.7"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.7",
+				"who": "actor",
+				"value": "…",
+				"post": ["next:4.1.8"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.8",
+				"who": "actor",
+				"value": "AHH!",
+				"post": ["next:4.1.9"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.9",
+				"who": "player",
+				"value": "Ahh!? What’s wrong?",
+				"post": ["next:4.1.91"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.91",
+				"who": "actor",
+				"value": "…Nothing.",
+				"post": ["next:4.1.911"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.911",
+				"who": "player",
+				"value": "…",
+				"post": ["next:4.1.912"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.912",
+				"who": "actor",
+				"value": "That’s why I’m here. I just can’t do my job.",
+				"post": ["next:4.1.913"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.913",
+				"who": "player",
+				"value": "Oh. Because you’re a demon?",
+				"post": ["next:4.1.914"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.914",
+				"who": "actor",
+				"value": "What?! How- how do you know that?",
+				"post": ["next:4.1.915"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.915",
+				"who": "player",
+				"value": "You look like a demon. I guess.",
+				"post": ["next:4.1.916"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.916",
+				"who": "actor",
+				"value": "I think I’ve been stuck in here longer than I thought.",
+				"post": ["next:4.1.917"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.917",
+				"who": "player",
+				"value": "Should I not know you’re a demon?",
+				"post": ["next:4.1.918"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.918",
+				"who": "actor",
+				"value": "Probably not. We’re here, after all.",
+				"post": ["next:4.1.919"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.919",
+				"who": "player",
+				"value": "That’s something I’ve been wondering about, actually. Do you know where here is?",
+				"post": ["next:4.1.92"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.92",
+				"who": "actor",
+				"value": "I have an idea.",
+				"post": ["next:4.1.921"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.921",
+				"who": "actor",
+				"value": "Look, kid, I don’t want to drag you down. I just don’t have it in me anymore.",
+				"post": ["next:4.1.922"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.922",
+				"who": "player",
+				"value": "Wait, are you like… some kind of demon that didn’t do a good job being mean or something? ",
+				"post": ["next:4.1.923"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.923",
+				"who": "player",
+				"value": "Are we in limbo or hell’s waiting room or something?",
+				"post": ["next:4.1.924"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.924",
+				"who": "actor",
+				"value": "What the- how did you know that? What have you guys been eating up there?",
+				"post": ["next:4.1.925"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.925",
+				"who": "player",
+				"value": "There’s literally two staircases. One says Hell and the other says Heaven.",
+				"post": ["next:4.1.926"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.926",
+				"who": "actor",
+				"value": "When did those… whatever nevermind.",
+				"post": ["next:4.1.927"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.927",
+				"who": "actor",
+				"value": "Yes, I’m a demon. Yes, this is some weird waiting room before you move on, or whatever.",
+				"post": ["next:4.1.928"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.928",
+				"who": "player",
+				"value": "Wait… that means I’m dead. Why didn’t I think of that before? I’M DEAD!",
+				"post": ["next:4.1.929"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.929",
+				"who": "actor",
+				"value": "Calm down! I can’t say for sure if you’re dead",
+				"post": ["next:4.1.930"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.930",
+				"who": "actor",
+				"value": "All I know is I’m definitely not dead. I’m a demon, like you said. We don’t die.",
+				"post": ["next:4.1.931"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.931",
+				"who": "player",
+				"value": "How did I die?",
+				"post": ["next:4.1.932"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.932",
+				"who": "actor",
+				"value": "You don’t remember?",
+				"post": ["next:4.1.933"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.933",
+				"who": "player",
+				"value": "No, I don’t remember. I don’t even remember my name or where I was from!",
+				"post": ["next:4.1.934"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.934",
+				"who": "actor",
+				"value": "Eh, that stuff’s just details. From what I can tell, you know who you are.",
+				"post": ["next:4.1.935"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.935",
+				"who": "player",
+				"value": "That’s… not very helpful.",
+				"post": ["next:4.1.936"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.936",
+				"who": "actor",
+				"value": "Good, then maybe I’m getting better at this.",
+				"post": ["next:4.1.937"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.937",
+				"who": "actor",
+				"value": " Now leave me alone so I can fill out these useless forms and spend the next hundred years brooding in peace.",
+				"post": ["flag:dform+1",
+					"flag:pforms+1"
+				]
+			},
+			{
+				"type": "basic",
+				"id": "4.2.1",
+				"who": "player",
+				"value": "I don’t think this is any of my business.",
+				"post": ["next:4.2.2"]
+			},
+			{
+				"type": "basic",
+				"id": "4.2.2",
+				"who": "actor",
+				"value": "No it’s probably not.",
+				"post": ["next:4.2.3"]
+			},
+			{
+				"type": "basic",
+				"id": "4.2.3",
+				"who": "actor",
+				"value": "Can you go away now?",
+				"post": ["next:4.2.4"]
+			},
+			{
+				"type": "basic",
+				"id": "4.2.4",
+				"who": "player",
+				"value": "Sure, whatever.",
+				"post": ["flag:dform+1",
+					"flag:pforms+1"
+				]
+			},
+			{
+				"type": "basic",
+				"id": "9.1",
+				"who": "actor",
+				"value": "Weren’t you just here?",
+				"post": ["next:9.1.1"]
+			},
+			{
+				"type": "choice",
+				"id": "9.1.1",
+				"who": "player",
+				"options": [{
+						"id": "9.2",
+						"value": "I forgot to say that you smell.",
+						"post": [
+							"next:9.2.1",
+							"flag:positive+1"
+						]
+					},
+					{
+						"id": "9.3",
+						"value": "I wanted to talk to you again.",
+						"post": [
+							"next:9.3.1",
+							"flag:grump+1"
+						]
+					}
+				]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.1",
+				"who": "player",
+				"value": "I forgot to say that you smell.",
+				"post": ["next:9.2.2"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.2",
+				"who": "actor",
+				"value": "I know I do, it’s the brimstone.",
+				"post": ["next:9.2.3"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.3",
+				"who": "player",
+				"value": "And probably the cigarette, could you at least put that out?",
+				"post": ["next:9.2.4"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.4",
+				"who": "actor",
+				"value": "You’re dead, why does it matter?",
+				"post": ["next:9.2.5"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.5",
+				"who": "player",
+				"value": "I … hmm.",
+				"post": ["next:9.2.6"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.6",
+				"who": "actor",
+				"value": "Yeah. Please leave me alone now.",
+				"post": []
+			},
+			{
+				"type": "basic",
+				"id": "9.3.1",
+				"who": "player",
+				"value": "I wanted to talk to you again.",
+				"post": ["next:9.3.2"]
+			},
+			{
+				"type": "basic",
+				"id": "9.3.2",
+				"who": "actor",
+				"value": "And what did I tell you?",
+				"post": ["next:9.3.3"]
+			},
+			{
+				"type": "basic",
+				"id": "9.3.3",
+				"who": "player",
+				"value": "To leave you alone?",
+				"post": ["next:9.3.4"]
+			},
+			{
+				"type": "basic",
+				"id": "9.3.4",
+				"who": "actor",
+				"value": "Mhmm.",
+				"post": []
+			},
+			{
+				"type": "basic",
+				"id": "9.3.1",
+				"who": "actor",
+				"value": "I wanted to talk to you again.",
+				"post": ["next:9.3.2"]
+			},
+			{
+				"type": "basic",
+				"id": "8.1",
+				"who": "actor",
+				"value": "What now?",
+				"post": ["next:8.2"]
+			},
+			{
+				"type": "basic",
+				"id": "8.2",
+				"who": "player",
+				"value": "I gave out the other forms.",
+				"post": ["next:8.3"]
+			},
+			{
+				"type": "basic",
+				"id": "8.3",
+				"who": "actor",
+				"value": "…Good for you.",
+				"post": ["next:8.4"]
+			},
+			{
+				"type": "choice",
+				"id": "8.4",
+				"who": "player",
+				"options": [{
+						"id": "8.4.1",
+						"value": "That’s it. I wanted to tell you I did it.",
+						"post": [
+							"next:8.5.1",
+							"flag:positive+1"
+						]
+					},
+					{
+						"id": "8.4.2",
+						"value": "I’m freaking out and I was hoping you could help.",
+						"post": [
+							"next:8.5.2",
+							"flag:grump+1"
+						]
+					}
+				]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.2",
+				"who": "player",
+				"value": "That’s it. I wanted to tell you I did it.",
+				"post": ["next:8.5.21"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.21",
+				"who": "actor",
+				"value": "Do you want a compliment? I’m not sure where this is going.",
+				"post": ["next:8.5.22"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.22",
+				"who": "player",
+				"value": "Compliment me.",
+				"post": ["next:8.5.23"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.23",
+				"who": "actor",
+				"value": "You have a nice…",
+				"post": ["next:8.5.24"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.24",
+				"who": "player",
+				"value": "...",
+				"post": ["next:8.5.25"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.25",
+				"who": "actor",
+				"value": "Hand.",
+				"post": ["next:8.5.26"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.26",
+				"who": "player",
+				"value": "Hand?",
+				"post": ["next:8.5.27"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.27",
+				"who": "actor",
+				"value": "Yes. There, now I’m officially the worst demon that’s ever lived.",
+				"post": ["next:8.5.28"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.28",
+				"who": "player",
+				"value": "Is that why you’re here?",
+				"post": ["next:8.5.29"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.29",
+				"who": "actor",
+				"value": "Because I’m nice, yeah, probably.",
+				"post": ["next:8.5.291"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.291",
+				"who": "player",
+				"value": "I don’t think you’re very nice.",
+				"post": ["next:8.5.292"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.292",
+				"who": "actor",
+				"value": "Oh… well thanks, kid. That actually means a lot.",
+				"post": ["next:8.5.293"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.293",
+				"who": "actor",
+				"value": "It’s a shame it’s too late for you.",
+				"post": ["next:8.5.294"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.294",
+				"who": "player",
+				"value": "Too late? Wait, what’s that supposed to mean?",
+				"post": ["next:8.5.295"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.295",
+				"who": "actor",
+				"value": "Ah- nothing. Nothing.",
+				"post": ["next:8.5.296"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.296",
+				"who": "player",
+				"value": "…",
+				"post": ["next:8.5.297"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.297",
+				"who": "actor",
+				"value": "Probably nothing. Just leave me alone! Forget I said anything!",
+				"post": ["flag:dform+1"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.1",
+				"who": "player",
+				"value": "I’m freaking out and I was hoping you could help.",
+				"post": ["next:8.5.11"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.11",
+				"who": "actor",
+				"value": "Why? Because you’re dead and waiting to be judged by some higher power?",
+				"post": ["next:8.5.12"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.12",
+				"who": "player",
+				"value": "...yes.",
+				"post": ["next:8.5.13"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.13",
+				"who": "actor",
+				"value": "Look, there’s no such thing.",
+				"post": ["next:8.5.14"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.14",
+				"who": "player",
+				"value": "What? But you’re a demon. Doesn’t that prove that there must be something out there?",
+				"post": ["next:8.5.15"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.15",
+				"who": "actor",
+				"value": "Who knows? Clearly I don’t.",
+				"post": ["next:8.5.16"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.16",
+				"who": "player",
+				"value": "You should, you’re a literal demon? Don’t you work for the devil?",
+				"post": ["next:8.5.17"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.17",
+				"who": "player",
+				"value": "Wait, ARE you the devil?",
+				"post": ["next:8.5.18"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.18",
+				"who": "actor",
+				"value": "…No",
+				"post": ["next:8.5.19"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.19",
+				"who": "player",
+				"value": "How do I know you aren’t lying?",
+				"post": ["next:8.5.191"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.191",
+				"who": "actor",
+				"value": " …You don’t.",
+				"post": ["next:8.5.192"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.192",
+				"who": "player",
+				"value": "Will you at least tell me how you got here?",
+				"post": ["next:8.5.193"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.193",
+				"who": "actor",
+				"value": "You already guessed, didn’t you?",
+				"post": ["next:8.5.194"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.194",
+				"who": "actor",
+				"value": "I’m a demon. I’m too nice. I was banished here.",
+				"post": ["next:8.5.195"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.195",
+				"who": "player",
+				"value": "Did you do anything… specific? You know, in the nice department?",
+				"post": ["next:8.5.196"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.196",
+				"who": "actor",
+				"value": "A couple kids were playing too close to a river. I was supposed to push a few in.",
+				"post": ["next:8.5.197"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.197",
+				"who": "actor",
+				"value": "Pull them down. Snag some feet on some rocks. Easy drowning and spread some misery around.",
+				"post": ["next:8.5.198"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.198",
+				"who": "player",
+				"value": "What did you do?",
+				"post": ["next:8.5.199"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.199",
+				"who": "actor",
+				"value": "I almost did it but…",
+				"post": ["next:8.5.1990"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.1990",
+				"who": "player",
+				"value": "But?",
+				"post": ["next:8.5.1991"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.1991",
+				"who": "actor",
+				"value": "They were crying.",
+				"post": ["next:8.5.1992"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.1992",
+				"who": "actor",
+				"value": "…I created a dog to come pull them all out of the river.",
+				"post": ["next:8.5.1993"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.1993",
+				"who": "player",
+				"value": "That’s really nice.",
+				"post": ["next:8.5.1994"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.1994",
+				"who": "actor",
+				"value": "I panicked. I didn’t want them to see me. I mean… LOOK at me.",
+				"post": ["next:8.5.1995"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.1995",
+				"who": "player",
+				"value": "Yes, you’re a demon.",
+				"post": ["next:8.5.1996"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.1996",
+				"who": "actor",
+				"value": "I’M A DEMON!",
+				"post": ["next:8.5.1997"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.1997",
+				"who": "actor",
+				"value": "Anyway, they brought the dog home and it became a damn legend.",
+				"post": ["next:8.5.1998"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.1998",
+				"who": "actor",
+				"value": "They erected a statue of it and everything. Named the town after it.",
+				"post": ["next:8.5.1999"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.1999",
+				"who": "player",
+				"value": "That’s-",
+				"post": ["next:8.5.19990"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.19990",
+				"who": "actor",
+				"value": "DOG TOWN! I mean come on, it isn’t even a good name!",
+				"post": ["next:8.5.19991"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.19991",
+				"who": "player",
+				"value": "That’s pretty sweet, actually.",
+				"post": ["next:8.5.19992"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.19992",
+				"who": "actor",
+				"value": "Not if you don’t want anyone to notice the demon dog you conjured.",
+				"post": ["next:8.5.19993"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.19993",
+				"who": "player",
+				"value": "Oh.",
+				"post": ["next:8.5.19994"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.19994",
+				"who": "actor",
+				"value": "Yeah, everyone found out. They made me empty out my desk and sent me here.",
+				"post": ["next:8.5.19995"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.19995",
+				"who": "player",
+				"value": "So this is limbo? Or is this heaven?",
+				"post": ["next:8.5.19996"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.19996",
+				"who": "actor",
+				"value": "Once again, how would I know? I didn’t even know there were FORMS. Or NUMBERS.",
+				"post": ["next:8.5.19997"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.19997",
+				"who": "player",
+				"value": "I don’t know what to do. I don’t know where I’m going to end up.",
+				"post": ["next:8.5.19998"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.19998",
+				"who": "player",
+				"value": "If an actual demon doesn’t know what’s going on, how can I?",
+				"post": ["next:8.5.19999"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.199990",
+				"who": "actor",
+				"value": "Look, kid. All I can say is this:",
+				"post": ["next:8.5.199991"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.199991",
+				"who": "actor",
+				"value": "We all have our own say in this. It’s different for all of us.",
+				"post": ["next:8.5.199992"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.199992",
+				"who": "actor",
+				"value": "It isn’t fair.",
+				"post": ["next:8.5.199993"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.199993",
+				"who": "actor",
+				"value": "It isn’t nice.",
+				"post": ["next:8.5.199994"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.199994",
+				"who": "actor",
+				"value": "But we get what we get and we do our best with that.",
+				"post": ["next:8.5.199995"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.199995",
+				"who": "player",
+				"value": "But I’m dead.",
+				"post": ["next:8.5.199996"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.199996",
+				"who": "actor",
+				"value": "So there’s no point worrying about it anymore, right?",
+				"post": ["next:8.5.199997"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.199997",
+				"who": "player",
+				"value": "I guess.",
+				"post": ["flag:dform+1"]
+			},
+			{
+				"type": "basic",
+				"id": "7.1",
+				"who": "actor",
+				"value": "See you on the other side, kid.",
 				"post": []
 			}
+
 		]
 	}]
 }

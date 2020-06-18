@@ -1,0 +1,62 @@
+
+skeleton.png
+size: 322,774
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm
+  rotate: false
+  xy: 207, 67
+  size: 110, 158
+  orig: 110, 158
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 2, 227
+  size: 318, 244
+  orig: 318, 244
+  offset: 0, 0
+  index: -1
+cloud01
+  rotate: false
+  xy: 2, 25
+  size: 93, 93
+  orig: 93, 93
+  offset: 0, 0
+  index: -1
+cloud02
+  rotate: true
+  xy: 97, 51
+  size: 67, 105
+  orig: 67, 105
+  offset: 0, 0
+  index: -1
+cloud03
+  rotate: false
+  xy: 2, 120
+  size: 203, 105
+  orig: 203, 105
+  offset: 0, 0
+  index: -1
+head01
+  rotate: false
+  xy: 2, 473
+  size: 302, 299
+  orig: 310, 313
+  offset: 4, 7
+  index: -1
+volcano01
+  rotate: true
+  xy: 97, 3
+  size: 46, 47
+  orig: 46, 47
+  offset: 0, 0
+  index: -1
+volcano02
+  rotate: true
+  xy: 204, 2
+  size: 63, 73
+  orig: 63, 73
+  offset: 0, 0
+  index: -1
