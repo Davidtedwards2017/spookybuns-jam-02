@@ -150,6 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fe4983eead14f94bb832d637022eb6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartingConversationCharacter: 0
   Character_ICs: []
 --- !u!4 &200493521
 Transform:
@@ -419,7 +420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneCamera: {fileID: 491142802}
-  ConversationWithCharacter: 0
+  CharacterIc: {fileID: 0}
   conversation:
     Id: 
   convoCamaraUpdateDuration: 0.5
@@ -749,7 +750,7 @@ PrefabInstance:
     - target: {fileID: 2660342404694970162, guid: e048be541d7be6244a9e95ed437c0232,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 359.7002
+      value: 355.9829
       objectReference: {fileID: 0}
     - target: {fileID: 2660342404694970162, guid: e048be541d7be6244a9e95ed437c0232,
         type: 3}
@@ -1139,7 +1140,7 @@ PrefabInstance:
     - target: {fileID: 8071566414848582416, guid: e048be541d7be6244a9e95ed437c0232,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 375.31845
+      value: 371.69812
       objectReference: {fileID: 0}
     - target: {fileID: 8071566414848582416, guid: e048be541d7be6244a9e95ed437c0232,
         type: 3}
@@ -1359,7 +1360,7 @@ PrefabInstance:
     - target: {fileID: 8071566416026281639, guid: e048be541d7be6244a9e95ed437c0232,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 360.31845
+      value: 356.69812
       objectReference: {fileID: 0}
     - target: {fileID: 8071566416026281639, guid: e048be541d7be6244a9e95ed437c0232,
         type: 3}

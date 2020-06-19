@@ -6,7 +6,7 @@ using UnityEngine;
 public class ConversationUiController : UiController<ConversationUiController>
 {
     public ConversationModule Module;
-    public IEnumerator PerformDialogue(Node dialogue)
+    public IEnumerator PerformDialogue(IDialogueNode dialogue)
     {
         yield return Module.PerformDialogue(dialogue);
     }

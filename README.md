@@ -20,7 +20,8 @@
 	{
 		"type": "basic",
 		"id": "2", //unique id
-		"who": "actor", //"actor" or "player"
+		"who": "actor", //"actor" or "player",
+		"expression": "angry",
 		"value": "This is a mighty fine <color=red><b>world</b></color>.",
 		"post": [
 			"next:3",
@@ -29,6 +30,14 @@
 	}
 }
 ```
+
+
+#### `expression`
+`neutral` (default)
+
+`happy`
+
+`angry`
 
 ### choice dialogue node
 ```

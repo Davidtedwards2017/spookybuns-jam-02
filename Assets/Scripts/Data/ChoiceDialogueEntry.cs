@@ -6,15 +6,17 @@ using UnityEngine;
 namespace Data
 {
     [System.Serializable]
-    public class ChoiceDialogueEntry : Node
+    public class ChoiceDialogueEntry : Node, IDialogueNode
     {
-        public string Who;
+        public string Who { get; private set; }
+        public string Expression { get; private set; }
+
         public ChoiceDialogueOption[] Options;
 
         public override void PopulateFromJObject(JToken token)
         {
             base.PopulateFromJObject(token);
-
+            Expression = token.Value<string>("expression");
             Who = token.Value<string>("who");
             var optionsJArray = token.Value<JArray>("options");
             var collection = new List<ChoiceDialogueOption>();

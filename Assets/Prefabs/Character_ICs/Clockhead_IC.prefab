@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9db98c60740638449864eb028fbe7ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: 3272f3aaf7a09624ca814276fd3ff235, type: 2}
+  skeletonDataAsset: {fileID: 11400000, guid: 2827a64b74a05474bb23f5bd0c175176, type: 2}
   initialSkinName: 
   initialFlipX: 0
   initialFlipY: 0
@@ -290,9 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75fa25cfb83a64a4d9f534b686708827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Character: 4
-  Collider: {fileID: 0}
-  Renderer: {fileID: 0}
+  Character: 0
   ConversationCameraAnchor: {fileID: 592572430474079270}
   ConversationDialogueBubbleAnchor: {fileID: 894579214722905385}
   ConversationCameraOrthoSize: 3

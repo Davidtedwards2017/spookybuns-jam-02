@@ -5,9 +5,11 @@ using DG.Tweening;
 
 public class Character_IC : MonoBehaviour
 {
+    private Collider2D _Collider;
+    private MeshRenderer _Renderer;
+    private Animator _Animator;
+
     public GameInfo.Character Character;
-    public Collider2D Collider;
-    public MeshRenderer Renderer;
 
     public Transform ConversationCameraAnchor;
     public Transform ConversationDialogueBubbleAnchor;
@@ -18,8 +20,11 @@ public class Character_IC : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _Collider = GetComponentInChildren<Collider2D>();
+        _Animator = GetComponentInChildren<Animator>();
+        _Renderer = GetComponentInChildren<MeshRenderer>();
+
         DialogueModule = GetComponentInChildren<DialogueModule>();
-        Renderer = GetComponentInChildren<MeshRenderer>();
 
         ConversationController.Instance.SubscribeToEvent("startconversation." + Character.ToString(), StartConversation);
         ConversationController.Instance.SubscribeToEvent("hide." + Character.ToString(), Hide);
@@ -36,15 +41,31 @@ public class Character_IC : MonoBehaviour
         ConversationController.Instance.StartConversation(this);
     }
 
+    public void UpdateExpression(GameInfo.Expression expression)
+    {
+        switch (expression)
+        {
+            case GameInfo.Expression.angry:
+                _Animator.SetTrigger("angry");
+                break;
+            case GameInfo.Expression.happy:
+                _Animator.SetTrigger("happy");
+                break;
+            case GameInfo.Expression.neutral:
+                _Animator.SetTrigger("neutral");
+                break;
+        }
+    }
+
     public void Hide()
     {
-        Collider.enabled = false;
-        Renderer.enabled = false;
+        _Collider.enabled = false;
+        _Renderer.enabled = false;
     }
 
     public void Show()
     {
-        Collider.enabled = true;
-        Renderer.enabled = true;
+        _Collider.enabled = true;
+        _Renderer.enabled = true;
     }
 }

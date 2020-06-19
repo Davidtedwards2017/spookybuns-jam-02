@@ -25,7 +25,7 @@ public class ConversationModule : Module
         base.OnDeactivated();
     }
 
-    public IEnumerator PerformDialogue(Node dialogue)
+    public IEnumerator PerformDialogue(IDialogueNode dialogue)
     {
         if(dialogue is BasicDialogueEntry)
         {

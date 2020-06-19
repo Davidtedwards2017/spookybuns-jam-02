@@ -8,6 +8,7 @@
 					"id": "1",
 					"who": "actor",
 					"value": "Hello!",
+					"expression": "angry",
 					"post": [
 						"next:2",
 						"flag:foo=1"
@@ -17,6 +18,7 @@
 					"type": "basic",
 					"id": "2",
 					"who": "actor",
+					"expression": "happy",
 					"value": "This is a mighty fine <color=red><b>world</b></color>.",
 					"post": [
 						"next:3",

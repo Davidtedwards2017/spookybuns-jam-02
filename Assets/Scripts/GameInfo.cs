@@ -11,4 +11,11 @@ public static class GameInfo
         planethead,
         test,
     }
+
+    public enum Expression
+    {
+        neutral,
+        happy,
+        angry
+    }
 }

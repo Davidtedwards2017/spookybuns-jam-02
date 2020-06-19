@@ -20,10 +20,10 @@ public class ConversationController : Singleton<ConversationController>
     }
 
     public Camera sceneCamera;
-    public GameInfo.Character ConversationWithCharacter;
+    public Character_IC CharacterIc;
     public DialogueData conversation;
 
-    private Node _CurrentDialogue;
+    private Node _CurrentNode;
     private Node _PrevDialogue;
 
     private ChoiceDialogueOption _SelectedOption;
@@ -57,7 +57,7 @@ public class ConversationController : Singleton<ConversationController>
         convoSceneCameraPos = ic.ConversationCameraAnchor.position;
         convoSceneCameraOrthoSize = ic.ConversationCameraOrthoSize;
 
-        ConversationWithCharacter = ic.Character;
+        CharacterIc = ic;
         _StateMachine.ChangeState(State.LoadingConversation);
     }
 
@@ -68,8 +68,8 @@ public class ConversationController : Singleton<ConversationController>
 
     private void LoadingConversation_Enter()
     {
-        conversation = ConversationLoader.Instance.GetCharacterConversation(ConversationWithCharacter);
-        LoadDialogueEntry(conversation.nodes.First());
+        conversation = ConversationLoader.Instance.GetCharacterConversation(CharacterIc.Character);
+        LoadNode(conversation.nodes.First());
         _StateMachine.ChangeState(State.ActorDialogue);
     }
 
@@ -82,13 +82,13 @@ public class ConversationController : Singleton<ConversationController>
         }
         else
         {
-            LoadDialogueEntry(node);
+            LoadNode(node);
         }
     }
 
-    private void LoadDialogueEntry(Node dialogue)
+    private void LoadNode(Node dialogue)
     {
-        _CurrentDialogue = dialogue;
+        _CurrentNode = dialogue;
     }
 
     public void UpdateCamera(Vector3 pos, float orthoSize, float duration)
@@ -111,12 +111,37 @@ public class ConversationController : Singleton<ConversationController>
         ConversationUiController.Instance.SetActive(true);
         NavigationUiController.Instance.SetActive(false);
 
-        if (_CurrentDialogue != null)
+        if (_CurrentNode != null && _CurrentNode is IDialogueNode)
         {
-            yield return ConversationUiController.Instance.PerformDialogue(_CurrentDialogue);
+            var dialogue = (IDialogueNode)_CurrentNode;
+            UpdateActorExpression(dialogue);
+            yield return ConversationUiController.Instance.PerformDialogue(dialogue);
+            UpdateActorExpression(null);
         }
 
         _StateMachine.ChangeState(State.PostDialogue);
+    }
+
+    private void UpdateActorExpression(IDialogueNode dialogue)
+    {
+        var expression = GameInfo.Expression.neutral;
+        if (dialogue != null)
+        {
+            switch (dialogue.Expression)
+            {
+                case "angry":
+                    expression = GameInfo.Expression.angry;
+                    break;
+                case "happy":
+                    expression = GameInfo.Expression.happy;
+                    break;
+                case "netural":
+                default:
+                    break;
+            }
+        }
+
+        CharacterIc.UpdateExpression(expression);
     }
 
     private void ActorDialogue_Update()
@@ -130,12 +155,12 @@ public class ConversationController : Singleton<ConversationController>
 
     private void PostDialogue_Enter()
     {
-        _PrevDialogue = _CurrentDialogue;
-        _CurrentDialogue = null;
+        _PrevDialogue = _CurrentNode;
+        _CurrentNode = null;
 
         ProcessNode(_PrevDialogue);
    
-        if (_CurrentDialogue != null)
+        if (_CurrentNode != null)
         {
             _StateMachine.ChangeState(State.ActorDialogue);
         }
