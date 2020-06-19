@@ -1,7 +1,7 @@
 {
 	"collection": [
 		{
-			"id": "clockhead",
+			"id": "test",
 			"dialogues": [
 				{
 					"type": "basic",
@@ -63,9 +63,9 @@
 						},
 						{
 							"id": "4.4",
-							"value": "(end)",
+							"value": "(start new convo)",
 							"post": [
-								"event:game.end"
+								"event:startconversation.demon"
 							]
 						},
 						{
@@ -83,99 +83,6 @@
 							"condition": "selected.4.5=1",
 							"post": [
 								"next:4"
-							]
-						}
-					],
-					"post": [
-						"flag:foo+1"
-					]
-				},
-				{
-					"type": "basic",
-					"id": "4.1.1",
-					"who": "actor",
-					"value": "Exactly, gotta stay possitive!",
-					"post": []
-				},
-				{
-					"type": "basic",
-					"id": "4.1.2",
-					"who": "actor",
-					"value": "Someone is being a <i>grumpy goose</i>.",
-					"post": [
-						"next:5"
-					]
-				},
-				{
-					"type": "condition",
-					"id": 5,
-					"condition": "grump=0",
-					"if": [
-						"next:6"
-					],
-					"else": []
-				},
-				{
-					"type": "basic",
-					"id": "6",
-					"who": "actor",
-					"value": "<i><b>Grumpy!</b></i>",
-					"post": []
-				}
-			]
-		},
-		{
-			"id": "demon",
-			"dialogues": [
-				{
-					"type": "basic",
-					"id": "1",
-					"who": "actor",
-					"value": "Hello!",
-					"post": [
-						"next:2",
-						"flag:foo=1"
-					]
-				},
-				{
-					"type": "basic",
-					"id": "2",
-					"who": "actor",
-					"value": "This is a mighty fine <color=red><b>world</b></color>.",
-					"post": [
-						"next:3",
-						"flag:foo+1"
-					]
-				},
-				{
-					"type": "basic",
-					"id": "3",
-					"who": "actor",
-					"value": "Don't you think?!",
-					"post": [
-						"next:4",
-						"flag:foo+1"
-					]
-				},
-				{
-					"type": "choice",
-					"id": "4",
-					"who": "player",
-					"options": [
-						{
-							"id": "4.1",
-							"value": "yeah sure is.",
-							"post": [
-								"next:4.1.1",
-								"flag:positive+1"
-							]
-						},
-						{
-							"id": "4.2",
-							"value": "nah it sucks.",
-							"post": [
-								"next:4.1.2",
-								"flag:grump+1"
 							]
 						}
 					],

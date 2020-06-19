@@ -303,6 +303,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: 2
   Collider: {fileID: 0}
+  Renderer: {fileID: 0}
   ConversationCameraAnchor: {fileID: 592572430474079270}
   ConversationDialogueBubbleAnchor: {fileID: 894579214722905385}
   ConversationCameraOrthoSize: 3.5

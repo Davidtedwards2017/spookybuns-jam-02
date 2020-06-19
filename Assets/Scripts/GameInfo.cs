@@ -8,6 +8,7 @@ public static class GameInfo
         clockhead,
         demon,
         statue,
-        planethead
+        planethead,
+        test,
     }
 }

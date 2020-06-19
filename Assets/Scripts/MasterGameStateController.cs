@@ -15,6 +15,8 @@ public class MasterGameStateController : Singleton<MasterGameStateController>
         PostGame,
     }
 
+    public GameInfo.Character StartingConversationCharacter;
+
     public Character_IC[] Character_ICs;
     private StateMachine<State> _StateMachine;
 
@@ -70,7 +72,7 @@ public class MasterGameStateController : Singleton<MasterGameStateController>
 
     private void Playing_Enter()
     {
-        StartConversation(GameInfo.Character.clockhead);
+        StartConversation(StartingConversationCharacter);
     }
 
     private void PostGame_Enter()

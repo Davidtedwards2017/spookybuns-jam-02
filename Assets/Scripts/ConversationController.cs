@@ -130,14 +130,11 @@ public class ConversationController : Singleton<ConversationController>
 
     private void PostDialogue_Enter()
     {
-        //if (_CurrentDialogue != null)
-        //{
-            _PrevDialogue = _CurrentDialogue;
-            _CurrentDialogue = null;
+        _PrevDialogue = _CurrentDialogue;
+        _CurrentDialogue = null;
 
-            ProcessNode(_PrevDialogue);
-        //}
-
+        ProcessNode(_PrevDialogue);
+   
         if (_CurrentDialogue != null)
         {
             _StateMachine.ChangeState(State.ActorDialogue);

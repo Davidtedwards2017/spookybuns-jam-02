@@ -73,3 +73,61 @@
 	"else": []
 }
 ```
+
+## Post commands
+
+### Next
+Procced to next node with id value
+
+syntax:
+`next:{node id}`
+
+examples:
+`next:1.0.1`
+
+### Flags
+Sets/Updates flag values 
+
+syntax:
+`flag:{flagname}{operation}{value}`
+
+examples:
+
+`flag:grump+1`
+`flag:nice=2`
+`flag:blah-3`
+
+
+### Events
+Triggers events
+
+syntax:
+`event:{event name}`
+
+#### Supported Events
+
+##### Start Convesation
+syntax:
+
+`event:startconversation.{character name}`
+
+##### Show Character
+syntax:
+
+`event:show.{character name}`
+
+##### Hide Character
+syntax:
+
+`event:hide.{character name}`
+
+##### Restart Game
+syntax:
+
+`event:game.restart`
+
+##### End Game (not yet implemented)
+syntax:
+
+`event:game.end`
+
