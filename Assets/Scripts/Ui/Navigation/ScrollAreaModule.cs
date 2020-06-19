@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class ScrollAreaModule : Module, IPointerEnterHandler, IPointerExitHandler
 {
+    public Animator Animator;
     public Vector3 ScrollDirection;
     public bool hover = false;
 
@@ -30,10 +31,12 @@ public class ScrollAreaModule : Module, IPointerEnterHandler, IPointerExitHandle
     }
 
     private void Update()
-    {
-        if(Active && hover)
+    {       
+        if (Active && hover)
         {
             MouseScreenScroller.Instance.Scroll(ScrollDirection);
         }
+
+        Animator.SetBool("hover", hover);
     }
 }
