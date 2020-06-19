@@ -1,0 +1,790 @@
+{
+	"collection": [{
+		"id": "planethead",
+		"dialogues": [{
+				"type": "condition",
+				"id": 7,
+				"condition": "phform=2",
+				"if": [
+					"next:7.1"
+				],
+				"else": ["next:8"]
+			},
+			{
+				"type": "condition",
+				"id": 8,
+				"condition": "pforms=4",
+				"if": [
+					"next:8.1"
+				],
+				"else": ["next:9"]
+			},
+			{
+				"type": "condition",
+				"id": 9,
+				"condition": "phform=1",
+				"if": [
+					"next:9.1"
+				],
+				"else": ["next:1"]
+			},
+			{
+				"type": "basic",
+				"id": "1",
+				"who": "actor",
+				"value": "…",
+				"post": [
+					"next:1.1"
+				]
+			},
+			{
+				"type": "basic",
+				"id": "1.1",
+				"who": "player",
+				"value": "Hello.",
+				"post": [
+					"next:1.2"
+				]
+			},
+			{
+				"type": "basic",
+				"id": "1.2",
+				"who": "actor",
+				"value": "...",
+				"post": [
+					"next:2"
+				]
+			},
+			{
+				"type": "choice",
+				"id": "2",
+				"who": "player",
+				"options": [{
+						"id": "2.1",
+						"value": "Sooo… I have some forms for you.",
+						"post": [
+							"next:2.1.1",
+							"flag:positive+1"
+						]
+					},
+					{
+						"id": "2.2",
+						"value": "What are you supposed to be?",
+						"post": [
+							"next:2.2.1",
+							"flag:grump+1"
+						]
+					}
+				]
+			},
+			{
+				"type": "basic",
+				"id": "2.1.1",
+				"who": "player",
+				"value": "Sooo… I have some forms for you.",
+				"post": [
+					"next:2.1.2"
+				]
+			},
+			{
+				"type": "basic",
+				"id": "2.1.2",
+				"who": "actor",
+				"value": "…",
+				"post": [
+					"next:2.1.3"
+				]
+			},
+			{
+				"type": "basic",
+				"id": "2.1.3",
+				"who": "player",
+				"value": "Can I leave them here?",
+				"post": ["next:2.1.4"]
+			},
+			{
+				"type": "basic",
+				"id": "2.1.4",
+				"who": "player",
+				"value": "For you?",
+				"post": ["next:2.1.5"]
+			},
+			{
+				"type": "basic",
+				"id": "2.1.5",
+				"who": "actor",
+				"value": "…",
+				"post": ["next:2.1.6"]
+			},
+			{
+				"type": "basic",
+				"id": "2.1.6",
+				"who": "player",
+				"value": "Okay, I’m going to go now.",
+				"post": ["flag:phform+1", "flag:pforms+1"]
+			},
+			{
+				"type": "basic",
+				"id": "2.2.1",
+				"who": "player",
+				"value": "What are you supposed to be?",
+				"post": ["next:3"]
+			},
+			{
+				"type": "basic",
+				"id": "3",
+				"who": "actor",
+				"value": "A planet.",
+				"post": ["next:3.1.1"]
+			},
+			{
+				"type": "basic",
+				"id": "3.1.1",
+				"who": "player",
+				"value": "Hah! So you can talk!",
+				"post": ["next:3.1.2"]
+			},
+			{
+				"type": "basic",
+				"id": "3.1.2",
+				"who": "actor",
+				"value": "I can, but the jury’s out on you, apparently.",
+				"post": ["next:3.1.3"]
+			},
+			{
+				"type": "basic",
+				"id": "3.1.3",
+				"who": "player",
+				"value": "If you’re a planet… how do you know what a jury is? And why can you talk?",
+				"post": ["next:3.1.4"]
+			},
+			{
+				"type": "basic",
+				"id": "3.1.4",
+				"who": "actor",
+				"value": "…",
+				"post": ["next:3.1.5"]
+			},
+			{
+				"type": "basic",
+				"id": "3.1.5",
+				"who": "player",
+				"value": "…",
+				"post": ["next:3.1.6"]
+			},
+			{
+				"type": "basic",
+				"id": "3.1.6",
+				"who": "actor",
+				"value": "Go away.",
+				"post": ["flag:phform+1", "flag:pforms+1"]
+			},
+			{
+				"type": "basic",
+				"id": "9.1",
+				"who": "actor",
+				"value": "…",
+				"post": ["next:9.1.1"]
+			},
+			{
+				"type": "choice",
+				"id": "9.1.1",
+				"who": "player",
+				"options": [{
+						"id": "9.2",
+						"value": "Hi, me again.",
+						"post": [
+							"next:9.2.1",
+							"flag:positive+1"
+						]
+					},
+					{
+						"id": "9.3",
+						"value": "You’re Earth right? Like, THE Earth?",
+						"post": [
+							"next:9.3.1",
+							"flag:positive+1"
+						]
+					}
+				]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.1",
+				"who": "player",
+				"value": "Hi, me again.",
+				"post": ["next:9.2.2"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.2",
+				"who": "player",
+				"value": "I was just over there, on the other side of this really small room, and I couldn’t help but wonder if I haven’t seen you somewhere before.",
+				"post": ["next:9.2.21"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.21",
+				"who": "actor",
+				"value": "You’ve seen me because I’m your planet. I was your planet, anyway. Until you killed me.",
+				"post": ["next:9.2.3"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.3",
+				"who": "player",
+				"value": "Wait, I killed you?!",
+				"post": ["next:9.2.4"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.4",
+				"who": "actor",
+				"value": "Indirectly, but yes, you.",
+				"post": ["next:9.2.5"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.5",
+				"who": "player",
+				"value": "I-I’m sorry!",
+				"post": ["next:9.2.6"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.6",
+				"who": "actor",
+				"value": "I know.",
+				"post": ["next:9.2.7"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.7",
+				"who": "player",
+				"value": "So… are you the reason I’m here?",
+				"post": ["next:9.2.8"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.8",
+				"who": "player",
+				"value": "Like, did the world, did you, end and did all the living things died?",
+				"post": ["next:9.2.9"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.9",
+				"who": "actor",
+				"value": "Probably not. I arrived well after you did.",
+				"post": ["next:9.2.91"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.91",
+				"who": "player",
+				"value": "But I just got here, didn’t I?",
+				"post": ["next:9.2.92"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.92",
+				"who": "actor",
+				"value": "It may seem that way, but time is tricky in places like this. Everyone experiences it differently.",
+				"post": ["next:9.2.93"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.93",
+				"who": "actor",
+				"value": "It’s just like life - we all go about it in our own way.",
+				"post": ["next:9.2.94"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.94",
+				"who": "player",
+				"value": "Oh. That’s really deep.",
+				"post": ["next:9.2.95"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.95",
+				"who": "actor",
+				"value": "Do you have anything else you want to know? If you don’t ask now, you’ll just come back over here in a few minutes to try and get more out of me.",
+				"post": ["next:9.2.96"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.96",
+				"who": "player",
+				"value": "Are you sure it’s okay?",
+				"post": ["next:9.2.97"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.97",
+				"who": "actor",
+				"value": "I say what I mean. Don’t be shy.",
+				"post": ["next:9.2.98"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.98",
+				"who": "player",
+				"value": "How did the world, er, how did you end?",
+				"post": ["next:9.2.99"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.99",
+				"who": "actor",
+				"value": "Greed, bad luck, fate.",
+				"post": ["next:9.2.991"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.991",
+				"who": "actor",
+				"value": "All of of them tend to come together every couple cycles to cause havoc.",
+				"post": ["next:9.2.992"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.992",
+				"who": "actor",
+				"value": "They aligned and got to me.",
+				"post": ["next:9.2.993"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.993",
+				"who": "player",
+				"value": "And I had a hand in that..",
+				"post": ["next:9.2.994"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.994",
+				"who": "actor",
+				"value": "Everyone has a hand in everything. There is no life without death and consequence.",
+				"post": ["next:9.2.995"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.995",
+				"who": "actor",
+				"value": "My end was coming, as was yours. There is no escaping or preventing that.",
+				"post": ["next:9.2.996"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.996",
+				"who": "player",
+				"value": "This is the end then. I’m not sure if I’m ready.",
+				"post": ["next:9.2.997"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.997",
+				"who": "actor",
+				"value": "That could be why you’re here.",
+				"post": ["next:9.2.998"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.998",
+				"who": "player",
+				"value": "What, this weird waiting room? It’s pretty obvious this is limbo, you know.",
+				"post": ["next:9.2.999"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.999",
+				"who": "player",
+				"value": "I’m going to end up in heaven or hell or something at the end of all this.",
+				"post": ["next:9.2.9991"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.9991",
+				"who": "actor",
+				"value": "If that’s what you believe, you probably will.",
+				"post": ["next:9.2.9992"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.9991",
+				"who": "player",
+				"value": "So...",
+				"post": ["next:9.2.9992"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.9992",
+				"who": "player",
+				"value": "There was no way I could stop you from ending?",
+				"post": ["next:9.2.9993"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.9993",
+				"who": "actor",
+				"value": "Cheer up, little one. As I said, everything has an end.",
+				"post": []
+			},
+			{
+				"type": "basic",
+				"id": "9.3.1",
+				"who": "player",
+				"value": "You’re Earth right? Like, THE Earth?",
+				"post": ["next:9.3.2"]
+			},
+			{
+				"type": "basic",
+				"id": "9.3.2",
+				"who": "actor",
+				"value": "Yes.",
+				"post": ["next:9.3.3"]
+			},
+			{
+				"type": "basic",
+				"id": "9.3.3",
+				"who": "player",
+				"value": "Alright, I’ve got some questions then.",
+				"post": ["next:9.3.4"]
+			},
+			{
+				"type": "basic",
+				"id": "9.3.4",
+				"who": "actor",
+				"value": "Fire away.",
+				"post": ["next:9.3.41"]
+			},
+			{
+				"type": "choice",
+				"id": "9.3.41",
+				"who": "player",
+				"options": [{
+						"id": "9.3.42",
+						"value": "Why are you here?",
+						"post": [
+							"next:9.4.1",
+							"flag:neutral+1"
+						]
+					},
+					{
+						"id": "9.3.43",
+						"value": "What happens next?",
+						"post": [
+							"next:9.6",
+							"flag:neutral+1"
+						]
+					}
+				]
+			},
+			{
+				"type": "basic",
+				"id": "9.4.1",
+				"who": "player",
+				"value": "Why are you here?",
+				"post": ["next:9.4.2"]
+			},
+			{
+				"type": "basic",
+				"id": "9.4.2",
+				"who": "actor",
+				"value": "I’m here, I suspect, for the same reason you’re here: I’m dead.",
+				"post": ["next:9.4.3"]
+			},
+			{
+				"type": "basic",
+				"id": "9.4.3",
+				"who": "player",
+				"value": "Does that mean I’m dead because you’re dead?",
+				"post": ["next:9.4.4"]
+			},
+			{
+				"type": "basic",
+				"id": "9.4.4",
+				"who": "player",
+				"value": "Like a comet hit you and everybody died, including me?",
+				"post": ["next:9.4.5"]
+			},
+			{
+				"type": "basic",
+				"id": "9.4.5",
+				"who": "actor",
+				"value": "Well, I don’t know for sure, but I do know you arrived before me, so I don’t think that’s the case.",
+				"post": ["next:9.4.6"]
+			},
+			{
+				"type": "basic",
+				"id": "9.4.6",
+				"who": "player",
+				"value": "Oh… you don’t know how I died, do you?",
+				"post": ["next:9.4.7"]
+			},
+			{
+				"type": "basic",
+				"id": "9.4.7",
+				"who": "actor",
+				"value": "I usually don’t keep track of those sorts of things, I’m afraid. So no, I don’t know how or when you died.",
+				"post": ["next:9.4.8"]
+			},
+			{
+				"type": "basic",
+				"id": "9.4.8",
+				"who": "player",
+				"value": "What happens next?",
+				"post": ["next:9.5"]
+			},
+			{
+				"type": "basic",
+				"id": "9.5",
+				"who": "actor",
+				"value": "I’ve never ended, so I wouldn’t know.",
+				"post": ["next:9.5.1"]
+			},
+			{
+				"type": "basic",
+				"id": "9.5.1",
+				"who": "player",
+				"value": "Oh… well that’s not very reassuring.",
+				"post": ["next:9.5.2"]
+			},
+			{
+				"type": "basic",
+				"id": "9.5.2",
+				"who": "actor",
+				"value": "I can say this though…",
+				"post": ["next:9.5.3"]
+			},
+			{
+				"type": "basic",
+				"id": "9.5.3",
+				"who": "actor",
+				"value": "Whatever it is that comes next… Is no big deal.",
+				"post": ["next:9.5.4"]
+			},
+			{
+				"type": "basic",
+				"id": "9.5.4",
+				"who": "player",
+				"value": "What’s that supposed to mean?",
+				"post": ["next:9.5.5"]
+			},
+			{
+				"type": "basic",
+				"id": "9.5.5",
+				"who": "actor",
+				"value": "It means you did your best, now you’re here. Keep doing your best and everything will be okay.",
+				"post": ["next:9.5.6"]
+			},
+			{
+				"type": "basic",
+				"id": "9.5.6",
+				"who": "player",
+				"value": "I don’t know if I like that.",
+				"post": ["next:9.5.7"]
+			},
+			{
+				"type": "basic",
+				"id": "9.5.7",
+				"who": "actor",
+				"value": "Me either.",
+				"post": []
+			},
+			{
+				"type": "basic",
+				"id": "9.6",
+				"who": "player",
+				"value": "What happens next?",
+				"post": ["next:9.6.1"]
+			},
+			{
+				"type": "basic",
+				"id": "9.6.12",
+				"who": "actor",
+				"value": "I’ve never ended, so I wouldn’t know.",
+				"post": ["next:9.6.2"]
+			},
+			{
+				"type": "basic",
+				"id": "9.6.2",
+				"who": "player",
+				"value": "Oh… well that’s not very reassuring.",
+				"post": ["next:9.6.3"]
+			},
+			{
+				"type": "basic",
+				"id": "9.6.3",
+				"who": "actor",
+				"value": "I can say this though…",
+				"post": ["next:9.6.4"]
+			},
+			{
+				"type": "basic",
+				"id": "9.6.4",
+				"who": "actor",
+				"value": "Whatever it is that comes next… Is no big deal.",
+				"post": ["next:9.6.5"]
+			},
+			{
+				"type": "basic",
+				"id": "9.6.5",
+				"who": "player",
+				"value": "What’s that supposed to mean?",
+				"post": ["next:9.6.6"]
+			},
+			{
+				"type": "basic",
+				"id": "9.6.6",
+				"who": "actor",
+				"value": "It means you did your best, now you’re here. Keep doing your best and everything will be okay.",
+				"post": ["next:9.6.7"]
+			},
+			{
+				"type": "basic",
+				"id": "9.6.7",
+				"who": "player",
+				"value": "I don’t know if I like that.",
+				"post": ["next:9.6.8"]
+			},
+			{
+				"type": "basic",
+				"id": "9.6.8",
+				"who": "actor",
+				"value": "Me either.",
+				"post": []
+			},
+			{
+				"type": "basic",
+				"id": "8.1",
+				"who": "actor",
+				"value": "Yes?",
+				"post": ["next:8.2"]
+			},
+			{
+				"type": "choice",
+				"id": "8.2",
+				"who": "player",
+				"options": [{
+						"id": "8.2.1",
+						"value": "I just wanted to say hi.",
+						"post": [
+							"next:8.3",
+							"flag:neutral+1"
+						]
+					},
+					{
+						"id": "8.2.2",
+						"value": "Just checking, I’m really dead right?",
+						"post": [
+							"next:8.4",
+							"flag:neutral+1"
+						]
+					}
+				]
+			},
+			{
+				"type": "basic",
+				"id": "8.3",
+				"who": "player",
+				"value": "I just wanted to say hi.",
+				"post": ["next:8.3.1"]
+			},
+			{
+				"type": "basic",
+				"id": "8.3.1",
+				"who": "player",
+				"value": "Again.",
+				"post": ["next:8.3.2"]
+			},
+			{
+				"type": "basic",
+				"id": "8.3.2",
+				"who": "actor",
+				"value": "Hi.",
+				"post": ["next:8.3.3"]
+			},
+			{
+				"type": "basic",
+				"id": "8.3.3",
+				"who": "player",
+				"value": "Okay, goodbye then.",
+				"post": ["next:8.3.4"]
+			},
+			{
+				"type": "basic",
+				"id": "8.3.4",
+				"who": "player",
+				"value": "Good luck on your next rotation, little one.",
+				"post": ["flag:phform+1"]
+			},
+			{
+				"type": "basic",
+				"id": "8.4",
+				"who": "player",
+				"value": "Just checking, I’m really dead right?",
+				"post": ["next:8.4.1"]
+			},
+			{
+				"type": "basic",
+				"id": "8.4.1",
+				"who": "actor",
+				"value": "Right.",
+				"post": ["next:8.4.2"]
+			},
+			{
+				"type": "basic",
+				"id": "8.4.2",
+				"who": "player",
+				"value": "And you exploded or overheated or something but I wasn’t there at the time?",
+				"post": ["next:8.4.3"]
+			},
+			{
+				"type": "basic",
+				"id": "8.4.3",
+				"who": "actor",
+				"value": "I have no idea.",
+				"post": ["next:8.4.4"]
+			},
+			{
+				"type": "basic",
+				"id": "8.4.4",
+				"who": "player",
+				"value": "Yeah, that makes sense.",
+				"post": ["8.4.5"]
+			},
+			{
+				"type": "basic",
+				"id": "8.4.5",
+				"who": "actor",
+				"value": "Good luck on your next rotation, little one.",
+				"post": ["8.4.6"]
+			},
+			{
+				"type": "basic",
+				"id": "8.4.6",
+				"who": "player",
+				"value": "Wait, what?",
+				"post": ["8.4.7"]
+			},
+			{
+				"type": "basic",
+				"id": "8.4.7",
+				"who": "actor",
+				"value": "...",
+				"post": ["flag:phform+1"]
+			},
+			{
+				"type": "basic",
+				"id": "7.1",
+				"who": "actor",
+				"value": "Good luck on your next rotation, little one.",
+				"post": []
+			}
+
+		]
+	}]
+}

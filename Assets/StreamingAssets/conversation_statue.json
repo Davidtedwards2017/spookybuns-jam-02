@@ -775,7 +775,7 @@
 				"id": "8.8",
 				"who": "actor",
 				"value": "...",
-				"post": ["My goodness, the service here is just dreadful.","flag:sform+1"]
+				"post": ["flag:sform+1"]
 			},
 			{
 				"type": "basic",
