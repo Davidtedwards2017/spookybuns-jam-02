@@ -301,7 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75fa25cfb83a64a4d9f534b686708827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Character: 1
+  Character: 2
   Collider: {fileID: 0}
   ConversationCameraAnchor: {fileID: 592572430474079270}
   ConversationDialogueBubbleAnchor: {fileID: 894579214722905385}

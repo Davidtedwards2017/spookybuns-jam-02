@@ -1,0 +1,790 @@
+{
+	"collection": [{
+		"id": "statue",
+		"dialogues": [{
+				"type": "condition",
+				"id": 7,
+				"condition": "sform=2",
+				"if": [
+					"next:7.1"
+				],
+				"else": ["next:8"]
+			},
+			{
+				"type": "condition",
+				"id": 8,
+				"condition": "pforms=4",
+				"if": [
+					"next:8.1"
+				],
+				"else": ["next:9"]
+			},
+			{
+				"type": "condition",
+				"id": 9,
+				"condition": "sform=1",
+				"if": [
+					"next:9.1"
+				],
+				"else": ["next:1"]
+			},
+			{
+				"type": "basic",
+				"id": "1",
+				"who": "actor",
+				"value": "Why hello, sweet child! How can I help you today?",
+				"post": [
+					"next:2"
+				]
+			},
+			{
+				"type": "choice",
+				"id": "2",
+				"who": "player",
+				"options": [{
+						"id": "2.1",
+						"value": "Hi! I have some forms here-",
+						"post": [
+							"next:2.1.1",
+							"flag:positive+1"
+						]
+					},
+					{
+						"id": "2.2",
+						"value": "Not a child.",
+						"post": [
+							"next:2.2.1",
+							"flag:grump+1"
+						]
+					}
+				]
+			},
+			{
+				"type": "basic",
+				"id": "2.1.1",
+				"who": "player",
+				"value": "Hi! I have some forms here-",
+				"post": [
+					"next:2.1.2"
+				]
+			},
+			{
+				"type": "basic",
+				"id": "2.1.2",
+				"who": "actor",
+				"value": "OH goody! I’ve been waiting for these. Can you believe I’ve been waiting for a whole FIVE minutes? I know statues are supposed to stay put, but that was excruciating!",
+				"post": [
+					"next:3"
+				]
+			},
+			{
+				"type": "basic",
+				"id": "2.2.1",
+				"who": "player",
+				"value": "Not a child.",
+				"post": ["next:2.2.2"]
+			},
+			{
+				"type": "basic",
+				"id": "2.2.2",
+				"who": "actor",
+				"value": "Well aren’t you rude, speaking like that in front of a bonafide work of ART! The nerve of you servants, making me wait for FIVE long minutes before even considering coming over to greet me and you do so in such a MANNER!",
+				"post": ["next:3"]
+			},
+			{
+				"type": "basic",
+				"id": "3",
+				"who": "actor",
+				"value": "…You’re still here?",
+				"post": ["next:3.01"]
+			},
+			{
+				"type": "choice",
+				"id": "3.01",
+				"who": "player",
+				"options": [{
+						"id": "3.1",
+						"value": "Take this form.",
+						"post": [
+							"next:3.1.1",
+							"flag:grump+1"
+						]
+					},
+					{
+						"id": "3.2",
+						"value": "Oh, yeah, sorry. I just wanted to ask you a couple questions.",
+						"post": [
+							"next:3.2.1",
+							"flag:positive+1"
+						]
+					}
+				]
+			},
+			{
+				"type": "basic",
+				"id": "3.1.1",
+				"who": "player",
+				"value": "Take this form.",
+				"post": ["next:3.1.2"]
+			},
+			{
+				"type": "basic",
+				"id": "3.1.2",
+				"who": "actor",
+				"value": " A-ahahaha! You don’t expect me to fill out paperwork, do you? Oh please, darling, it’s clear you don’t know the first thing about who or what you are talking to. Do you honestly think I’d lower myself so much as to fill out a paper?",
+				"post": ["next:3.1.3"]
+			},
+			{
+				"type": "basic",
+				"id": "3.1.3",
+				"who": "player",
+				"value": "Please just take it.",
+				"post": ["next:3.1.4"]
+			},
+			{
+				"type": "basic",
+				"id": "3.1.4",
+				"who": "actor",
+				"value": "Here’s what we’ll do, darling. YOU are going to fill them out and do your job, this is your job, isn’t it? And I’m not going to hear another silly word. Now, where to begin…",
+				"post": ["next:4"]
+			},
+			{
+				"type": "basic",
+				"id": "3.2.1",
+				"who": "player",
+				"value": "Oh, yeah, sorry. I just wanted to ask you a couple questions.",
+				"post": ["next:3.2.2"]
+			},
+			{
+				"type": "basic",
+				"id": "3.2.2",
+				"who": "actor",
+				"value": "AHA~! Say no more, my dear. Well, where to begin.",
+				"post": ["next:4"]
+			},
+			{
+				"type": "basic",
+				"id": "4",
+				"who": "actor",
+				"value": "I was erected in the year 100, it was lovely then, springtime, I remember it like it was yesterday.",
+				"post": ["next:4.01"]
+			},
+			{
+				"type": "choice",
+				"id": "4.01",
+				"who": "player",
+				"options": [{
+						"id": "4.1",
+						"value": "...",
+						"post": [
+							"next:4.1.1",
+							"flag:positive+1"
+						]
+					},
+					{
+						"id": "4.2",
+						"value": "STOP!",
+						"post": [
+							"next:4.2.1",
+							"flag:grump+1"
+						]
+					}
+				]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.1",
+				"who": "actor",
+				"value": "They hauled my marble out of this beautiful, crystal clear lake that had the most exquisite city just beginning to take hold beside it.",
+				"post": ["next:4.1.2"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.2",
+				"who": "player",
+				"value": "Excuse me for interrupting, but-",
+				"post": ["next:4.1.3"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.3",
+				"who": "actor",
+				"value": "Well then don’t, dear. As I was saying.",
+				"post": ["next:4.1.4"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.4",
+				"who": "actor",
+				"value": "AHA~ yes, that city grew and grew and I was able to watch with my splendid eyes, have you seen them? I won’t mind if you take a closer look. I am quite tall, but I’ll give you a moment to find a um, chair or a table to climb upon. I certainly don’t mind giving a bit of culture back to you uh… people.",
+				"post": ["next:4.1.5"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.5",
+				"who": "player",
+				"value": "They’re very… blue.",
+				"post": ["next:4.1.6"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.6",
+				"who": "actor",
+				"value": "They ARE, aren’t they?",
+				"post": ["next:4.1.61"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.61",
+				"who": "player",
+				"value": "…",
+				"post": ["next:4.1.7"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.7",
+				"who": "actor",
+				"value": "…",
+				"post": ["next:4.1.8"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.8",
+				"who": "player",
+				"value": "So-",
+				"post": ["next:4.1.9"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.9",
+				"who": "actor",
+				"value": "Now where do you suppose those stairs go?",
+				"post": ["next:4.1.91"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.91",
+				"who": "player",
+				"value": "The stairs that say Heaven or the stairs that say Hell?",
+				"post": ["next:4.1.911"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.911",
+				"who": "actor",
+				"value": "Are there other doors I could be referring to? My goodness, I believe you may be a bit worse for wear, dear. Oh my, you aren’t contagious, are you? Perhaps if you speak to the servant over there they will supply you with a mask to keep you from spreading whatever that is, in case it’s catchy. You never know what will damage as fine a bodice as this, you know!",
+				"post": ["next:4.1.912"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.912",
+				"who": "player",
+				"value": "I don’t think I’m sick.",
+				"post": ["next:4.1.913"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.913",
+				"who": "actor",
+				"value": "Well you’re dead, aren’t you? So you never do know, whatever it was that led you to your untimely demise may still be lingering in that fleshy series of tubes you have making up your squishy form.",
+				"post": ["next:4.1.914"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.914",
+				"who": "player",
+				"value": "So I am dead…",
+				"post": ["next:4.1.915"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.915",
+				"who": "actor",
+				"value": "Clearly.",
+				"post": ["next:4.1.916"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.916",
+				"who": "player",
+				"value": "Wait, aren’t you a statue? Can statues die?",
+				"post": ["next:4.1.917"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.917",
+				"who": "actor",
+				"value": "Excuse me? I’m not dead! How preposterous. The- the nerve! EXCUSE ME, CONCIERGE! ",
+				"post": ["next:4.1.918"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.918",
+				"who": "actor",
+				"value": "The service here is just dreadful.",
+				"post": ["next:4.1.919"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.919",
+				"who": "player",
+				"value": "Um… if you aren’t dead, why are you here?",
+				"post": ["next:5"]
+			},
+			{
+				"type": "basic",
+				"id": "4.2.1",
+				"who": "player",
+				"value": "STOP!",
+				"post": ["next:4.2.2"]
+			},
+			{
+				"type": "basic",
+				"id": "4.2.2",
+				"who": "actor",
+				"value": "!",
+				"post": ["next:4.2.3"]
+			},
+			{
+				"type": "basic",
+				"id": "4.2.3",
+				"who": "player",
+				"value": "I’m not your servant, I don’t work here, and I just want to get rid of this piece of paper please stop talking!",
+				"post": ["next:4.2.4"]
+			},
+			{
+				"type": "basic",
+				"id": "4.2.4",
+				"who": "actor",
+				"value": "W-w-w-well I never!",
+				"post": ["next:4.2.5"]
+			},
+			{
+				"type": "basic",
+				"id": "4.2.5",
+				"who": "player",
+				"value": "W-w-w-well now you have.",
+				"post": ["next:4.2.6"]
+			},
+			{
+				"type": "basic",
+				"id": "4.2.6",
+				"who": "actor",
+				"value": "Some grand award this turned out to be.",
+				"post": ["next:4.2.7"]
+			},
+			{
+				"type": "basic",
+				"id": "4.2.7",
+				"who": "player",
+				"value": "Okay, I’ll bite. What do you mean by “award”?",
+				"post": ["next:5"]
+			},
+			{
+				"type": "basic",
+				"id": "5",
+				"who": "actor",
+				"value": "Well clearly the fellow upstairs has finally caught up with the rest of the world and noticed just how splendid I am! I’m a work of art. I’m being promoted, I’m sure. I’ll probably be enshrined! They’ll name children after me!",
+				"post": ["next:5.01"]
+			},
+			{
+				"type": "choice",
+				"id": "5.01",
+				"who": "player",
+				"options": [{
+						"id": "5.1",
+						"value": "Does that mean God or a god of some kind brought you here?",
+						"post": [
+							"next:5.1.1",
+							"flag:positive+1"
+						]
+					},
+					{
+						"id": "5.2",
+						"value": "If that’s the case, then why am I here?",
+						"post": [
+							"next:5.2.1",
+							"flag:grump+1"
+						]
+					}
+				]
+			},
+			{
+				"type": "basic",
+				"id": "5.1.1",
+				"who": "player",
+				"value": "Does that mean God or a god of some kind brought you here?",
+				"post": ["next:5.1.2"]
+			},
+			{
+				"type": "basic",
+				"id": "5.1.2",
+				"who": "actor",
+				"value": "Of course it does! And can you blame them?",
+				"post": ["next:5.1.3"]
+			},
+			{
+				"type": "basic",
+				"id": "5.1.3",
+				"who": "player",
+				"value": "But by that logic… I’m being “promoted” too.",
+				"post": ["next:5.1.4"]
+			},
+			{
+				"type": "basic",
+				"id": "5.1.4",
+				"who": "actor",
+				"value": "YOU? Ah-ahaha!",
+				"post": ["next:5.1.5"]
+			},
+			{
+				"type": "basic",
+				"id": "5.1.5",
+				"who": "actor",
+				"value": "Of course, dear. Whatever you say.",
+				"post": ["next:5.1.6"]
+			},
+			{
+				"type": "basic",
+				"id": "5.1.6",
+				"who": "player",
+				"value": "I don’t think you’re very nice…",
+				"post": ["next:5.1.61"]
+			},
+			{
+				"type": "basic",
+				"id": "5.1.61",
+				"who": "actor",
+				"value": "What was that?",
+				"post": ["next:5.1.7"]
+			},
+			{
+				"type": "basic",
+				"id": "5.1.7",
+				"who": "player",
+				"value": "Nothing. Good luck with your enshrining-ment thing.",
+				"post": ["next:5.1.8"]
+			},
+			{
+				"type": "basic",
+				"id": "5.1.8",
+				"who": "actor",
+				"value": "Please, I don’t need luck.",
+				"post": ["flag:sform+1",
+					"flag:pforms+1"]
+			},
+						{
+				"type": "basic",
+				"id": "5.2.1",
+				"who": "player",
+				"value": "If that’s the case, then why am I here?",
+				"post": ["next:5.2.2"]
+			},
+			{
+				"type": "basic",
+				"id": "5.2.2",
+				"who": "actor",
+				"value": "W-what?",
+				"post": ["next:5.2.3"]
+			},
+			{
+				"type": "basic",
+				"id": "5.2.3",
+				"who": "player",
+				"value": "If you’re here because you’re SO great, then I should be here for the same reason.",
+				"post": ["next:5.2.4"]
+			},
+			{
+				"type": "basic",
+				"id": "5.2.4",
+				"who": "player",
+				"value": "But you’ve already been a huge jerk to me, so I highly doubt that.",
+				"post": ["next:5.2.5"]
+			},
+			{
+				"type": "basic",
+				"id": "5.2.5",
+				"who": "actor",
+				"value": "No, you’re mistaken. Surely this is a misunderstanding. I am destined for greatness!",
+				"post": ["next:5.2.6"]
+			},
+			{
+				"type": "basic",
+				"id": "5.2.6",
+				"who": "player",
+				"value": "Then so am I. Or, and this is more likely, we’re both stuck in limbo because we’re both actually dead.",
+				"post": ["next:5.2.7"]
+			},
+			{
+				"type": "basic",
+				"id": "5.2.7",
+				"who": "player",
+				"value": "Maybe someone knocked you over.",
+				"post": ["next:5.2.8"]
+			},
+			{
+				"type": "basic",
+				"id": "5.2.8",
+				"who": "actor",
+				"value": "Knocked me… how dare you!",
+				"post": ["next:5.2.9"]
+			},
+			{
+				"type": "basic",
+				"id": "5.2.9",
+				"who": "player",
+				"value": "You probably shattered into a million little pieces and now you’re stuck here with me because no one knows where to put you.",
+				"post": ["next:5.2.91"]
+			},
+			{
+				"type": "basic",
+				"id": "5.2.91",
+				"who": "actor",
+				"value": "But I would remember if something so horrid had happened… s-surely.",
+				"post": ["next:5.2.92"]
+			},
+			{
+				"type": "basic",
+				"id": "5.2.92",
+				"who": "player",
+				"value": "I don’t remember what happened to me.",
+				"post": ["next:5.2.93"]
+			},
+			{
+				"type": "basic",
+				"id": "5.2.93",
+				"who": "actor",
+				"value": "Oh dear, you poor wretched thing. I see what’s happening here.",
+				"post": ["next:5.2.94"]
+			},
+			{
+				"type": "basic",
+				"id": "5.2.94",
+				"who": "player",
+				"value": "You do?",
+				"post": ["next:5.2.95"]
+			},
+			{
+				"type": "basic",
+				"id": "5.2.95",
+				"who": "actor",
+				"value": "Yes, oh my, and for me to not see it sooner. Why, how unkind of me, and so very off-brand, if I do say so myself. You see, dear. You are projecting your own fears and grumpy thoughts onto ME. Now, I don’t blame you, who wouldn’t want to see themselves in me, but it’s so very unhealthy a thing to do.",
+				"post": ["next:5.2.96"]
+			},
+			{
+				"type": "basic",
+				"id": "5.2.95",
+				"who": "player",
+				"value": "I don’t think that’s what’s-",
+				"post": ["next:5.2.96"]
+			},
+			{
+				"type": "basic",
+				"id": "5.2.96",
+				"who": "actor",
+				"value": "I know things are hard right now, but you can’t take your self hatred and push it on others, it’s just not right.",
+				"post": ["next:5.2.97"]
+			},
+			{
+				"type": "basic",
+				"id": "5.2.97",
+				"who": "player",
+				"value": "This is pointless, isn’t it?",
+				"post": ["next:5.2.98"]
+			},
+			{
+				"type": "basic",
+				"id": "5.2.98",
+				"who": "actor",
+				"value": "Oh, you’re even further gone than I thought!",
+				"post": ["flag:sform+1",
+					"flag:pforms+1"]
+			},
+
+			{
+				"type": "basic",
+				"id": "9.1",
+				"who": "actor",
+				"value": "Well hello there, are you here to bring me upstairs?",
+				"post": ["next:9.1.1"]
+			},
+			{
+				"type": "choice",
+				"id": "9.1.1",
+				"who": "player",
+				"options": [{
+						"id": "9.2",
+						"value": "What? No.",
+						"post": [
+							"next:9.2.1",
+							"flag:positive+1"
+						]
+					},
+					{
+						"id": "9.3",
+						"value": "Yes, please follow me.",
+						"post": [
+							"next:9.3.1",
+							"flag:grump+1"
+						]
+					}
+				]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.1",
+				"who": "player",
+				"value": "What? No.",
+				"post": ["next:9.2.2"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.2",
+				"who": "player",
+				"value": "Wait, do you not remember me? I was just here like a second ago.",
+				"post": ["next:9.2.3"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.3",
+				"who": "actor",
+				"value": "Well you must be mistaken! I would never forget a conversation, how insulting!",
+				"post": ["next:9.2.4"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.4",
+				"who": "player",
+				"value": "I wasn’t trying to insult you.",
+				"post": ["next:9.2.5"]
+			},
+			{
+				"type": "basic",
+				"id": "9.2.5",
+				"who": "actor",
+				"value": "Well you did. I’m sure you feel just awful, but you’ll have to do it somewhere else!",
+				"post": []
+			},
+			{
+				"type": "basic",
+				"id": "9.3.1",
+				"who": "player",
+				"value": "Yes, please follow me.",
+				"post": ["next:9.3.2"]
+			},
+			{
+				"type": "basic",
+				"id": "9.3.2",
+				"who": "actor",
+				"value": "Oh lovely, I’m very excited, you know. This has been a long time coming, and I think you’ll be quite impressed by how much I’ve positively impacted those in my presence in the many years I’ve been servicing the entire world!",
+				"post": ["next:9.3.3"]
+			},
+			{
+				"type": "basic",
+				"id": "9.3.3",
+				"who": "player",
+				"value": "You really don’t remember me, do you? I was here just a second ago?",
+				"post": ["next:9.3.4"]
+			},
+			{
+				"type": "basic",
+				"id": "9.3.4",
+				"who": "actor",
+				"value": "What are you blathering about, aren’t you supposed to be bringing me to my grand award ceremony?",
+				"post": ["next:9.3.41"]
+			},
+			{
+				"type": "basic",
+				"id": "9.3.41",
+				"who": "player",
+				"value": "Sure, it’s right down this way, under the sign that says HEEL.",
+				"post": ["next:9.3.5"]
+			},
+						{
+				"type": "basic",
+				"id": "9.3.5",
+				"who": "actor",
+				"value": "Oh thank you… wait a moment.",
+				"post": ["next:9.3.6"]
+			},
+						{
+				"type": "basic",
+				"id": "9.3.6",
+				"who": "player",
+				"value": "…",
+				"post": ["next:9.3.7"]
+			},
+			{
+				"type": "basic",
+				"id": "9.3.7",
+				"who": "actor",
+				"value": "That says, “hell” darling. My lord, they will let just about anyone have a job these days. Well, toodle-loo!",
+				"post": []
+			},
+			{
+				"type": "basic",
+				"id": "8.1",
+				"who": "actor",
+				"value": "Ah, there you are!",
+				"post": ["next:8.2"]
+			},
+			{
+				"type": "basic",
+				"id": "8.2",
+				"who": "player",
+				"value": "You remember me this time!",
+				"post": ["next:8.3"]
+			},
+			{
+				"type": "basic",
+				"id": "8.3",
+				"who": "actor",
+				"value": "Of course I do, dear. Now I hope you washed your hands before handling my order. I prefer my pea shoot salads to be crisp and free of finger grease.",
+				"post": ["next:8.4"]
+			},
+			{
+				"type": "basic",
+				"id": "8.4",
+				"who": "player",
+				"value": "…You think I’m a waiter.",
+				"post": ["next:8.5"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5",
+				"who": "actor",
+				"value": "Why are you just standing there? Where are my greens?",
+				"post": ["next:8.6"]
+			},
+			{
+				"type": "basic",
+				"id": "8.6",
+				"who": "player",
+				"value": "I-",
+				"post": ["next:8.7"]
+			},
+			{
+				"type": "basic",
+				"id": "8.7",
+				"who": "player",
+				"value": "…Nevermind. I’ll get your salad.",
+				"post": ["next:8.8"]
+			},
+			{
+				"type": "basic",
+				"id": "8.8",
+				"who": "actor",
+				"value": "...",
+				"post": ["flag:sform+1"]
+			},
+			{
+				"type": "basic",
+				"id": "7.1",
+				"who": "actor",
+				"value": "Hello! Please take this time to marvel in my marble.",
+				"post": []
+			}
+
+		]
+	}]
+}
