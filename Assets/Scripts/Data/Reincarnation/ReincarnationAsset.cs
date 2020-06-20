@@ -11,14 +11,14 @@ namespace Data
     {
         public string Id;
         public string Description;
-        public string[] Conditions;
+        public string Condition;
         public Sprite Sprite;
 
         public void PopulateFromJObject(JToken token)
         {
             Id = token.Value<string>("id");
             Description = token.Value<string>("description");
-            Conditions = token.Value<JArray>("conditions").Values<string>().ToArray();
+            Condition = token.Value<string>("Condition");
 
             var imageUrl = token.Value<string>("imageurl");
 

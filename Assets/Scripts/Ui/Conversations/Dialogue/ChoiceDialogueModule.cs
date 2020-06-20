@@ -55,7 +55,7 @@ public class ChoiceDialogueModule : Module
         }
 
         if(data.Condition != null && 
-            !ConversationController.ProcessConditionalStatement(data.Condition))
+            !ConditionParser.ProcessConditionalStatement(data.Condition))
         {
             return false;
         }

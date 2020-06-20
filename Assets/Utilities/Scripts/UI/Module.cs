@@ -19,7 +19,7 @@ public class Module : MonoBehaviour {
         }
     }
 
-    public bool _Active;
+    private bool _Active;
 
     public bool Active
     {

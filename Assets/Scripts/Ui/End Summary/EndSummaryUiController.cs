@@ -14,10 +14,10 @@ public class EndSummaryUiController : UiController<EndSummaryUiController>
         SetActive(false);
     }
 
-    public IEnumerator StartEndGameSummary()
+    public IEnumerator StartEndGameSummary(ReincarnationAsset reincarnation)
     {
         _ProceedFromSummary = false;
-        Asset = ReincarnationAssetLoader.Instance.Reincarnations.First();
+        Asset = reincarnation;
 
         SetActive(true);
         yield return new WaitUntil(() => _ProceedFromSummary);

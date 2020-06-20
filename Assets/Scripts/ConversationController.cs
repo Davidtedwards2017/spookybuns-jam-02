@@ -209,18 +209,7 @@ public class ConversationController : Singleton<ConversationController>
 
     public void ProcessConditional(Conditional conditional)
     {
-        bool result = true;
-        var statements = SplitAndStatments(conditional.Condition);
-        foreach (var statement in statements)
-        {
-            if (!ProcessConditionalStatement(statement))
-            {
-                result = false;
-                break;
-            }
-        }
-
-        if (result)
+        if (ConditionParser.ProcessConditionalStatement(conditional.Condition))
         {
             ProcessPost(conditional.If);
         }
@@ -228,32 +217,6 @@ public class ConversationController : Singleton<ConversationController>
         {
             ProcessPost(conditional.Else);
         }
-    }
-
-    public static string[] SplitAndStatments(string statmentText)
-    {
-        var split = Regex.Split(statmentText, @"(&&)").Where(e => !e.Equals("&&")).ToArray();
-        return split;
-    }
-
-    public static bool ProcessConditionalStatement(string statmentText)
-    {
-        var split = Regex.Split(statmentText, @"([=><])");
-        string symbol = split[1];
-        int conditionalValue = int.Parse(split[2]);
-        int value = StatsController.Instance.GetFlagValue(split[0]);
-
-        switch (symbol)
-        {
-            case "=":
-                return value == conditionalValue;
-            case ">":
-                return value > conditionalValue;
-            case "<":
-                return value < conditionalValue;
-        }
-
-        return false;
     }
 
     private void ProcessFlag(string flagText)
