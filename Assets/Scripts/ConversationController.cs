@@ -116,7 +116,6 @@ public class ConversationController : Singleton<ConversationController>
             var dialogue = (IDialogueNode)_CurrentNode;
             UpdateActorExpression(dialogue);
             yield return ConversationUiController.Instance.PerformDialogue(dialogue);
-            UpdateActorExpression(null);
         }
 
         _StateMachine.ChangeState(State.PostDialogue);
@@ -124,24 +123,23 @@ public class ConversationController : Singleton<ConversationController>
 
     private void UpdateActorExpression(IDialogueNode dialogue)
     {
-        var expression = GameInfo.Expression.neutral;
         if (dialogue != null)
         {
             switch (dialogue.Expression)
             {
                 case "angry":
-                    expression = GameInfo.Expression.angry;
+                    CharacterIc.UpdateExpression(GameInfo.Expression.angry);
                     break;
                 case "happy":
-                    expression = GameInfo.Expression.happy;
+                    CharacterIc.UpdateExpression(GameInfo.Expression.happy);
                     break;
                 case "netural":
-                default:
+                    CharacterIc.UpdateExpression(GameInfo.Expression.neutral);
                     break;
+                default:
+                    return;
             }
         }
-
-        CharacterIc.UpdateExpression(expression);
     }
 
     private void ActorDialogue_Update()
@@ -211,7 +209,18 @@ public class ConversationController : Singleton<ConversationController>
 
     public void ProcessConditional(Conditional conditional)
     {
-        if (ProcessConditionalStatement(conditional.Condition))
+        bool result = true;
+        var statements = SplitAndStatments(conditional.Condition);
+        foreach (var statement in statements)
+        {
+            if (!ProcessConditionalStatement(statement))
+            {
+                result = false;
+                break;
+            }
+        }
+
+        if (result)
         {
             ProcessPost(conditional.If);
         }
@@ -219,6 +228,12 @@ public class ConversationController : Singleton<ConversationController>
         {
             ProcessPost(conditional.Else);
         }
+    }
+
+    public static string[] SplitAndStatments(string statmentText)
+    {
+        var split = Regex.Split(statmentText, @"(&&)").Where(e => !e.Equals("&&")).ToArray();
+        return split;
     }
 
     public static bool ProcessConditionalStatement(string statmentText)
