@@ -1,0 +1,127 @@
+{
+	"collection": [{
+		"id": "clockhead",
+		"dialogues": [
+			{
+				"type": "condition",
+				"id": 11,
+				"condition": "pforms=4",
+				"if": [
+					"next:1"
+				],
+				"else": []
+			},
+			{
+				"type": "basic",
+				"id": "1",
+				"who": "actor",
+				"value": "Welcome back!",
+				"post": [
+					"next:2"
+				]
+			},
+			{
+				"type": "choice",
+				"id": "2",
+				"who": "player",
+				"options": [{
+						"id": "2.1",
+						"value": "I did it, I gave all the forms to the right people.",
+						"post": [
+							"next:2.1.1",
+							"flag:positive+1"
+						]
+					},
+					{
+						"id": "2.2",
+						"value": "Let me leave.",
+						"post": [
+							"next:2.2.1",
+							"flag:grump+1"
+						]
+					}
+				]
+			},
+			{
+				"type": "basic",
+				"id": "2.1.1",
+				"who": "player",
+				"value": "I did it, I gave all the forms to the right people.",
+				"post": [
+					"next:2.1.2"
+				]
+			},
+			{
+				"type": "basic",
+				"id": "2.1.2",
+				"who": "actor",
+				"value": "Wonderful! How do you feel?",
+				"post": [
+					"next:2.1.3"
+				]
+			},
+			{
+				"type": "basic",
+				"id": "2.1.3",
+				"who": "actor",
+				"value": "How do I… feel?",
+				"post": [
+					"next:2.1.4"
+				]
+			},
+			{
+				"type": "basic",
+				"id": "2.1.4",
+				"who": "player",
+				"value": "Fine I guess. I actually had some interesting conversations.",
+				"post": [
+					"next:2.1.5"
+				]
+			},
+			{
+				"type": "basic",
+				"id": "2.1.5",
+				"who": "player",
+				"value": "And I think I have a better idea of where I am.",
+				"post": [
+					"next:2.1.6"
+				]
+			},
+			{
+				"type": "basic",
+				"id": "2.1.6",
+				"who": "player",
+				"value": "How nice for you!",
+				"post": ["event:game.end"]
+			},
+			{
+				"type": "basic",
+				"id": "2.2.1",
+				"who": "player",
+				"value": "Let me leave.",
+				"post": ["next:2.2.2"]
+			},
+			{
+				"type": "basic",
+				"id": "2.2.2",
+				"who": "actor",
+				"value": "You did as I asked, thank you very much!",
+				"post": ["next:2.2.3"]
+			},
+			{
+				"type": "basic",
+				"id": "2.2.3",
+				"who": "player",
+				"value": "Please just let me leave. I don’t want to be here.",
+				"post": ["next:2.2.4"]
+			},
+			{
+				"type": "basic",
+				"id": "2.2.4",
+				"who": "actor",
+				"value": "I see.",
+				"post": ["event:game.end"]
+			}
+		]
+	}]
+}

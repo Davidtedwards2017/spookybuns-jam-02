@@ -471,7 +471,7 @@
 				"who": "actor",
 				"value": "Please, I don’t need luck.",
 				"post": ["flag:sform+1",
-					"flag:pforms+1"]
+					"flag:pforms+1","flag:bonus+1"]
 			},
 						{
 				"type": "basic",
@@ -598,7 +598,7 @@
 				"who": "actor",
 				"value": "Oh, you’re even further gone than I thought!",
 				"post": ["flag:sform+1",
-					"flag:pforms+1"]
+					"flag:pforms+1","flag:bonus+1"]
 			},
 
 			{

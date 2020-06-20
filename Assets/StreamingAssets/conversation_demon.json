@@ -612,7 +612,7 @@
 				"who": "actor",
 				"value": " Now leave me alone so I can fill out these useless forms and spend the next hundred years brooding in peace.",
 				"post": ["flag:dform+1",
-					"flag:pforms+1"
+					"flag:pforms+1","flag:bonus+1"
 				]
 			},
 			{
@@ -642,7 +642,7 @@
 				"who": "player",
 				"value": "Sure, whatever.",
 				"post": ["flag:dform+1",
-					"flag:pforms+1"
+					"flag:pforms+1","flag:bonus+1"
 				]
 			},
 			{
