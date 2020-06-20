@@ -28,6 +28,15 @@
 				"if": [
 					"next:12"
 				],
+				"else": ["next:20"]
+			},
+			{
+				"type": "condition",
+				"id": 20,
+				"condition": "pforms=1&&bonus=1",
+				"if": [
+					"next:12"
+				],
 				"else": ["next:7"]
 			},
 			{
@@ -63,6 +72,9 @@
 				"who": "actor",
 				"value": "Welcome back!",
 				"post": [
+					"event:hide.demon",
+					"event:hide.statue",
+					"event:hide.planethead",
 					"next:2"
 				]
 			},
@@ -109,7 +121,7 @@
 			{
 				"type": "basic",
 				"id": "2.1.3",
-				"who": "actor",
+				"who": "player",
 				"value": "Will that someone answer my questions.",
 				"post": [
 					"next:2.1.4"
@@ -248,7 +260,12 @@
 				"id": "5.2",
 				"who": "actor",
 				"value": "It's clock humor!",
-				"post": ["next:5.3"]
+				"post": [
+					"next:5.3",
+					"event:show.demon",
+					"event:show.statue",
+					"event:show.planethead",
+				]
 			},
 			{
 				"type": "choice",
@@ -298,7 +315,7 @@
 				"id": "6.1.4",
 				"who": "player",
 				"value": "Okay, no problem.",
-				"post": ["flag:pforms+1"]
+				"post": ["flag:bonus+1"]
 			},
 			{
 				"type": "basic",
@@ -340,7 +357,7 @@
 				"id": "6.2.6",
 				"who": "actor",
 				"value": "Yes.",
-				"post": ["flag:pforms+1"]
+				"post": ["flag:bonus+1"]
 			},
 			{
 				"type": "basic",
@@ -437,12 +454,16 @@
 				"options": [{
 						"id": "12.31",
 						"value": "Oh, I guess there were two more",
-						"post": ["flag:positive+1", "next:12.4"
+						"post": [
+							"next:12.4",
+							"flag:positive+1"
+						]
+					},
 					{
 						"id": "12.32",
 						"value": "One.",
 						"post": [
-							"flag:positive+1","next:12.6"
+							"flag:positive+1", "next:12.6"
 						]
 					}
 				]
@@ -510,12 +531,13 @@
 				"options": [{
 						"id": "13.2",
 						"value": "Thanks! I gave two of the forms out.",
-						"post": ["flag:positive+1", "next:13.4"
+						"post": ["flag:positive+1", "next:13.4"]
+					},
 					{
 						"id": "13.3",
 						"value": "I’m done.",
 						"post": [
-							"flag:grump+1","next:13.6"
+							"flag:grump+1", "next:13.6"
 						]
 					}
 				]
@@ -663,7 +685,7 @@
 			{
 				"type": "basic",
 				"id": "162.1.3",
-				"who": "actor",
+				"who": "player",
 				"value": "How do I… feel?",
 				"post": [
 					"next:162.1.4"
@@ -690,7 +712,7 @@
 			{
 				"type": "basic",
 				"id": "162.1.6",
-				"who": "player",
+				"who": "actor",
 				"value": "How nice for you!",
 				"post": ["event:game.end"]
 			},
