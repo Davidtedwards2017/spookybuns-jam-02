@@ -75,9 +75,10 @@ public class MasterGameStateController : Singleton<MasterGameStateController>
         StartConversation(StartingConversationCharacter);
     }
 
-    private void PostGame_Enter()
+    private IEnumerator PostGame_Enter()
     {
-
+        yield return EndSummaryUiController.Instance.StartEndGameSummary();
+        _StateMachine.ChangeState(State.Restart);
     }
 
     #endregion

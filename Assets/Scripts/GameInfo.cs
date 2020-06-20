@@ -18,4 +18,12 @@ public static class GameInfo
         happy,
         angry
     }
+
+    public enum Reincarnate
+    {
+        humanoid,
+        demon,
+        cat,
+        barnacle
+    }
 }
