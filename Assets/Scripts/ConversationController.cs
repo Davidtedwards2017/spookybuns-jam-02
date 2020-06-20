@@ -13,6 +13,7 @@ public class ConversationController : Singleton<ConversationController>
 {
     public enum State
     {
+        none,
         LoadingConversation,
         ActorDialogue,
         PostDialogue,
@@ -44,6 +45,12 @@ public class ConversationController : Singleton<ConversationController>
     private void Awake()
     {
         _StateMachine = StateMachine<State>.Initialize(this);
+        _StateMachine.ChangeState(State.none);
+    }
+
+    public bool InConversation()
+    {
+        return !_StateMachine.IsOrWillBeState(State.none);
     }
 
     public void StartConversation(Character_IC ic)
@@ -265,5 +272,7 @@ public class ConversationController : Singleton<ConversationController>
         UpdateCamera(prevSceneCameraPos, prevSceneCameraOrthoSize, convoCamaraUpdateDuration);
         ConversationUiController.Instance.SetActive(false);
         NavigationUiController.Instance.SetActive(true);
+
+        _StateMachine.ChangeState(State.none);
     }
 }

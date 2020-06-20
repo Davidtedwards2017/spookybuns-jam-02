@@ -16,6 +16,8 @@ public class Character_IC : MonoBehaviour
     public float ConversationCameraOrthoSize = 3;
 
     public DialogueModule DialogueModule;
+    public Vector3 HoverScaleAmount = new Vector3(1.05f, 1.05f, 1.0f);
+    public Vector3 DefaultScale = Vector3.one;
     
     // Start is called before the first frame update
     void Start()
@@ -34,6 +36,22 @@ public class Character_IC : MonoBehaviour
     public void OnMouseDown()
     {
         StartConversation();
+    }
+
+    public void OnMouseOver()
+    {
+        if(!ConversationController.Instance.InConversation())
+        {
+            _Renderer.transform.DOScale(HoverScaleAmount, 0.1f);
+        }
+    }
+
+    public void OnMouseExit()
+    {
+        if (!ConversationController.Instance.InConversation())
+        {
+            _Renderer.transform.DOScale(DefaultScale, 0.1f);
+        }
     }
 
     public void StartConversation()

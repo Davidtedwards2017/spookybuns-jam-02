@@ -335,8 +335,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Character: 1
-  Collider: {fileID: 0}
   ConversationCameraAnchor: {fileID: 592572430474079270}
   ConversationDialogueBubbleAnchor: {fileID: 894579214722905385}
   ConversationCameraOrthoSize: 3
   DialogueModule: {fileID: 0}
+  HoverScaleAmount: {x: 1.05, y: 1.05, z: 1}
+  DefaultScale: {x: 1, y: 1, z: 1}
