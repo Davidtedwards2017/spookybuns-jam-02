@@ -1,8 +1,15 @@
 {
 	"collection": [{
 		"id": "clockhead",
-		"dialogues": [
-
+		"dialogues": [{
+				"type": "condition",
+				"id": 1000000,
+				"condition": "endgame=1",
+				"if": [
+					"next:997"
+				],
+				"else": ["next:14"]
+			},
 			{
 				"type": "condition",
 				"id": 14,
@@ -287,7 +294,7 @@
 					"next:5.3",
 					"event:show.demon",
 					"event:show.statue",
-					"event:show.planethead",
+					"event:show.planethead"
 				]
 			},
 			{
@@ -803,7 +810,7 @@
 				"id": "162.1.6",
 				"who": "actor",
 				"value": "How nice for you!",
-				"post": ["event:game.end"]
+				"post": ["next:800"]
 			},
 			{
 				"type": "basic",
@@ -831,6 +838,105 @@
 				"id": "162.2.4",
 				"who": "actor",
 				"value": "I see.",
+				"post": ["next:800"]
+			},
+			{
+				"type": "basic",
+				"id": "800",
+				"who": "actor",
+				"expression": "happy",
+				"value": "Oh my!",
+				"post": ["next:801"]
+			},
+			{
+				"type": "basic",
+				"id": "801",
+				"who": "actor",
+				"expression": "neutral",
+				"value": "Did you see that? I believe that’s your number.",
+				"post": ["next:802"]
+			},
+			{
+				"type": "choice",
+				"id": "802",
+				"who": "player",
+				"options": [{
+						"id": "802.1",
+						"value": "Can I have a second to say goodbye?",
+						"post": [
+							"next:803"
+						]
+					},
+					{
+						"id": "802.2",
+						"value": "Finally!",
+						"post": [
+							"next:806"
+						]
+					}
+				]
+			},
+			{
+				"type": "basic",
+				"id": "803",
+				"who": "player",
+				"value": "Can I have a second to say goodbye?",
+				"post": ["next:803.1"]
+			},
+			{
+				"type": "basic",
+				"id": "803.1",
+				"who": "actor",
+				"value": "That’s a bit strange, but I don’t see why not.",
+				"post": ["next:804"]
+			},
+			{
+				"type": "basic",
+				"id": "804",
+				"who": "actor",
+				"value": "Just come back to me when you’re ready.",
+				"post": ["flag:endgame+1"]
+			},
+			{
+				"type": "basic",
+				"id": "806",
+				"who": "player",
+				"value": "Finally!",
+				"post": ["next:807"]
+			},
+			{
+				"type": "basic",
+				"id": "807",
+				"who": "player",
+				"value": "Get me out of here.",
+				"post": ["next:999"]
+			},
+			{
+				"type": "basic",
+				"id": "999",
+				"who": "actor",
+				"value": "Right this way.",
+				"post": ["event:game.end"]
+			},
+			{
+				"type": "basic",
+				"id": "997",
+				"who": "actor",
+				"value": "Are you ready to go?",
+				"post": ["next:998"]
+			},
+			{
+				"type": "basic",
+				"id": "998",
+				"who": "player",
+				"value": "Yes.",
+				"post": ["next:999"]
+			},
+			{
+				"type": "basic",
+				"id": "999",
+				"who": "actor",
+				"value": "Right this way.",
 				"post": ["event:game.end"]
 			}
 		]

@@ -773,7 +773,7 @@
 				"who": "actor",
 				"expression": "happy",
 				"value": "That says, “hell” darling. My lord, they will let just about anyone have a job these days. Well, toodle-loo!",
-				"post": ["event:hide.statue"]
+				"post": ["event:hide.statue", "flag:grump+10"]
 			},
 			{
 				"type": "basic",
