@@ -140,7 +140,7 @@ public class ConversationController : Singleton<ConversationController>
                 case "happy":
                     CharacterIc.UpdateExpression(GameInfo.Expression.happy);
                     break;
-                case "netural":
+                case "neutral":
                     CharacterIc.UpdateExpression(GameInfo.Expression.neutral);
                     break;
                 default:

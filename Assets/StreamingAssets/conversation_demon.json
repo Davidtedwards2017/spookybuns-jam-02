@@ -32,6 +32,7 @@
 				"type": "basic",
 				"id": "1",
 				"who": "actor",
+				"expression": "neutral",
 				"value": "Hey kid.",
 				"post": [
 					"next:2"
@@ -139,6 +140,7 @@
 				"type": "basic",
 				"id": "3",
 				"who": "actor",
+				"expression": "angry",
 				"value": "Wait, do you work here?",
 				"post": ["next:3.01"]
 			},
@@ -182,6 +184,7 @@
 				"type": "basic",
 				"id": "3.1.3",
 				"who": "actor",
+				"expression": "neutral",
 				"value": "Hah! Of course they did, lazy bureaucrats.",
 				"post": ["next:3.1.4"]
 			},
@@ -252,6 +255,7 @@
 				"type": "basic",
 				"id": "3.2.2",
 				"who": "actor",
+				"expression": "happy",
 				"value": "Oh, finally!",
 				"post": ["next:3.2.3"]
 			},
@@ -259,6 +263,7 @@
 				"type": "basic",
 				"id": "3.2.3",
 				"who": "actor",
+				"expression": "neutral",
 				"value": "Alright lookie here, buddy.",
 				"post": ["next:3.2.4"]
 			},
@@ -280,6 +285,7 @@
 				"type": "basic",
 				"id": "3.2.6",
 				"who": "actor",
+				"expression": "angry",
 				"value": "Oh.",
 				"post": ["next:3.2.7"]
 			},
@@ -294,6 +300,7 @@
 				"type": "basic",
 				"id": "3.2.8",
 				"who": "actor",
+				"expression": "neutral",
 				"value": "What number? Give me that form.",
 				"post": ["next:3.2.9"]
 			},
@@ -365,6 +372,7 @@
 				"type": "basic",
 				"id": "4.1.3",
 				"who": "actor",
+				"expression": "angry",
 				"value": "Uhhhhhhhhhhhggg!",
 				"post": ["next:4.1.4"]
 			},
@@ -372,6 +380,7 @@
 				"type": "basic",
 				"id": "4.1.4",
 				"who": "actor",
+				"expression": "neutral",
 				"value": "Okay. Well. How long could it be before that counter machine ticks back around?",
 				"post": ["next:4.1.5"]
 			},
@@ -407,6 +416,7 @@
 				"type": "basic",
 				"id": "4.1.8",
 				"who": "actor",
+				"expression": "angry",
 				"value": "AHH!",
 				"post": ["next:4.1.9"]
 			},
@@ -421,7 +431,15 @@
 				"type": "basic",
 				"id": "4.1.91",
 				"who": "actor",
-				"value": "…Nothing.",
+				"value": "…",
+				"post": ["next:4.1.912"]
+			},
+			{
+				"type": "basic",
+				"id": "4.1.912",
+				"who": "actor",
+				"expression": "neutral",
+				"value": "Nothing.",
 				"post": ["next:4.1.911"]
 			},
 			{
@@ -429,11 +447,11 @@
 				"id": "4.1.911",
 				"who": "player",
 				"value": "…",
-				"post": ["next:4.1.912"]
+				"post": ["next:4.1.9122"]
 			},
 			{
 				"type": "basic",
-				"id": "4.1.912",
+				"id": "4.1.9122",
 				"who": "actor",
 				"value": "That’s why I’m here. I just can’t do my job.",
 				"post": ["next:4.1.913"]
@@ -449,6 +467,7 @@
 				"type": "basic",
 				"id": "4.1.914",
 				"who": "actor",
+				"expression": "angry",
 				"value": "What?! How- how do you know that?",
 				"post": ["next:4.1.915"]
 			},
@@ -463,6 +482,7 @@
 				"type": "basic",
 				"id": "4.1.916",
 				"who": "actor",
+				"expression": "neutral",
 				"value": "I think I’ve been stuck in here longer than I thought.",
 				"post": ["next:4.1.917"]
 			},
@@ -498,6 +518,7 @@
 				"type": "basic",
 				"id": "4.1.921",
 				"who": "actor",
+				"expression": "angry",
 				"value": "Look, kid, I don’t want to drag you down. I just don’t have it in me anymore.",
 				"post": ["next:4.1.922"]
 			},
@@ -540,6 +561,7 @@
 				"type": "basic",
 				"id": "4.1.927",
 				"who": "actor",
+				"expression": "neutral",
 				"value": "Yes, I’m a demon. Yes, this is some weird waiting room before you move on, or whatever.",
 				"post": ["next:4.1.928"]
 			},
@@ -554,7 +576,7 @@
 				"type": "basic",
 				"id": "4.1.929",
 				"who": "actor",
-				"value": "Calm down! I can’t say for sure if you’re dead",
+				"value": "Calm down! I can’t say for sure if you’re dead.",
 				"post": ["next:4.1.930"]
 			},
 			{
@@ -575,6 +597,7 @@
 				"type": "basic",
 				"id": "4.1.932",
 				"who": "actor",
+				"expression": "angry",
 				"value": "You don’t remember?",
 				"post": ["next:4.1.933"]
 			},
@@ -589,6 +612,7 @@
 				"type": "basic",
 				"id": "4.1.934",
 				"who": "actor",
+				"expression": "neutral",
 				"value": "Eh, that stuff’s just details. From what I can tell, you know who you are.",
 				"post": ["next:4.1.935"]
 			},
@@ -633,6 +657,7 @@
 				"type": "basic",
 				"id": "4.2.3",
 				"who": "actor",
+				"expression": "angry",
 				"value": "Can you go away now?",
 				"post": ["next:4.2.4"]
 			},
@@ -649,6 +674,7 @@
 				"type": "basic",
 				"id": "9.1",
 				"who": "actor",
+				"expression": "neutral",
 				"value": "Weren’t you just here?",
 				"post": ["next:9.1.1"]
 			},
@@ -727,6 +753,7 @@
 				"type": "basic",
 				"id": "9.3.2",
 				"who": "actor",
+				"expression": "angry",
 				"value": "And what did I tell you?",
 				"post": ["next:9.3.3"]
 			},
@@ -740,6 +767,7 @@
 			{
 				"type": "basic",
 				"id": "9.3.4",
+				"expression": "neutral",
 				"who": "actor",
 				"value": "Mhmm.",
 				"post": []
@@ -813,12 +841,21 @@
 				"id": "8.5.22",
 				"who": "player",
 				"value": "Compliment me.",
+				"post": ["next:8.5.23333"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.23333",
+				"who": "actor",
+				"expression": "angry",
+				"value": "…",
 				"post": ["next:8.5.23"]
 			},
 			{
 				"type": "basic",
 				"id": "8.5.23",
 				"who": "actor",
+				"expression": "neutral",
 				"value": "You have a nice…",
 				"post": ["next:8.5.24"]
 			},
@@ -833,6 +870,7 @@
 				"type": "basic",
 				"id": "8.5.25",
 				"who": "actor",
+				"expression": "happy",
 				"value": "Hand.",
 				"post": ["next:8.5.26"]
 			},
@@ -847,6 +885,7 @@
 				"type": "basic",
 				"id": "8.5.27",
 				"who": "actor",
+				"expression": "angry",
 				"value": "Yes. There, now I’m officially the worst demon that’s ever lived.",
 				"post": ["next:8.5.28"]
 			},
@@ -861,6 +900,7 @@
 				"type": "basic",
 				"id": "8.5.29",
 				"who": "actor",
+				"expression": "neutral",
 				"value": "Because I’m nice, yeah, probably.",
 				"post": ["next:8.5.291"]
 			},
@@ -875,6 +915,7 @@
 				"type": "basic",
 				"id": "8.5.292",
 				"who": "actor",
+				"expression": "happy",
 				"value": "Oh… well thanks, kid. That actually means a lot.",
 				"post": ["next:8.5.293"]
 			},
@@ -896,6 +937,7 @@
 				"type": "basic",
 				"id": "8.5.295",
 				"who": "actor",
+				"expression": "neutral",
 				"value": "Ah- nothing. Nothing.",
 				"post": ["next:8.5.296"]
 			},
@@ -938,6 +980,7 @@
 				"type": "basic",
 				"id": "8.5.13",
 				"who": "actor",
+				"expression": "angry",
 				"value": "Look, there’s no such thing.",
 				"post": ["next:8.5.14"]
 			},
@@ -952,6 +995,7 @@
 				"type": "basic",
 				"id": "8.5.15",
 				"who": "actor",
+				"expression": "neutral",
 				"value": "Who knows? Clearly I don’t.",
 				"post": ["next:8.5.16"]
 			},
@@ -973,7 +1017,15 @@
 				"type": "basic",
 				"id": "8.5.18",
 				"who": "actor",
-				"value": "…No",
+				"value": "…",
+				"post": ["next:8.5.1888"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.1888",
+				"who": "actor",
+				"expression": "angry",
+				"value": "No.",
 				"post": ["next:8.5.19"]
 			},
 			{
@@ -987,7 +1039,16 @@
 				"type": "basic",
 				"id": "8.5.191",
 				"who": "actor",
-				"value": " …You don’t.",
+				"expression": "neutral",
+				"value": "…",
+				"post": ["next:8.5.1911"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.1911",
+				"who": "actor",
+				"expression": "angry",
+				"value": "You don’t.",
 				"post": ["next:8.5.192"]
 			},
 			{
@@ -1001,6 +1062,7 @@
 				"type": "basic",
 				"id": "8.5.193",
 				"who": "actor",
+				"expression": "neutral",
 				"value": "You already guessed, didn’t you?",
 				"post": ["next:8.5.194"]
 			},
@@ -1022,6 +1084,14 @@
 				"type": "basic",
 				"id": "8.5.196",
 				"who": "actor",
+				"value": "...",
+				"post": ["next:8.5.19666"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.19666",
+				"who": "actor",
+				"expression": "neutral",
 				"value": "A couple kids were playing too close to a river. I was supposed to push a few in.",
 				"post": ["next:8.5.197"]
 			},
@@ -1043,6 +1113,14 @@
 				"type": "basic",
 				"id": "8.5.199",
 				"who": "actor",
+				"value": "…",
+				"post": ["next:8.5.19901"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.19901",
+				"who": "actor",
+				"expression": "angry",
 				"value": "I almost did it but…",
 				"post": ["next:8.5.1990"]
 			},
@@ -1057,14 +1135,23 @@
 				"type": "basic",
 				"id": "8.5.1991",
 				"who": "actor",
+				"expression": "neutral",
 				"value": "They were crying.",
+				"post": ["next:8.5.199222"]
+			},
+			{
+				"type": "basic",
+				"id": "8.5.199222",
+				"who": "actor",
+				"value": "…",
 				"post": ["next:8.5.1992"]
 			},
 			{
 				"type": "basic",
 				"id": "8.5.1992",
 				"who": "actor",
-				"value": "…I created a dog to come pull them all out of the river.",
+				"expression": "angry",
+				"value": "I created a dog to come pull them all out of the river.",
 				"post": ["next:8.5.1993"]
 			},
 			{
@@ -1099,6 +1186,7 @@
 				"type": "basic",
 				"id": "8.5.1997",
 				"who": "actor",
+				"expression": "neutral",
 				"value": "Anyway, they brought the dog home and it became a damn legend.",
 				"post": ["next:8.5.1998"]
 			},
@@ -1120,6 +1208,7 @@
 				"type": "basic",
 				"id": "8.5.19990",
 				"who": "actor",
+				"expression": "angry",
 				"value": "DOG TOWN! I mean come on, it isn’t even a good name!",
 				"post": ["next:8.5.19991"]
 			},
@@ -1134,6 +1223,7 @@
 				"type": "basic",
 				"id": "8.5.19992",
 				"who": "actor",
+				"expression": "neutral",
 				"value": "Not if you don’t want anyone to notice the demon dog you conjured.",
 				"post": ["next:8.5.19993"]
 			},
@@ -1162,6 +1252,7 @@
 				"type": "basic",
 				"id": "8.5.19996",
 				"who": "actor",
+				"expression": "angry",
 				"value": "Once again, how would I know? I didn’t even know there were FORMS. Or NUMBERS.",
 				"post": ["next:8.5.19997"]
 			},
@@ -1183,6 +1274,7 @@
 				"type": "basic",
 				"id": "8.5.199990",
 				"who": "actor",
+				"expression": "neutral",
 				"value": "Look, kid. All I can say is this:",
 				"post": ["next:8.5.199991"]
 			},
@@ -1239,6 +1331,7 @@
 				"type": "basic",
 				"id": "7.1",
 				"who": "actor",
+				"expression": "neutral",
 				"value": "See you on the other side, kid.",
 				"post": []
 			}
