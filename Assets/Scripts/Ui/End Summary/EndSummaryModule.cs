@@ -19,6 +19,7 @@ public class EndSummaryModule : Module
     {
         Initialize(EndSummaryUiController.Instance.Asset);
         Animator.SetBool("visible", true);
+        ProceedButton.animator.SetBool("visible", true);
         base.OnActivated();
     }
        

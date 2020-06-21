@@ -8,6 +8,11 @@ public static class ConditionParser
 {
     public static bool ProcessConditionalStatement(string conditionalStatement)
     {
+        if (string.IsNullOrEmpty(conditionalStatement))
+        {
+            return true;
+        }
+
         bool result = true;
         var statements = SplitAndStatements(conditionalStatement);
         foreach (var statement in statements)

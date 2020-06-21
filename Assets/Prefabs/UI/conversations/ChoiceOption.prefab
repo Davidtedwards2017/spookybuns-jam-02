@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 366.25, y: 0}
+  m_AnchoredPosition: {x: 360.31845, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3755254580313636360
@@ -133,7 +133,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 365.7906, y: 0}
+  m_AnchoredPosition: {x: 359.7002, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5133903, y: 0.5}
 --- !u!222 &4212796556685034928
@@ -245,7 +245,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3c508d0f20703542b2253d2b2fad81d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Active: 0
   OptionData:
     Id: 
     Value: 
@@ -377,7 +376,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 2.5
 --- !u!95 &6702072816606677888
 Animator:
   serializedVersion: 3
