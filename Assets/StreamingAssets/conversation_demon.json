@@ -329,7 +329,14 @@
 				"type": "basic",
 				"id": "4",
 				"who": "actor",
-				"value": "I’m number… six.",
+				"value": "I’m number…",
+				"post": ["next:4.012"]
+			},
+			{
+				"type": "basic",
+				"id": "4.012",
+				"who": "actor",
+				"value": "...six.",
 				"post": ["next:4.01"]
 			},
 			{
@@ -816,7 +823,7 @@
 						"id": "8.4.2",
 						"value": "I’m freaking out and I was hoping you could help.",
 						"post": [
-							"next:8.5.2",
+							"next:8.5.1",
 							"flag:grump+1"
 						]
 					}

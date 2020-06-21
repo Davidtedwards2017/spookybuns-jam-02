@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class TextTyper : MonoBehaviour
 {
     private Text _TextArea;
-    private float TimePerCharacter = 0.035f;
+    private float TimePerCharacter = 0.032f;
 
     private List<string> Tags;
     int substringLength = 1;
