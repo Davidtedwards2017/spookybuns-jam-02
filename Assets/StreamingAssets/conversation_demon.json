@@ -150,7 +150,7 @@
 				"who": "player",
 				"options": [{
 						"id": "3.1",
-						"value": "Oh, no. The receptionist clock-person just asked me to bring these to you.",
+						"value": "Oh, no.",
 						"post": [
 							"next:3.1.1",
 							"flag:positive+1"
@@ -170,7 +170,14 @@
 				"type": "basic",
 				"id": "3.1.1",
 				"who": "player",
-				"value": "Oh, no. The receptionist clock-person just asked me to bring these to you.",
+				"value": "Oh, no.",
+				"post": ["next:3.1.2444"]
+			},
+			{
+				"type": "basic",
+				"id": "3.1.2444",
+				"who": "player",
+				"value": "The receptionist clock-person just asked me to bring these to you.",
 				"post": ["next:3.1.2"]
 			},
 			{
@@ -329,7 +336,14 @@
 				"type": "basic",
 				"id": "4",
 				"who": "actor",
-				"value": "I’m number… six.",
+				"value": "I’m number…",
+				"post": ["next:4.012"]
+			},
+			{
+				"type": "basic",
+				"id": "4.012",
+				"who": "actor",
+				"value": "...six.",
 				"post": ["next:4.01"]
 			},
 			{
@@ -650,7 +664,7 @@
 				"type": "basic",
 				"id": "4.2.2",
 				"who": "actor",
-				"value": "No it’s probably not.",
+				"value": "No, it’s probably not.",
 				"post": ["next:4.2.3"]
 			},
 			{
@@ -808,7 +822,7 @@
 						"id": "8.4.1",
 						"value": "That’s it. I wanted to tell you I did it.",
 						"post": [
-							"next:8.5.1",
+							"next:8.5.2",
 							"flag:positive+1"
 						]
 					},
@@ -816,7 +830,7 @@
 						"id": "8.4.2",
 						"value": "I’m freaking out and I was hoping you could help.",
 						"post": [
-							"next:8.5.2",
+							"next:8.5.1",
 							"flag:grump+1"
 						]
 					}
@@ -1003,7 +1017,7 @@
 				"type": "basic",
 				"id": "8.5.16",
 				"who": "player",
-				"value": "You should, you’re a literal demon? Don’t you work for the devil?",
+				"value": "You should, you’re a literal demon. Don’t you work for the devil?",
 				"post": ["next:8.5.17"]
 			},
 			{

@@ -735,7 +735,7 @@
 				"type": "basic",
 				"id": "9.3.3",
 				"who": "player",
-				"value": "You really don’t remember me, do you? I was here just a second ago?",
+				"value": "You really don’t remember me, do you? I was here just a second ago.",
 				"post": ["next:9.3.4"]
 			},
 			{
@@ -773,7 +773,7 @@
 				"who": "actor",
 				"expression": "happy",
 				"value": "That says, “hell” darling. My lord, they will let just about anyone have a job these days. Well, toodle-loo!",
-				"post": ["event:hide.statue", "flag:grump+10"]
+				"post": ["event:hide.statue", "flag:grump+10", "flag:positive-3"]
 			},
 			{
 				"type": "basic",
