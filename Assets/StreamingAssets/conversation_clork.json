@@ -1,8 +1,15 @@
 {
 	"collection": [{
 		"id": "clockhead",
-		"dialogues": [
-
+		"dialogues": [{
+				"type": "condition",
+				"id": 1000000,
+				"condition": "endgame=1",
+				"if": [
+					"next:997"
+				],
+				"else": ["next:14"]
+			},
 			{
 				"type": "condition",
 				"id": 14,
@@ -25,15 +32,6 @@
 				"type": "condition",
 				"id": 10,
 				"condition": "pforms=2",
-				"if": [
-					"next:12"
-				],
-				"else": ["next:20"]
-			},
-			{
-				"type": "condition",
-				"id": 20,
-				"condition": "pforms=1&&bonus=1",
 				"if": [
 					"next:12"
 				],
@@ -71,6 +69,7 @@
 				"id": "1",
 				"who": "actor",
 				"value": "Welcome back!",
+				"expression": "happy",
 				"post": [
 					"event:hide.demon",
 					"event:hide.statue",
@@ -106,12 +105,22 @@
 				"who": "player",
 				"value": "Oh, thanks. Sorry, but could you tell me where I am?",
 				"post": [
+					"next:2.1.29"
+				]
+			},
+			{
+				"type": "basic",
+				"id": "2.1.29",
+				"who": "actor",
+				"value": "…",
+				"post": [
 					"next:2.1.2"
 				]
 			},
 			{
 				"type": "basic",
 				"id": "2.1.2",
+				"expression": "neutral",
 				"who": "actor",
 				"value": "Please fill out these forms and take a number. Someone will be with you shortly.",
 				"post": [
@@ -124,6 +133,15 @@
 				"who": "player",
 				"value": "Will that someone answer my questions.",
 				"post": [
+					"next:2.1.41"
+				]
+			},
+			{
+				"type": "basic",
+				"id": "2.1.41",
+				"who": "actor",
+				"value": "...",
+				"post": [
 					"next:2.1.4"
 				]
 			},
@@ -131,6 +149,7 @@
 				"type": "basic",
 				"id": "2.1.4",
 				"who": "actor",
+				"expression": "happy",
 				"value": "Sure!",
 				"post": [
 					"flag:c1nice+1"
@@ -141,6 +160,13 @@
 				"id": "2.2.1",
 				"who": "player",
 				"value": "What do you mean, 'Welcome back!'?",
+				"post": ["next:2.2.21"]
+			},
+			{
+				"type": "basic",
+				"id": "2.2.21",
+				"who": "actor",
+				"value": "...",
 				"post": ["next:2.2.2"]
 			},
 			{
@@ -196,6 +222,7 @@
 				"type": "basic",
 				"id": "2.2.9",
 				"who": "actor",
+				"expression": "neutral",
 				"value": "Please fill out these forms and take a number. Someone will be with you shortly.",
 				"post": ["next:2.2.91"]
 			},
@@ -231,6 +258,7 @@
 				"type": "basic",
 				"id": "4.2",
 				"who": "actor",
+				"expression": "happy",
 				"value": "That makes sense.",
 				"post": ["next:4.3"]
 			},
@@ -245,6 +273,7 @@
 				"type": "basic",
 				"id": "5",
 				"who": "actor",
+				"expression": "happy",
 				"value": "Silly me! Must be getting a bit rusty.",
 				"post": ["next:5.1"]
 			},
@@ -259,12 +288,13 @@
 				"type": "basic",
 				"id": "5.2",
 				"who": "actor",
+				"expression": "neutral",
 				"value": "It's clock humor!",
 				"post": [
 					"next:5.3",
 					"event:show.demon",
 					"event:show.statue",
-					"event:show.planethead",
+					"event:show.planethead"
 				]
 			},
 			{
@@ -307,6 +337,7 @@
 				"type": "basic",
 				"id": "6.1.3",
 				"who": "actor",
+				"expression": "neutral",
 				"value": "Do an old analog a favor and pass those forms on to the others waiting just over there for me please.",
 				"post": ["next:6.1.4"]
 			},
@@ -315,7 +346,7 @@
 				"id": "6.1.4",
 				"who": "player",
 				"value": "Okay, no problem.",
-				"post": ["flag:bonus+1"]
+				"post": ["flag:pforms+1"]
 			},
 			{
 				"type": "basic",
@@ -328,6 +359,7 @@
 				"type": "basic",
 				"id": "6.2.2",
 				"who": "actor",
+				"expression": "happy",
 				"value": "Perhaps not.",
 				"post": ["next:6.2.3"]
 			},
@@ -357,12 +389,13 @@
 				"id": "6.2.6",
 				"who": "actor",
 				"value": "Yes.",
-				"post": ["flag:bonus+1"]
+				"post": ["flag:pforms+1"]
 			},
 			{
 				"type": "basic",
 				"id": "7.1",
 				"who": "actor",
+				"expression": "happy",
 				"value": "Welcome back!",
 				"post": ["next:7.2"]
 			},
@@ -377,6 +410,7 @@
 				"type": "basic",
 				"id": "7.3",
 				"who": "actor",
+				"expression": "neutral",
 				"value": "Give those extra forms to the three other beings in this room.",
 				"post": ["next:7.4"]
 			},
@@ -423,6 +457,7 @@
 				"type": "basic",
 				"id": "8.2.4",
 				"who": "actor",
+				"expression": "angry",
 				"value": "Yes, you are really dead.",
 				"post": []
 			},
@@ -430,6 +465,7 @@
 				"type": "basic",
 				"id": "12",
 				"who": "actor",
+				"expression": "happy",
 				"value": "Welcome back!",
 				"post": ["next:12.1"]
 			},
@@ -444,6 +480,7 @@
 				"type": "basic",
 				"id": "12.2",
 				"who": "actor",
+				"expression": "angry",
 				"value": "And how many forms were there?",
 				"post": ["next:12.3"]
 			},
@@ -473,12 +510,20 @@
 				"id": "12.4",
 				"who": "player",
 				"value": "Oh, I guess there were two more",
+				"post": ["next:12.411"]
+			},
+			{
+				"type": "basic",
+				"id": "12.411",
+				"who": "actor",
+				"value": "…",
 				"post": ["next:12.41"]
 			},
 			{
 				"type": "basic",
 				"id": "12.41",
 				"who": "actor",
+				"expression": "neutral",
 				"value": "If you wouldn’t mind…",
 				"post": ["next:12.42"]
 			},
@@ -500,6 +545,7 @@
 				"type": "basic",
 				"id": "12.61",
 				"who": "actor",
+				"expression": "neutral",
 				"value": "Really? One form?",
 				"post": ["next:12.62"]
 			},
@@ -514,6 +560,7 @@
 				"type": "basic",
 				"id": "12.63",
 				"who": "actor",
+				"expression": "happy",
 				"value": "Okay! Please take a seat and your number will be called shortly.",
 				"post": []
 			},
@@ -521,6 +568,7 @@
 				"type": "basic",
 				"id": "13",
 				"who": "actor",
+				"expression": "happy",
 				"value": "Welcome back!",
 				"post": ["next:13.1"]
 			},
@@ -553,6 +601,7 @@
 				"type": "basic",
 				"id": "13.41",
 				"who": "actor",
+				"expression": "angry",
 				"value": "…",
 				"post": ["next:13.42"]
 			},
@@ -588,6 +637,7 @@
 				"type": "basic",
 				"id": "13.46",
 				"who": "actor",
+				"expression": "angry",
 				"value": "Hmm…",
 				"post": []
 			},
@@ -602,6 +652,7 @@
 				"type": "basic",
 				"id": "13.61",
 				"who": "actor",
+				"expression": "neutral",
 				"value": "You still have one extra form.",
 				"post": ["next:13.62"]
 			},
@@ -616,12 +667,35 @@
 				"type": "basic",
 				"id": "13.63",
 				"who": "actor",
+				"expression": "angry",
 				"value": "Didn’t I ask you to give out three forms?",
 				"post": ["next:13.64"]
 			},
 			{
-				"type": "basic",
+				"type": "choice",
 				"id": "13.64",
+				"who": "player",
+				"options": [{
+						"id": "40.1",
+						"value": "No.",
+						"post": [
+							"next:13.642",
+							"flag:grump+1"
+						]
+					},
+					{
+						"id": "40.2",
+						"value": "I don’t remember.",
+						"post": [
+							"next:13.641",
+							"flag:neutral+1"
+						]
+					}
+				]
+			},
+			{
+				"type": "basic",
+				"id": "13.641",
 				"who": "player",
 				"value": "I don’t remember.",
 				"post": ["next:13.65"]
@@ -630,6 +704,27 @@
 				"type": "basic",
 				"id": "13.65",
 				"who": "actor",
+				"value": "Hmm… maybe you need to be rewound.",
+				"post": ["next:13.655"]
+			},
+			{
+				"type": "basic",
+				"id": "13.655",
+				"who": "actor",
+				"value": "Hand out the last form, please.",
+				"post": []
+			},
+			{
+				"type": "basic",
+				"id": "13.642",
+				"who": "player",
+				"value": "No.",
+				"post": ["next:13.6422"]
+			},
+			{
+				"type": "basic",
+				"id": "13.6422",
+				"who": "actor",
 				"value": "Hmm… one moment please.",
 				"post": ["event:game.restart"]
 			},
@@ -637,6 +732,7 @@
 				"type": "basic",
 				"id": "16",
 				"who": "actor",
+				"expression": "happy",
 				"value": "Welcome back!",
 				"post": [
 					"next:162"
@@ -714,7 +810,7 @@
 				"id": "162.1.6",
 				"who": "actor",
 				"value": "How nice for you!",
-				"post": ["event:game.end"]
+				"post": ["next:800"]
 			},
 			{
 				"type": "basic",
@@ -742,6 +838,105 @@
 				"id": "162.2.4",
 				"who": "actor",
 				"value": "I see.",
+				"post": ["next:800"]
+			},
+			{
+				"type": "basic",
+				"id": "800",
+				"who": "actor",
+				"expression": "happy",
+				"value": "Oh my!",
+				"post": ["next:801"]
+			},
+			{
+				"type": "basic",
+				"id": "801",
+				"who": "actor",
+				"expression": "neutral",
+				"value": "Did you see that? I believe that’s your number.",
+				"post": ["next:802"]
+			},
+			{
+				"type": "choice",
+				"id": "802",
+				"who": "player",
+				"options": [{
+						"id": "802.1",
+						"value": "Can I have a second to say goodbye?",
+						"post": [
+							"next:803"
+						]
+					},
+					{
+						"id": "802.2",
+						"value": "Finally!",
+						"post": [
+							"next:806"
+						]
+					}
+				]
+			},
+			{
+				"type": "basic",
+				"id": "803",
+				"who": "player",
+				"value": "Can I have a second to say goodbye?",
+				"post": ["next:803.1"]
+			},
+			{
+				"type": "basic",
+				"id": "803.1",
+				"who": "actor",
+				"value": "That’s a bit strange, but I don’t see why not.",
+				"post": ["next:804"]
+			},
+			{
+				"type": "basic",
+				"id": "804",
+				"who": "actor",
+				"value": "Just come back to me when you’re ready.",
+				"post": ["flag:endgame+1"]
+			},
+			{
+				"type": "basic",
+				"id": "806",
+				"who": "player",
+				"value": "Finally!",
+				"post": ["next:807"]
+			},
+			{
+				"type": "basic",
+				"id": "807",
+				"who": "player",
+				"value": "Get me out of here.",
+				"post": ["next:999"]
+			},
+			{
+				"type": "basic",
+				"id": "999",
+				"who": "actor",
+				"value": "Right this way.",
+				"post": ["event:game.end"]
+			},
+			{
+				"type": "basic",
+				"id": "997",
+				"who": "actor",
+				"value": "Are you ready to go?",
+				"post": ["next:998"]
+			},
+			{
+				"type": "basic",
+				"id": "998",
+				"who": "player",
+				"value": "Yes.",
+				"post": ["next:999"]
+			},
+			{
+				"type": "basic",
+				"id": "999",
+				"who": "actor",
+				"value": "Right this way.",
 				"post": ["event:game.end"]
 			}
 		]

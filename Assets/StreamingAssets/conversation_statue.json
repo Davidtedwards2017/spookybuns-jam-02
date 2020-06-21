@@ -32,6 +32,7 @@
 				"type": "basic",
 				"id": "1",
 				"who": "actor",
+				"expression": "neutral",
 				"value": "Why hello, sweet child! How can I help you today?",
 				"post": [
 					"next:2"
@@ -72,6 +73,7 @@
 				"type": "basic",
 				"id": "2.1.2",
 				"who": "actor",
+				"expression": "happy",
 				"value": "OH goody! I’ve been waiting for these. Can you believe I’ve been waiting for a whole FIVE minutes? I know statues are supposed to stay put, but that was excruciating!",
 				"post": [
 					"next:3"
@@ -88,6 +90,7 @@
 				"type": "basic",
 				"id": "2.2.2",
 				"who": "actor",
+				"expression": "angry",
 				"value": "Well aren’t you rude, speaking like that in front of a bonafide work of ART! The nerve of you servants, making me wait for FIVE long minutes before even considering coming over to greet me and you do so in such a MANNER!",
 				"post": ["next:3"]
 			},
@@ -95,7 +98,16 @@
 				"type": "basic",
 				"id": "3",
 				"who": "actor",
-				"value": "…You’re still here?",
+				"expression": "idle",
+				"value": "…",
+				"post": ["next:3.091"]
+			},
+			{
+				"type": "basic",
+				"id": "3.091",
+				"who": "actor",
+				"expression": "angry",
+				"value": "You’re still here?",
 				"post": ["next:3.01"]
 			},
 			{
@@ -131,6 +143,7 @@
 				"type": "basic",
 				"id": "3.1.2",
 				"who": "actor",
+				"expression": "happy",
 				"value": " A-ahahaha! You don’t expect me to fill out paperwork, do you? Oh please, darling, it’s clear you don’t know the first thing about who or what you are talking to. Do you honestly think I’d lower myself so much as to fill out a paper?",
 				"post": ["next:3.1.3"]
 			},
@@ -145,7 +158,16 @@
 				"type": "basic",
 				"id": "3.1.4",
 				"who": "actor",
+				"expression": "angry",
 				"value": "Here’s what we’ll do, darling. YOU are going to fill them out and do your job, this is your job, isn’t it? And I’m not going to hear another silly word. Now, where to begin…",
+				"post": ["next:3.1445"]
+			},
+			{
+				"type": "basic",
+				"id": "3.1445",
+				"who": "actor",
+				"expression": "neutral",
+				"value": "Now, where to begin…",
 				"post": ["next:4"]
 			},
 			{
@@ -166,7 +188,8 @@
 				"type": "basic",
 				"id": "4",
 				"who": "actor",
-				"value": "I was erected in the year 100, it was lovely then, springtime, I remember it like it was yesterday.",
+				"expression": "happy",
+				"value": "I was erected in the year 1666, it was lovely then, springtime, I remember it like it was yesterday.",
 				"post": ["next:4.01"]
 			},
 			{
@@ -209,6 +232,7 @@
 				"type": "basic",
 				"id": "4.1.3",
 				"who": "actor",
+				"expression": "angry",
 				"value": "Well then don’t, dear. As I was saying.",
 				"post": ["next:4.1.4"]
 			},
@@ -216,6 +240,7 @@
 				"type": "basic",
 				"id": "4.1.4",
 				"who": "actor",
+				"expression": "happy",
 				"value": "AHA~ yes, that city grew and grew and I was able to watch with my splendid eyes, have you seen them? I won’t mind if you take a closer look. I am quite tall, but I’ll give you a moment to find a um, chair or a table to climb upon. I certainly don’t mind giving a bit of culture back to you uh… people.",
 				"post": ["next:4.1.5"]
 			},
@@ -258,6 +283,7 @@
 				"type": "basic",
 				"id": "4.1.9",
 				"who": "actor",
+				"expression": "neutral",
 				"value": "Now where do you suppose those stairs go?",
 				"post": ["next:4.1.91"]
 			},
@@ -272,7 +298,8 @@
 				"type": "basic",
 				"id": "4.1.911",
 				"who": "actor",
-				"value": "Are there other doors I could be referring to? My goodness, I believe you may be a bit worse for wear, dear. Oh my, you aren’t contagious, are you? Perhaps if you speak to the servant over there they will supply you with a mask to keep you from spreading whatever that is, in case it’s catchy. You never know what will damage as fine a bodice as this, you know!",
+				"expression": "angry",
+				"value": "Are there other stairs I could be referring to? My goodness, I believe you may be a bit worse for wear, dear. Oh my, you aren’t contagious, are you? Perhaps if you speak to the servant over there they will supply you with a mask to keep you from spreading whatever that is, in case it’s catchy. You never know what will damage as fine a bodice as this, you know!",
 				"post": ["next:4.1.912"]
 			},
 			{
@@ -286,6 +313,7 @@
 				"type": "basic",
 				"id": "4.1.913",
 				"who": "actor",
+				"expression": "neutral",
 				"value": "Well you’re dead, aren’t you? So you never do know, whatever it was that led you to your untimely demise may still be lingering in that fleshy series of tubes you have making up your squishy form.",
 				"post": ["next:4.1.914"]
 			},
@@ -314,6 +342,7 @@
 				"type": "basic",
 				"id": "4.1.917",
 				"who": "actor",
+				"expression": "angry",
 				"value": "Excuse me? I’m not dead! How preposterous. The- the nerve! EXCUSE ME, CONCIERGE! ",
 				"post": ["next:4.1.918"]
 			},
@@ -321,6 +350,7 @@
 				"type": "basic",
 				"id": "4.1.918",
 				"who": "actor",
+				"expression": "neutral",
 				"value": "The service here is just dreadful.",
 				"post": ["next:4.1.919"]
 			},
@@ -342,6 +372,7 @@
 				"type": "basic",
 				"id": "4.2.2",
 				"who": "actor",
+				"expression": "angry",
 				"value": "!",
 				"post": ["next:4.2.3"]
 			},
@@ -370,6 +401,7 @@
 				"type": "basic",
 				"id": "4.2.6",
 				"who": "actor",
+				"expression": "idle",
 				"value": "Some grand award this turned out to be.",
 				"post": ["next:4.2.7"]
 			},
@@ -384,6 +416,7 @@
 				"type": "basic",
 				"id": "5",
 				"who": "actor",
+				"expression": "happy",
 				"value": "Well clearly the fellow upstairs has finally caught up with the rest of the world and noticed just how splendid I am! I’m a work of art. I’m being promoted, I’m sure. I’ll probably be enshrined! They’ll name children after me!",
 				"post": ["next:5.01"]
 			},
@@ -420,6 +453,7 @@
 				"type": "basic",
 				"id": "5.1.2",
 				"who": "actor",
+				"expression": "neutral",
 				"value": "Of course it does! And can you blame them?",
 				"post": ["next:5.1.3"]
 			},
@@ -434,7 +468,16 @@
 				"type": "basic",
 				"id": "5.1.4",
 				"who": "actor",
+				"expression": "angry",
 				"value": "YOU? Ah-ahaha!",
+				"post": ["next:5.1.550"]
+			},
+			{
+				"type": "basic",
+				"id": "5.1.550",
+				"who": "actor",
+				"expression": "neutral",
+				"value": "...",
 				"post": ["next:5.1.5"]
 			},
 			{
@@ -455,6 +498,7 @@
 				"type": "basic",
 				"id": "5.1.61",
 				"who": "actor",
+				"expression": "angry",
 				"value": "What was that?",
 				"post": ["next:5.1.7"]
 			},
@@ -469,6 +513,7 @@
 				"type": "basic",
 				"id": "5.1.8",
 				"who": "actor",
+				"expression": "neutral",
 				"value": "Please, I don’t need luck.",
 				"post": ["flag:sform+1",
 					"flag:pforms+1","flag:bonus+1"]
@@ -526,6 +571,7 @@
 				"type": "basic",
 				"id": "5.2.8",
 				"who": "actor",
+				"expression": "angry",
 				"value": "Knocked me… how dare you!",
 				"post": ["next:5.2.9"]
 			},
@@ -540,6 +586,7 @@
 				"type": "basic",
 				"id": "5.2.91",
 				"who": "actor",
+				"expression": "neutral",
 				"value": "But I would remember if something so horrid had happened… s-surely.",
 				"post": ["next:5.2.92"]
 			},
@@ -568,6 +615,7 @@
 				"type": "basic",
 				"id": "5.2.95",
 				"who": "actor",
+				"expression": "happy",
 				"value": "Yes, oh my, and for me to not see it sooner. Why, how unkind of me, and so very off-brand, if I do say so myself. You see, dear. You are projecting your own fears and grumpy thoughts onto ME. Now, I don’t blame you, who wouldn’t want to see themselves in me, but it’s so very unhealthy a thing to do.",
 				"post": ["next:5.2.96"]
 			},
@@ -582,6 +630,7 @@
 				"type": "basic",
 				"id": "5.2.96",
 				"who": "actor",
+				"expression": "idle",
 				"value": "I know things are hard right now, but you can’t take your self hatred and push it on others, it’s just not right.",
 				"post": ["next:5.2.97"]
 			},
@@ -606,6 +655,7 @@
 				"id": "9.1",
 				"who": "actor",
 				"value": "Well hello there, are you here to bring me upstairs?",
+				"expression": "happy",
 				"post": ["next:9.1.1"]
 			},
 			{
@@ -648,6 +698,7 @@
 				"type": "basic",
 				"id": "9.2.3",
 				"who": "actor",
+				"expression": "angry",
 				"value": "Well you must be mistaken! I would never forget a conversation, how insulting!",
 				"post": ["next:9.2.4"]
 			},
@@ -676,6 +727,7 @@
 				"type": "basic",
 				"id": "9.3.2",
 				"who": "actor",
+				"expression": "happy",
 				"value": "Oh lovely, I’m very excited, you know. This has been a long time coming, and I think you’ll be quite impressed by how much I’ve positively impacted those in my presence in the many years I’ve been servicing the entire world!",
 				"post": ["next:9.3.3"]
 			},
@@ -690,6 +742,7 @@
 				"type": "basic",
 				"id": "9.3.4",
 				"who": "actor",
+				"expression": "neutral",
 				"value": "What are you blathering about, aren’t you supposed to be bringing me to my grand award ceremony?",
 				"post": ["next:9.3.41"]
 			},
@@ -718,13 +771,15 @@
 				"type": "basic",
 				"id": "9.3.7",
 				"who": "actor",
+				"expression": "happy",
 				"value": "That says, “hell” darling. My lord, they will let just about anyone have a job these days. Well, toodle-loo!",
-				"post": []
+				"post": ["event:hide.statue", "flag:grump+10"]
 			},
 			{
 				"type": "basic",
 				"id": "8.1",
 				"who": "actor",
+				"expression": "neutral",
 				"value": "Ah, there you are!",
 				"post": ["next:8.2"]
 			},
@@ -753,6 +808,7 @@
 				"type": "basic",
 				"id": "8.5",
 				"who": "actor",
+				"expression": "angry",
 				"value": "Why are you just standing there? Where are my greens?",
 				"post": ["next:8.6"]
 			},
@@ -774,14 +830,16 @@
 				"type": "basic",
 				"id": "8.8",
 				"who": "actor",
-				"value": "...",
+				"value": "My goodness, the service here is just dreadful.",
+				"expression": "neutral",
 				"post": ["flag:sform+1"]
 			},
 			{
 				"type": "basic",
 				"id": "7.1",
 				"who": "actor",
-				"value": "Hello! Please take this time to marvel in my marble.",
+				"expression": "neutral",
+				"value": "My goodness, the service here is just dreadful.",
 				"post": []
 			}
 
