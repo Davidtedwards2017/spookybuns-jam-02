@@ -167,7 +167,7 @@ MonoBehaviour:
     Volume: 0.3
   TitleScreenUi: {fileID: 285163960551202562}
   FadeUi: {fileID: 1319580692}
-  StartingConversationCharacter: 4
+  StartingConversationCharacter: 0
   Character_ICs: []
 --- !u!4 &200493521
 Transform:

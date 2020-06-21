@@ -405,7 +405,7 @@
 				"type": "basic",
 				"id": "9.2.998",
 				"who": "player",
-				"value": "What, this weird waiting room? It’s pretty obvious this is limbo, you know.",
+				"value": "What, in this weird waiting room? It’s pretty obvious this is limbo, you know.",
 				"post": ["next:9.2.999"]
 			},
 			{
