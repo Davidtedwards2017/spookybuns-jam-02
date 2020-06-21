@@ -42,6 +42,9 @@ public class ConversationController : Singleton<ConversationController>
 
     private Dictionary<string, UnityEvent> _Events = new Dictionary<string, UnityEvent>();
 
+    public AudioSource MusicAudioSource;
+    public float IdleMusicPitch = 1;
+
     private void Awake()
     {
         _StateMachine = StateMachine<State>.Initialize(this);
@@ -113,6 +116,7 @@ public class ConversationController : Singleton<ConversationController>
 
     private IEnumerator ActorDialogue_Enter()
     {
+        SetMusicPitch(CharacterIc.ConversationMusicPitch);
         UpdateCamera(convoSceneCameraPos, convoSceneCameraOrthoSize, convoCamaraUpdateDuration);
 
         ConversationUiController.Instance.SetActive(true);
@@ -122,7 +126,7 @@ public class ConversationController : Singleton<ConversationController>
         {
             var dialogue = (IDialogueNode)_CurrentNode;
             UpdateActorExpression(dialogue);
-            yield return ConversationUiController.Instance.PerformDialogue(dialogue);
+            yield return ConversationUiController.Instance.PerformDialogue(dialogue, CharacterIc);
         }
 
         _StateMachine.ChangeState(State.PostDialogue);
@@ -140,7 +144,7 @@ public class ConversationController : Singleton<ConversationController>
                 case "happy":
                     CharacterIc.UpdateExpression(GameInfo.Expression.happy);
                     break;
-                case "netural":
+                case "neutral":
                     CharacterIc.UpdateExpression(GameInfo.Expression.neutral);
                     break;
                 default:
@@ -273,6 +277,12 @@ public class ConversationController : Singleton<ConversationController>
         ConversationUiController.Instance.SetActive(false);
         NavigationUiController.Instance.SetActive(true);
 
+        SetMusicPitch(IdleMusicPitch);
         _StateMachine.ChangeState(State.none);
+    }
+
+    private void SetMusicPitch(float value)
+    {
+        MusicAudioSource.DOPitch(value, 0.4f);
     }
 }

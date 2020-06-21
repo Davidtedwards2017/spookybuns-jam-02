@@ -18,7 +18,7 @@ namespace Data
         {
             Id = token.Value<string>("id");
             Description = token.Value<string>("description");
-            Condition = token.Value<string>("Condition");
+            Condition = token.Value<string>("condition");
 
             var imageUrl = token.Value<string>("imageurl");
 

@@ -25,7 +25,7 @@ public class ConversationModule : Module
         base.OnDeactivated();
     }
 
-    public IEnumerator PerformDialogue(IDialogueNode dialogue)
+    public IEnumerator PerformDialogue(IDialogueNode dialogue, Character_IC ic)
     {
         if(dialogue is BasicDialogueEntry)
         {
@@ -33,10 +33,11 @@ public class ConversationModule : Module
             switch (basicDialogue.Who)
             {
                 case "actor":
-                    yield return ActorDialogueModule.PerformDialogue(basicDialogue);
+                    yield return ActorDialogueModule.PerformDialogue(basicDialogue, ic.TypingSounds);
                     break;
                 case "player":
-                    yield return PlayerDialogueModule.PerformDialogue(basicDialogue);
+                    yield return PlayerDialogueModule.PerformDialogue(basicDialogue,
+                        MasterGameStateController.Instance.PlayerTypingSounds);
                     break;
             }
         }

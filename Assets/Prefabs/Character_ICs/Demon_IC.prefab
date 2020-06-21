@@ -161,7 +161,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7466251665715788761}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.1, y: 3.38, z: -10}
+  m_LocalPosition: {x: 4.1, y: 3.14, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8652883415815805033}
@@ -337,7 +337,17 @@ MonoBehaviour:
   Character: 1
   ConversationCameraAnchor: {fileID: 592572430474079270}
   ConversationDialogueBubbleAnchor: {fileID: 894579214722905385}
-  ConversationCameraOrthoSize: 3
+  ConversationCameraOrthoSize: 3.5
   DialogueModule: {fileID: 0}
   HoverScaleAmount: {x: 1.05, y: 1.05, z: 1}
   DefaultScale: {x: 1, y: 1, z: 1}
+  ConversationMusicPitch: 1
+  TypingSounds:
+  - Clip: {fileID: 8300000, guid: 1afb57d36b2eb3a4b860f919ba996fa8, type: 3}
+    Volume: 0.4
+  - Clip: {fileID: 8300000, guid: 804b7e39d891d0a4e912df8cfc82864a, type: 3}
+    Volume: 0.4
+  - Clip: {fileID: 8300000, guid: e472a730d8e3af742bec22a36c223d82, type: 3}
+    Volume: 0.4
+  - Clip: {fileID: 8300000, guid: 60be38cad7bfa86439b1467a10abc124, type: 3}
+    Volume: 0.4

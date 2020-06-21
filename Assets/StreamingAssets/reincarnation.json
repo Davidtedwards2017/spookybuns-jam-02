@@ -4,10 +4,7 @@
 			"id": "demon",
 			"description": "You are now a demon",
 			"imageurl": "images/end_demon.png",
-			"conditions": [
-				"foo>1",
-				"grump>1"
-			]
+			"condition":"foo>0"
 		}
 	]
 }

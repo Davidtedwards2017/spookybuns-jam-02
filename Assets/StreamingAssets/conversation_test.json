@@ -72,10 +72,10 @@
 						},
 						{
 							"id": "4.5",
-							"value": "(remove this option)",
+							"value": "(end game)",
 							"onlyonce": true,
 							"post": [
-								"next:4"
+								"event:game.end"
 							]
 						},
 						{

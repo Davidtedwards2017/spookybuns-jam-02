@@ -2,6 +2,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using Data;
+using Utilites;
+using System.Collections.Generic;
 
 public class DialogueModule : Module
 {
@@ -10,7 +12,10 @@ public class DialogueModule : Module
 
     public TextTyper Typer;
     private bool _ShouldProceed;
-    
+
+    private SoundEffectData _TypingSound;
+    private List<SoundEffectData> _TypingSounds;
+
     public void Awake()
     {
         ActionButton.onClick.AddListener(ActionButtonPressed);
@@ -33,18 +38,25 @@ public class DialogueModule : Module
         }
     }
 
-    public IEnumerator PerformDialogue(BasicDialogueEntry dialogueEntry)
+    public IEnumerator PerformDialogue(BasicDialogueEntry dialogueEntry, List<SoundEffectData> typingSounds)
     {
+        _TypingSounds = typingSounds;
         ActionButton.animator.SetBool("visible", false);
         Animator.SetBool("visible", true);
         _ShouldProceed = false;
-        yield return Typer.PerformTextTyping(dialogueEntry.Value);
+        yield return Typer.PerformTextTyping(dialogueEntry.Value, PlayTypingSoundEffect);
         //StartCoroutine(UpdateLayoutGroups());
         //SetDialogueText(dialogueEntry.Value);
         ActionButton.animator.SetBool("visible", true);
         yield return new WaitUntil(() => _ShouldProceed);
         ActionButton.animator.SetBool("visible", false);
         Animator.SetBool("visible", false);
+    }
+
+    public void PlayTypingSoundEffect()
+    {
+        //_TypingSound.PlaySfx();
+        _TypingSounds.PlaySfx();
     }
 
     private void ActionButtonPressed()

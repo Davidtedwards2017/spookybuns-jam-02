@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Text))]
 public class TextTyper : MonoBehaviour
 {
     private Text _TextArea;
-    private float TimePerCharacter = 0.015f;
+    private float TimePerCharacter = 0.035f;
 
     private List<string> Tags;
     int substringLength = 1;
@@ -19,7 +20,7 @@ public class TextTyper : MonoBehaviour
         SetText("");
     }
 
-    public IEnumerator PerformTextTyping(string value)
+    public IEnumerator PerformTextTyping(string value, UnityAction onTypeCallBack = null)
     {
         Tags = new List<string>();
         SetText(GetWhiteSpaces(value.Length));
@@ -28,11 +29,14 @@ public class TextTyper : MonoBehaviour
         while(head < value.Length)
         {
             var next = Parse(ref head, value);
-
             next = ApplyTags(next);
 
             var spaces = GetWhiteSpaces(value.Length - (head + substringLength));
             SetText(string.Format("{0}{1}{2}", previous, next, spaces));
+            if(onTypeCallBack != null)
+            {
+                onTypeCallBack.Invoke();
+            }
             yield return new WaitForSeconds(TimePerCharacter);
             previous += next;
         }

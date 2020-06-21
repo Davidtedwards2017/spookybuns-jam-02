@@ -225,7 +225,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4840c1dc0641022489f8114807eb78fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Active: 0
   ActionButton: {fileID: 1327509897196486543}
   ShouldUpdatePosition: 0
   Typer: {fileID: 3468430885195733803}
@@ -711,7 +710,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2694fb1e193013e45ab487ddd84885ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Active: 0
   OptionsArea: {fileID: 8071566414848582416}
   OptionPrefab: {fileID: 5757701489741981709, guid: 1de1a973638d54e46a91226a4ab2f0bd,
     type: 3}
@@ -876,7 +874,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 380.6701, y: 0}
+  m_AnchoredPosition: {x: 375.31845, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: -0.000000024214387}
 --- !u!114 &8071566414848582428
@@ -1189,7 +1187,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3477f1ae353f8804eb5f7722de2346d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Active: 0
   ActorDialogueModule: {fileID: 8071566415633801761}
   PlayerDialogueModule: {fileID: 645127021285648018}
   ChoiceDialogueModule: {fileID: 8071566414685374889}
@@ -1609,7 +1606,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 2.86911, y: 0}
+  m_AnchoredPosition: {x: 4.4, y: 0}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &8071566415502820486
@@ -1799,7 +1796,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4840c1dc0641022489f8114807eb78fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Active: 0
   ActionButton: {fileID: 8071566415105247595}
   ShouldUpdatePosition: 0
   Typer: {fileID: 8071566414992453012}
@@ -2146,7 +2142,7 @@ PrefabInstance:
     - target: {fileID: 3755254580313636363, guid: 1de1a973638d54e46a91226a4ab2f0bd,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 365.6701
+      value: 360.31845
       objectReference: {fileID: 0}
     - target: {fileID: 3755254580313636363, guid: 1de1a973638d54e46a91226a4ab2f0bd,
         type: 3}
@@ -2176,7 +2172,7 @@ PrefabInstance:
     - target: {fileID: 6986703240888326046, guid: 1de1a973638d54e46a91226a4ab2f0bd,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 365.19516
+      value: 359.7002
       objectReference: {fileID: 0}
     - target: {fileID: 6986703240888326046, guid: 1de1a973638d54e46a91226a4ab2f0bd,
         type: 3}

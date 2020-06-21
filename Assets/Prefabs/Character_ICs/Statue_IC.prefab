@@ -1366,7 +1366,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7466251665715788761}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.95, y: 4.41, z: -10}
+  m_LocalPosition: {x: 3.49, y: 4.41, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8652883415815805033}
@@ -1452,7 +1452,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7530391340900874424}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.72, y: 5.43, z: 0}
+  m_LocalPosition: {x: 2.37, y: 5.43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8652883415815805033}
@@ -1810,6 +1810,18 @@ MonoBehaviour:
   DialogueModule: {fileID: 0}
   HoverScaleAmount: {x: 1.05, y: 1.05, z: 1}
   DefaultScale: {x: 1, y: 1, z: 1}
+  TypingSound:
+    Clip: {fileID: 0}
+    Volume: 1
+  TypingSounds:
+  - Clip: {fileID: 8300000, guid: f2cfdae0d9b99944692a3c53a16bed5c, type: 3}
+    Volume: 0.1
+  - Clip: {fileID: 8300000, guid: 5acc092f227b4ab48860eac376c1d5ac, type: 3}
+    Volume: 0.1
+  - Clip: {fileID: 8300000, guid: 32e5815c63aa456438ea1a933bc2aa17, type: 3}
+    Volume: 0.1
+  - Clip: {fileID: 8300000, guid: 526263ee9f9543243b519fdc6773f77b, type: 3}
+    Volume: 0.1
 --- !u!1 &8672211690121012698
 GameObject:
   m_ObjectHideFlags: 0

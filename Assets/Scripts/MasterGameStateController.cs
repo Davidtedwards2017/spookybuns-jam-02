@@ -17,7 +17,10 @@ public class MasterGameStateController : Singleton<MasterGameStateController>
         PostGame,
     }
 
+    public List<SoundEffectData> PlayerTypingSounds;
+
     public Module TitleScreenUi;
+    public Module FadeUi;
     public GameInfo.Character StartingConversationCharacter;
 
     public Character_IC[] Character_ICs;
@@ -71,11 +74,15 @@ public class MasterGameStateController : Singleton<MasterGameStateController>
 
     private IEnumerator Title_Enter()
     {
-        TitleScreenUi.Active = true;
+        FadeUi.SetActive(false);
+        TitleScreenUi.SetActive(true);
         yield return new WaitForSeconds(0.2f);
         yield return new WaitUntil(() => Input.anyKeyDown);
-        TitleScreenUi.Active = false;
-        yield return new WaitForSeconds(0.2f);
+        FadeUi.SetActive(true);
+        TitleScreenUi.SetActive(false);
+        yield return new WaitForSeconds(1.1f);
+        FadeUi.SetActive(false);
+        yield return new WaitForSeconds(0.4f);
         _StateMachine.ChangeState(State.Playing);
     }
 
@@ -93,13 +100,9 @@ public class MasterGameStateController : Singleton<MasterGameStateController>
 
     private IEnumerator PostGame_Enter()
     {
-
-
-
-        //fade to black
-
-
-
+        FadeUi.SetActive(true);
+        yield return new WaitForSeconds(1.0f);
+ 
         yield return EndSummaryUiController.Instance.StartEndGameSummary(CacluateReincarnationResult());
         _StateMachine.ChangeState(State.Restart);
     }

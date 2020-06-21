@@ -13,7 +13,7 @@ namespace Utilites
 
         public static AudioSource PlaySfx(this SoundEffectData data, bool looping = false, float volume = 1)
         {
-            if (data.Clip != null)
+            if (data != null && data.Clip != null)
             {
                 return PlaySfx(data.Clip, data.Volume * volume, looping);
             }
@@ -23,6 +23,10 @@ namespace Utilites
 
         public static AudioSource PlaySfx(this List<SoundEffectData> collection, float volume = 1, bool loop = false)
         {
+            if(collection== null)
+            {
+                return null;
+            }
             var picked = collection.PickRandom();
             return picked.PlaySfx(loop, volume);
         }

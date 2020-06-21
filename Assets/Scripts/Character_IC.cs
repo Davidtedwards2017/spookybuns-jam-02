@@ -18,7 +18,10 @@ public class Character_IC : MonoBehaviour
     public DialogueModule DialogueModule;
     public Vector3 HoverScaleAmount = new Vector3(1.05f, 1.05f, 1.0f);
     public Vector3 DefaultScale = Vector3.one;
-    
+    public float ConversationMusicPitch = 1;
+
+    public List<SoundEffectData> TypingSounds;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +38,10 @@ public class Character_IC : MonoBehaviour
 
     public void OnMouseDown()
     {
-        StartConversation();
+        if (!ConversationController.Instance.InConversation())
+        {
+            StartConversation();
+        }
     }
 
     public void OnMouseOver()

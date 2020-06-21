@@ -290,3 +290,15 @@ MonoBehaviour:
   DialogueModule: {fileID: 0}
   HoverScaleAmount: {x: 1.05, y: 1.05, z: 1}
   DefaultScale: {x: 1, y: 1, z: 1}
+  TypingSound:
+    Clip: {fileID: 0}
+    Volume: 1
+  TypingSounds:
+  - Clip: {fileID: 8300000, guid: dc034960d52d1f74181065976d286a61, type: 3}
+    Volume: 0.3
+  - Clip: {fileID: 8300000, guid: 240459dd628bd2147bcdf0c04dfcaa22, type: 3}
+    Volume: 0.3
+  - Clip: {fileID: 8300000, guid: a374d2a9d8dc01b408478c7fe834870c, type: 3}
+    Volume: 0.3
+  - Clip: {fileID: 8300000, guid: ca1b761577cabba44be7bf7375cf78f8, type: 3}
+    Volume: 0.3
