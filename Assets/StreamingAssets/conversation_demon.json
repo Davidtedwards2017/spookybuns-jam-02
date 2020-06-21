@@ -657,7 +657,7 @@
 				"type": "basic",
 				"id": "4.2.2",
 				"who": "actor",
-				"value": "No it’s probably not.",
+				"value": "No, it’s probably not.",
 				"post": ["next:4.2.3"]
 			},
 			{
@@ -815,7 +815,7 @@
 						"id": "8.4.1",
 						"value": "That’s it. I wanted to tell you I did it.",
 						"post": [
-							"next:8.5.1",
+							"next:8.5.2",
 							"flag:positive+1"
 						]
 					},

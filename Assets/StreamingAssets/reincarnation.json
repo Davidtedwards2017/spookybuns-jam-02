@@ -1,17 +1,18 @@
 {
 	"entries": [
 		{
-			"id": "demon",
-			"description": "You are reborn as a...\nDemon!\nWoah! It’s hot down here.\nUh oh, is this the bad place?\nBetter luck next time",
-			"imageurl": "images/end_demon.png",
-			"condition": "grump>6&&positive>3"
-		},
-		{
 			"id": "barnacle",
 			"description": "You are reborn as a...\nBarnacle!\nNegativity\nAnd sins of the past\nNo eyes, no ears; alone",
 			"imageurl": "images/end_barnacle.png",
 			"condition":"grump>8"
 		},
+		{
+			"id": "demon",
+			"description": "You are reborn as a...\nDemon!\nWoah! It’s hot down here.\nUh oh, is this the bad place?\nBetter luck next time",
+			"imageurl": "images/end_demon.png",
+			"condition": "grump>6&&positive>4"
+		},
+
 		{
 			"id": "humanoid",
 			"description": "You are reborn as a...\nHumanoid!\nCongratulations!\nYou get to be a human\nAgain and again",

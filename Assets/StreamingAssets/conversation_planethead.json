@@ -615,7 +615,7 @@
 				"id": "9.6",
 				"who": "player",
 				"value": "What happens next?",
-				"post": ["next:9.6.1"]
+				"post": ["next:9.6.12"]
 			},
 			{
 				"type": "basic",
@@ -734,7 +734,7 @@
 			{
 				"type": "basic",
 				"id": "8.3.4",
-				"who": "player",
+				"who": "actor",
 				"value": "Good luck on your next rotation, little one.",
 				"post": ["flag:phform+1"]
 			},
